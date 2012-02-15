@@ -10,6 +10,7 @@
  *
  *= require 'twitter/bootstrap'
  *= require_self
+ *= require 'highlight/sunburst'
  *= require_tree .
 */
 
