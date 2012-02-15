@@ -1,0 +1,32 @@
+.post
+  .title Colorful rails logs
+  .body
+    p If you use a terminal that support colors, like OSX Term or iTerm, you can add colors to log messages in Rails applications.
+    p Usually when we need to log infomation that is useful for us we use the Rails logger like:
+
+    .code logger.debug "Here is where I am"
+
+    p You will see that log message is being displayed in a plain, boring white/grayish color and it just gets lost with the rest of the log messages.
+
+    p We could add some colors and fun to our logs with very simple escape sequences.
+
+    p To log a message with blue color we just need to start with an escape sequence that set our color, we also need a stop escape sequence to change the color back:
+
+    .code logger.debug "\033[0;34mHere is where I am\033[0;37m"
+    p If we go and look into our Rails log, it will be more easy to spot our message within the rest of the log messages, this is because it will be colored with a bright blue color.
+
+    p Rails logger can accept many more attributes than just changing colors, for example we can set the following font attributes:
+
+    p
+      | 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+
+    p Or change text colors as we discussed earlier: 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+
+    p Or we can algo change background colors to: 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+
+    p So the next step, will be to create a reusable helper method to log colorful messages, maybe something like:
+
+    .code logger.blue_debug "Hey I should be blue"
+
+    p Now you know that your Rails logs can be fun and colorful.
+
