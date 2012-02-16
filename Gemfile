@@ -7,7 +7,7 @@ gem 'rails', '3.2.1'
 
 gem 'less-rails-bootstrap'
 gem 'psych'
-gem 'sqlite3'
+gem 'pg'
 gem 'slim'
 
 
