@@ -14,11 +14,11 @@ html
 
   body
     = render 'nav_bar'
-    .container
+    .container.bordered
       .row
         .span9
           .posts= yield
         .span3
           .right= render 'right_side_bar'
 
-      = render 'footer'
+    = render 'footer'
