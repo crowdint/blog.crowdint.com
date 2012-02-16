@@ -5,7 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'less-rails-bootstrap'
+gem 'less-rails-bootstrap', '~> 2.0.4'
 gem 'psych'
 gem 'pg'
 gem 'slim'

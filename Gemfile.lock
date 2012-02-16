@@ -63,7 +63,7 @@ GEM
     less-rails (2.1.5)
       actionpack (>= 3.1)
       less (~> 2.0.7)
-    less-rails-bootstrap (2.0.2)
+    less-rails-bootstrap (2.0.4)
       less-rails (~> 2.1.0)
     libv8 (3.3.10.4)
     mail (2.4.1)
@@ -136,7 +136,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   heroku
   jquery-rails
-  less-rails-bootstrap
+  less-rails-bootstrap (~> 2.0.4)
   pg
   psych
   rails (= 3.2.1)
