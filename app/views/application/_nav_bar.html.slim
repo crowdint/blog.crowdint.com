@@ -1,0 +1,13 @@
+.navbar
+  .navbar-inner
+    .container
+      .row
+        .span7
+          = image_tag 'logo_03.png'
+        .span5
+          ul.nav
+            li= link_to 'Home', 'http://www.crowdint.com'
+            li= link_to 'Projects', 'http://www.crowdint.com/projects'
+            li= link_to 'Services', 'http://www.crowdint.com/services'
+            li.active= link_to 'Blog', root_path
+            li= link_to 'About', 'http://www.crowdint.com/about'
