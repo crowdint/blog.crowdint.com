@@ -5,6 +5,7 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'carrierwave'
 gem 'devise'
 gem 'less-rails-bootstrap', '~> 2.0.4'
 gem 'omniauth'
@@ -26,8 +27,10 @@ end
 
 gem 'jquery-rails'
 
-group :development do
+group :development, :test do
+  gem 'cucumber-rails'
   gem 'heroku'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
