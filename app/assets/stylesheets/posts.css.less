@@ -1,3 +1,4 @@
+@import 'twitter/bootstrap/variables';
 @import 'twitter/bootstrap/mixins';
 
 .posts {
@@ -7,7 +8,7 @@
 
   .post {
     margin-bottom: 50px;
-    .title {
+    .header {
       h1 {
         font-size: 24px;
         line-height: 24px;
@@ -26,6 +27,10 @@
     .body {
       background-color: #ebebeb;
       padding: 10px;
+    }
+
+    .title {
+      .clearfix();
     }
   }
 }
