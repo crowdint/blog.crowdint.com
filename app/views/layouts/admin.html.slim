@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Crowd Blog
+
+    = stylesheet_link_tag    "admin", :media => "all"
+    = javascript_include_tag "admin"
+    = csrf_meta_tags
+  body
+    .navbar
+      .navbar-inner
+        .container
+          .row
+            .span7
+              = image_tag 'logo_03.png'
+
+    .container= yield
