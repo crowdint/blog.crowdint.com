@@ -5,6 +5,10 @@ Crowdblog::Application.routes.draw do
 
   match '/auth/google_oauth2/callback', :to => 'sessions#authenticate_user'
 
+  namespace :admin do
+    resources :posts
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,13 @@
+h1 Posts
+
+#posts
+  = link_to 'New Post', '#new', class: 'btn new-post'
+
+
+- content_for :scripts do
+  coffee:
+    $ ->
+      new PostsApp.PostsView
+      new PostsApp.Router
+      Backbone.history.start()
+

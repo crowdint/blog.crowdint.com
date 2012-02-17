@@ -5,15 +5,18 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'backbone-rails'
 gem 'carrierwave'
 gem 'devise'
+gem 'eco'
+gem 'slim_assets'
 gem 'less-rails-bootstrap', '~> 2.0.4'
 gem 'omniauth-google-oauth2'
 gem 'openid'
 gem 'psych'
 gem 'pg'
 gem 'ruby-openid'
-gem 'slim'
+gem 'slim-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
