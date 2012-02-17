@@ -72,6 +72,10 @@ GEM
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    faraday (0.7.6)
+      addressable (~> 2.2)
+      multipart-post (~> 1.1)
+      rack (~> 1.1)
     ffi (1.0.11)
     gherkin (2.7.7)
       json (>= 1.4.6)
@@ -105,10 +109,21 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.4)
+    multipart-post (1.1.5)
     nokogiri (1.5.0)
+    oauth2 (0.5.2)
+      faraday (~> 0.7)
+      multi_json (~> 1.0)
     omniauth (1.0.2)
       hashie (~> 1.2)
       rack
+    omniauth-google-oauth2 (0.1.9)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+    omniauth-oauth2 (1.0.0)
+      oauth2 (~> 0.5.0)
+      omniauth (~> 1.0)
+    openid (0.0.1)
     orm_adapter (0.0.6)
     pg (0.13.1)
     polyglot (0.3.3)
@@ -153,6 +168,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    ruby-openid (2.1.8)
     rubyzip (0.9.6.1)
     sass (3.1.15)
     sass-rails (3.2.4)
@@ -184,7 +200,7 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
-    warden (1.1.0)
+    warden (1.1.1)
       rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
@@ -202,11 +218,13 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails-bootstrap (~> 2.0.4)
-  omniauth
+  omniauth-google-oauth2
+  openid
   pg
   psych
   rails (= 3.2.1)
   rspec-rails
+  ruby-openid
   sass-rails (~> 3.2.3)
   slim
   uglifier (>= 1.0.3)

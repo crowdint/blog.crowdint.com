@@ -2,6 +2,9 @@ Crowdblog::Application.routes.draw do
   devise_for :users
 
   root to: "posts#index"
+
+  match '/auth/google_oauth2/callback', :to => 'sessions#authenticate_user'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

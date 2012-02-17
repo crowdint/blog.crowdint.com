@@ -8,9 +8,11 @@ gem 'rails', '3.2.1'
 gem 'carrierwave'
 gem 'devise'
 gem 'less-rails-bootstrap', '~> 2.0.4'
-gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'openid'
 gem 'psych'
 gem 'pg'
+gem 'ruby-openid'
 gem 'slim'
 
 # Gems used only for assets and not required
