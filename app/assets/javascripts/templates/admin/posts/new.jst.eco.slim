@@ -1,5 +1,19 @@
-h1 New Post
+h2 New Post
 
-form#new-post
-  input name='post_name'
+#post-form
+  = form_for [:admin, Post.new], html: { class: 'form-horizontal' } do |f|
+    fieldset
+      .control-group
+        = f.label :title, class: 'control-label'
+        .controls
+          = f.text_field :title, class: 'input-xlarge span9'
+
+      .control-group
+        = f.label :body, class: 'control-label'
+        .controls
+          = f.text_area :body, class: 'input-xlarge span9', rows: 30
+
+      .form-actions
+        = f.submit 'Save', class: 'btn btn-primary save'
+        = f.submit 'Cancel', class: 'btn btn-danger cancel'
 

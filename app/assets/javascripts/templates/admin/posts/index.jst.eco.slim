@@ -1,0 +1,18 @@
+= link_to 'New Post', '#new', class: 'btn btn-primary new-post'
+
+.posts
+  | <% if @posts.length: %>
+
+  table.table.table-striped
+    thead
+      tr
+        th Title
+    tbody
+      |   <% for post in @posts: %>
+      tr
+        td <%= post.title %>
+      |   <% end %>
+        <% else: %>
+          No posts
+        <% end %>
+
