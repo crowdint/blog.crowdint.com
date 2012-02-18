@@ -13,4 +13,10 @@ class Admin::PostsController < Admin::BaseController
     @post.save
     respond_with [:admin, @post]
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    respond_with @post
+  end
 end
