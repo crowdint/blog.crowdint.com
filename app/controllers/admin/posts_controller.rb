@@ -19,4 +19,16 @@ class Admin::PostsController < Admin::BaseController
     @post.destroy
     respond_with @post
   end
+
+  def show
+    @post = Post.find(params[:id])
+    respond_with @post
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update_attributes(params[:post])
+
+    respond_with @post
+  end
 end
