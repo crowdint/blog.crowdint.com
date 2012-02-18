@@ -1,4 +1,4 @@
-h2 Edit Post
+h2 <%= (if @isNew then 'New' else 'Edit') %> Post
 
 = form_tag '/', class: 'form-horizontal' do
   fieldset
@@ -13,5 +13,8 @@ h2 Edit Post
         = text_area_tag 'post_body', "<%= @post.body %>".html_safe, class: 'span9', rows: 30
 
     .form-actions
-      button.btn.btn-primary.update Update
-      button.btn.btn-danger.cancel Cancel
+      .row
+        .span1
+          button.btn.btn-primary.update Save
+        .span1
+          button.btn.btn-danger.cancel Cancel

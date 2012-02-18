@@ -9,8 +9,7 @@ $ ->
 
     render: ->
       this.model.fetch()
-      console.log this.model.toJSON()
-      this.$el.html(this.template({post: this.model.toJSON()}))
+      this.$el.html(this.template({post: this.model.toJSON(), isNew: this.model.isNew()}))
       this
 
     cancelPost: (e) ->

@@ -6,7 +6,7 @@ $ ->
       "edit/:id" : "editPost"
 
     newPost: ->
-      new_posts = new PostsApp.NewPostView()
+      new_posts = new PostsApp.EditPostView({model: new PostsApp.Post() })
       $('#posts').html(new_posts.render().el)
 
     index: ->
