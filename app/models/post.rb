@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
 
     before_transition on: :publish do |post, transition|
       #post.update_attribute(:published_at, Time.now)
-      post.published_at = Time.now
+      post.published_at ||= Time.now
     end
 
     event :publish do
