@@ -53,6 +53,12 @@ class Post < ActiveRecord::Base
     published_at.strftime("%b %d, %Y")
   end
 
+  def html_body
+    @@renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+        :autolink => true, :space_after_headers => true)
+    @@renderer.render(self.body).html_safe
+  end
+
   def publish_if_allowed(transition, user)
     if user.is_publisher?
       self.publisher = user
