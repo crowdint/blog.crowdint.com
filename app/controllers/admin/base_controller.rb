@@ -4,6 +4,6 @@ class Admin::BaseController < ApplicationController
   before_filter :authenticate!
 
   def authenticate!
-    redirect_to '/auth/google_oauth2' unless current_user
+    redirect_to user_omniauth_authorize_path :google_oauth2 unless current_user
   end
 end

@@ -1,9 +1,9 @@
 Crowdblog::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: "posts#index"
 
-  match '/auth/google_oauth2/callback', :to => 'sessions#authenticate_user'
+  #match '/auth/google_oauth2/callback', :to => 'sessions#authenticate_user'
 
   match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
       constraints: { year: /\d+/ }
