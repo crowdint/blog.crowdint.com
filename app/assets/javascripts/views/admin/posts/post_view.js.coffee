@@ -21,11 +21,11 @@ $ ->
     togglePublish: ->
       if this.model.get('published?')
         this.model.save
-          state: 'drafted'
+          transition: 'draft'
         this.model.set('published?', false)
       else
         this.model.save
-          state: 'published'
+          transition: 'publish'
         this.model.set('published?', true)
 
       this.paintButtons()

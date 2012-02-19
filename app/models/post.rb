@@ -51,4 +51,11 @@ class Post < ActiveRecord::Base
   def formatted_published_date
     published_at.strftime("%b %d, %Y")
   end
+
+  def publish_if_allowed(transition, user)
+    if user.is_publisher?
+      self.publisher = user
+      self.send(transition)
+    end
+  end
 end

@@ -9,3 +9,8 @@ end
 Given /^An author with name "([^"]*)" and email "([^"]*)"$/ do |name, email|
   User.create!(name: name, email: email)
 end
+
+Given /^current user is publisher$/ do
+  @current_user.update_attribute(:is_publisher, true)
+end
+

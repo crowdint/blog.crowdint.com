@@ -3,6 +3,7 @@ Feature: Manage Posts
 
   Background:
     Given I am signed in as "test@test.com"
+    And current user is publisher
 
   Scenario: Posts CRUD
     Given I go to the posts page

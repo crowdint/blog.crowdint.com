@@ -44,6 +44,7 @@ group :development, :test do
   gem 'heroku'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'spork'
 end
 
 # To use ActiveModel has_secure_password

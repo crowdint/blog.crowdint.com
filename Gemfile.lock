@@ -209,6 +209,7 @@ GEM
     slim_assets (0.0.2)
       slim
       tilt
+    spork (0.9.0)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -262,5 +263,6 @@ DEPENDENCIES
   simple_form
   slim-rails
   slim_assets (~> 0.0.2)
+  spork
   state_machine
   uglifier (>= 1.0.3)

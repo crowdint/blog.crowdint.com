@@ -37,4 +37,34 @@ describe Post do
       subject.formatted_published_date.should == 'Feb 18, 2012'
     end
   end
+
+  describe "#publish_if_allowed" do
+    let(:user) { User.new }
+    context "user is publisher" do
+      before do
+        user.is_publisher = true
+      end
+
+      it "changes its state" do
+        subject.should_receive('publish')
+        subject.publish_if_allowed('publish', user)
+      end
+
+      it "sets the user as publisher" do
+        subject.publish_if_allowed('publish', user)
+        subject.publisher.should be(user)
+      end
+    end
+
+    context "user is not publisher" do
+      before do
+        user.is_publisher = false
+      end
+
+      it "does not change its state" do
+        subject.should_not_receive('publish')
+        subject.publish_if_allowed('publish', user)
+      end
+    end
+  end
 end

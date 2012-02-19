@@ -35,16 +35,7 @@ class Admin::PostsController < Admin::BaseController
       @post.save!
     end
 
-    # TODO: Move this to model with a different param
-    # that receives the new state, or the transition
-    #
-    if params[:state] == 'published'
-      @post.publisher = current_user
-      @post.save!
-      @post.publish
-    else
-      @post.draft
-    end
+    @post.publish_if_allowed(params[:transition], current_user) if params[:transition]
 
     respond_with @post
   end
