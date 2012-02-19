@@ -12,6 +12,7 @@ h2 <%= (if @isNew then 'New' else 'Edit') %> Post
       = label_tag 'post_body', 'Body', class: 'control-label'
       .controls
         = text_area_tag 'post_body', "<%= @post.body %>".html_safe, class: 'span9', rows: 30
+        span.help-inline= link_to 'Markdown syntax', 'http://daringfireball.net/projects/markdown/syntax', target: '_BLANK'
 
     | <% unless @isNew: %>
     #attachments.row
