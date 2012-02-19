@@ -33,3 +33,4 @@ Feature: Manage Posts
     And current user is set as its publisher
     When I click on "Publish"
     Then the post titled "The great gatsby" is marked as drafted
+

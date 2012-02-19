@@ -23,8 +23,10 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def show
-    @post = Post.find(params[:id])
-    respond_with @post
+    @post = Post.includes(:assets).find(params[:id])
+    respond_to do |format|
+      format.json { render json: @post.to_json(include: :assets) }
+    end
   end
 
   def update

@@ -17,9 +17,20 @@ $ ->
     editPost: (e) ->
       post = PostsApp.Posts.get(e) || new PostsApp.Post({id: e, title: 'The title'})
       post.fetch
-        success: (model) ->
+        success: (model) =>
           edit_post_view = new PostsApp.EditPostView({model: post})
           $('#posts').html(edit_post_view.render().el)
+          $('#uploader').uploadify
+            'uploader'  : '/uploadify.swf'
+            'cancelImg' : '/assets/cancel.png'
+            'auto'      : true
+            'script'    : '/admin/posts/' + post.id + '/assets'
+            'onComplete' : this.uploadComplete
+
+    uploadComplete: (e, id, file, response, data) ->
+      $('.attachment-list').append($.parseJSON(response).attachment.url)
+
+      true
 
   PostsApp.Posts = new PostsApp.PostCollection()
 

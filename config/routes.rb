@@ -5,11 +5,14 @@ Crowdblog::Application.routes.draw do
 
   match '/auth/google_oauth2/callback', :to => 'sessions#authenticate_user'
 
-  match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post'
+  match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
+      constraints: { year: /\d+/ }
 
   namespace :admin do
     root to: 'posts#index'
-    resources :posts
+    resources :posts do
+      resources :assets
+    end
   end
 
   # The priority is based upon order of creation:

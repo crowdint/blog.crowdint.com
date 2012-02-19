@@ -13,6 +13,17 @@ h2 <%= (if @isNew then 'New' else 'Edit') %> Post
       .controls
         = text_area_tag 'post_body', "<%= @post.body %>".html_safe, class: 'span9', rows: 30
 
+    | <% unless @isNew: %>
+    #attachments.row
+      h2 Attachments
+      .span8.attachment-list
+        | <% for asset in @post.assets: %>
+          <%= asset.attachment.url %>
+          <% end %>
+      .span4
+        #uploader
+
+    | <% end %>
     .form-actions
       .row
         .span1
