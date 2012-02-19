@@ -1,5 +1,6 @@
 class Admin::PostsController < Admin::BaseController
   respond_to :html, :json
+  cache_sweeper :post_sweeper
 
   def index
     respond_to do |format|
