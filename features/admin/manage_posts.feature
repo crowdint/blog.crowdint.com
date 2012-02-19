@@ -1,5 +1,8 @@
 Feature: Manage Posts
 
+  Background:
+    Given I am signed in as "test@test.com"
+
   @javascript
   Scenario: Posts CRUD
     Given I go to the posts page
