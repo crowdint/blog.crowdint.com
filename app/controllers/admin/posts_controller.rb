@@ -10,6 +10,7 @@ class Admin::PostsController < Admin::BaseController
 
   def create
     @post = Post.new(params[:post])
+    @post.published = false
     @post.save
     respond_with [:admin, @post]
   end

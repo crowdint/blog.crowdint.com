@@ -1,11 +1,11 @@
 PostsApp.Post = Backbone.Model.extend
   url: ->
     if this.id
-      'posts/' + this.id
+      '/admin/posts/' + this.id
     else
-      'posts'
+      '/admin/posts'
 
 PostsApp.PostCollection = Backbone.Collection.extend
   model: PostsApp.Post
 
-  url: 'posts'
+  url: '/admin/posts'
