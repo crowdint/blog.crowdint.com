@@ -9,3 +9,5 @@ h1 Posts
       PostsApp.router = new PostsApp.Router
       Backbone.history.start()
 
+  javascript:
+    PostsApp.publisher = #{current_user.is_publisher}

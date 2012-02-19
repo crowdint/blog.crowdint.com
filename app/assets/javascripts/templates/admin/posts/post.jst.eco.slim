@@ -1,7 +1,9 @@
 td <%= @post.title %>
 td <%= @post.author_email %>
 td.span1
+  | <% if @publisher: %>
   a.btn.publish.span1 href="#" Publish
+  | <% end %>
 td.span1
   a.btn.delete.span1 Delete
 td.span1

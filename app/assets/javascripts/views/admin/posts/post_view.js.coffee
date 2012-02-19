@@ -10,7 +10,7 @@ $ ->
       JST["templates/admin/posts/post"]
 
     render: ->
-      this.$el.html(this.template({post: this.model.toJSON()}))
+      this.$el.html(this.template({post: this.model.toJSON(), publisher: PostsApp.publisher}))
       this.paintButtons()
       this
 
