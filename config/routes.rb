@@ -5,6 +5,8 @@ Crowdblog::Application.routes.draw do
 
   match '/auth/google_oauth2/callback', :to => 'sessions#authenticate_user'
 
+  match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post'
+
   namespace :admin do
     root to: 'posts#index'
     resources :posts

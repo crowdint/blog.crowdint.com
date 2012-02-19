@@ -2,12 +2,13 @@ h2 <%= (if @isNew then 'New' else 'Edit') %> Post
 
 = form_tag '/', class: 'form-horizontal' do
   fieldset
-    .control-group
+    .control-group.title
       = label_tag 'post_title', 'Title', class: 'control-label'
       .controls
-        = text_field_tag 'post_title', "<%= @post.title %>".html_safe, class: 'input-xlarge span9'
+        = text_field_tag 'post_title', "<%= @post.title %>".html_safe, class: 'input-xlarge span7'
+        span.help-inline.title
 
-    .control-group
+    .control-group.body
       = label_tag 'post_body', 'Body', class: 'control-label'
       .controls
         = text_area_tag 'post_body', "<%= @post.body %>".html_safe, class: 'span9', rows: 30

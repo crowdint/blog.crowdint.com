@@ -18,8 +18,17 @@ $ ->
 
     updatePost: (e) ->
       e.preventDefault()
-      this.model.save(this.extractData())
-      this.goHome()
+      this.model.save this.extractData(),
+        success: =>
+          this.goHome()
+
+        error: (e) =>
+          errors = $.parseJSON(e.responseText).errors
+          console.log errors[0]
+
+          $.each errors, (key, value) =>
+            this.$('.control-group.' + key).addClass('error')
+            this.$('.' + key + '.help-inline').html(value.join(','))
 
     extractData: ->
       {

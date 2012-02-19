@@ -3,11 +3,12 @@
     .row
       .span1
         = image_tag post.gravatar_url
-      .span2
+      .span3
         .author #{post.author_name}
         .email #{post.author_email}
         .date #{post.formatted_published_date}
       .title
-        h1 #{post.title}
+        h1
+          = link_to post.title, post_path(post.year, post.month, post.day, post.permalink, 'html')
 
   .body #{post.body}

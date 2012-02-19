@@ -5,6 +5,12 @@ class Post < ActiveRecord::Base
   delegate :email, to: :author, prefix: true
   delegate :gravatar_url, to: :author
 
+  delegate :year, to: :published_at
+  delegate :month, to: :published_at
+  delegate :day, to: :published_at
+
+  validates :title, length: { minimum: 5, maximum: 90 }
+
   def self.all_posts_json
     Post.all.to_json only: [:id, :title], methods: [:author_email]
   end
