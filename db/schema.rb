@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219071614) do
+ActiveRecord::Schema.define(:version => 20120219234253) do
 
   create_table "assets", :force => true do |t|
     t.integer  "post_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20120219071614) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
+    t.string   "gravatar_alias"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

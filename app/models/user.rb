@@ -8,9 +8,13 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
-  gravtastic
+  gravtastic :gravatar_email
 
   def publisher!
     update_attribute(:is_publisher, true)
+  end
+
+  def gravatar_email
+    (gravatar_alias || email)
   end
 end
