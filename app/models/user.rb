@@ -11,6 +11,6 @@ class User < ActiveRecord::Base
   gravtastic
 
   def publisher!
-    update_attributes(:is_publisher, true)
+    update_attribute(:is_publisher, true)
   end
 end
