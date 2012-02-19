@@ -16,8 +16,9 @@ class Post < ActiveRecord::Base
     state :drafted
     state :published
 
-    after_transition on: :publish do
-      self.published_at = Time.now
+    before_transition on: :publish do |post, transition|
+      #post.update_attribute(:published_at, Time.now)
+      post.published_at = Time.now
     end
 
     event :publish do
