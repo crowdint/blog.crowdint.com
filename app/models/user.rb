@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
   gravtastic
+
+  def publisher!
+    update_attributes(:is_publisher, true)
+  end
 end
