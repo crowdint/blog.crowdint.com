@@ -20,6 +20,7 @@ gem 'slim-rails'
 gem 'slim_assets', '~> 0.0.2'
 gem 'simple_form'
 gem 'state_machine'
+gem 'unicorn'
 
 # Gems used only for assets and not required
 # in production environments by default.
