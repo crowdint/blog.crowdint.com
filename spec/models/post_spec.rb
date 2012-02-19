@@ -12,7 +12,7 @@ describe Post do
   describe "#allowed_to_update_permalink?" do
     context "post is published" do
       before do
-        subject.published = true
+        subject.state = 'published'
       end
 
       it "returns false" do
@@ -22,7 +22,7 @@ describe Post do
 
     context "post is not published" do
       before do
-        subject.published = false
+        subject.state = 'draft'
       end
 
       it "returns true" do

@@ -3,7 +3,7 @@ Given /^the published posts by "([^"]*)":$/ do |name, table|
   table.hashes.each_with_index do |hash, index|
     time_index = (index * 5)
     p = Post.create!(author: author, title: hash[:title], body: hash[:body],
-      					 published_at: time_index.minutes.ago, published: true)
+        				 published_at: time_index.minutes.ago, state: 'published')
     p.regenerate_permalink
     p.save!
   end

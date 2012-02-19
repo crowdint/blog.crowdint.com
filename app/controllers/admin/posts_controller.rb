@@ -11,7 +11,6 @@ class Admin::PostsController < Admin::BaseController
   def create
     @post = Post.new(params[:post])
     @post.author = current_user
-    @post.published = false
     @post.regenerate_permalink
     @post.save
     respond_with [:admin, @post]
