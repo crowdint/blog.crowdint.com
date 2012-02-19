@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   caches_page :index, :show
+  cache_sweeper :post_sweeper
 
   def index
     @posts = Post.for_index
