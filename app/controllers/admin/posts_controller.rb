@@ -12,6 +12,7 @@ class Admin::PostsController < Admin::BaseController
     @post = Post.new(params[:post])
     @post.author = current_user
     @post.published = false
+    @post.regenerate_permalink
     @post.save
     respond_with [:admin, @post]
   end
@@ -30,6 +31,10 @@ class Admin::PostsController < Admin::BaseController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(params[:post])
+    if @post.allowed_to_update_permalink?
+      @post.regenerate_permalink
+      @post.save
+    end
 
     respond_with @post
   end

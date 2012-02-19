@@ -7,4 +7,12 @@ class Post < ActiveRecord::Base
   def self.all_posts_json
     Post.all.to_json only: [:id, :title], methods: [:author_email]
   end
+
+  def regenerate_permalink
+    self.permalink = title.parameterize
+  end
+
+  def allowed_to_update_permalink?
+    !self.published
+  end
 end

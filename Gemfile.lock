@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ZenTest (4.6.2)
     actionmailer (3.2.1)
       actionpack (= 3.2.1)
       mail (~> 2.4.0)
@@ -30,6 +31,8 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.7)
     arel (3.0.0)
+    autotest-rails (4.1.2)
+      ZenTest (~> 4.5)
     backbone-rails (0.9.0)
       rails (>= 3.0.0)
     bcrypt-ruby (3.0.1)
@@ -228,6 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest-rails
   backbone-rails
   carrierwave
   coffee-rails (~> 3.2.1)
