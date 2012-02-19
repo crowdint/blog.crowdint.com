@@ -33,7 +33,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.all_posts_json
-    Post.all.to_json only: [:id, :title, :state], methods: [:author_email, :published?]
+    Post.order('created_at desc').to_json only: [:id, :title, :state], methods: [:author_email, :published?]
   end
 
   def self.for_index
