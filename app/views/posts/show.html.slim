@@ -1,1 +1,4 @@
 .posts= render @post
+
+- content_for :page_title do
+  | :: #{@post.title}
