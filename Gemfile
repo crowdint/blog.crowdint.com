@@ -34,6 +34,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'cucumber', '1.1.4'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'heroku'
