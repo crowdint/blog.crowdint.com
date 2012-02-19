@@ -36,6 +36,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'autotest-rails'
   gem 'cucumber', '1.1.4'
+  gem 'cucumber-debug'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'heroku'

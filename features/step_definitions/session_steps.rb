@@ -6,3 +6,6 @@ Given /^I am signed in as "([^"]*)"$/ do |email|
   visit '/admin?auth_token=' + @current_user.authentication_token
 end
 
+Given /^An author with name "([^"]*)" and email "([^"]*)"$/ do |name, email|
+  User.create!(name: name, email: email)
+end

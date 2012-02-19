@@ -18,3 +18,9 @@ end
 Then /^I should not see "([^"]*)"$/ do |expectation|
   page.should_not have_content expectation
 end
+
+Then /^I should see:$/ do |table|
+  table.raw.flatten.each do |expected|
+    page.should have_content expected
+  end
+end

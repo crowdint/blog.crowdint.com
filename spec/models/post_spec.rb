@@ -30,4 +30,11 @@ describe Post do
       end
     end
   end
+
+  describe "#formatted_published_date" do
+    it "Formats the published_at date" do
+      subject.published_at = Time.at(1329619863)
+      subject.formatted_published_date.should == 'Feb 18, 2012'
+    end
+  end
 end
