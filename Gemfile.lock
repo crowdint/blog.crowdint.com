@@ -92,6 +92,7 @@ GEM
     ffi (1.0.11)
     gherkin (2.7.7)
       json (>= 1.4.6)
+    gravtastic (3.2.6)
     hashie (1.2.0)
     heroku (2.20.1)
       launchy (>= 0.3.2)
@@ -244,6 +245,7 @@ DEPENDENCIES
   database_cleaner
   devise
   eco
+  gravtastic
   heroku
   jquery-rails
   launchy

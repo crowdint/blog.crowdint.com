@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
 
   delegate :name, to: :author, prefix: true
   delegate :email, to: :author, prefix: true
+  delegate :gravatar_url, to: :author
 
   def self.all_posts_json
     Post.all.to_json only: [:id, :title], methods: [:author_email]

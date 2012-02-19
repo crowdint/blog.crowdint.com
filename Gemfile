@@ -9,8 +9,7 @@ gem 'backbone-rails'
 gem 'carrierwave'
 gem 'devise'
 gem 'eco'
-gem 'slim_assets', '~> 0.0.2'
-gem 'simple_form'
+gem 'gravtastic'
 gem 'less-rails-bootstrap', '~> 2.0.4'
 gem 'omniauth-google-oauth2'
 gem 'openid'
@@ -18,6 +17,8 @@ gem 'psych'
 gem 'pg'
 gem 'ruby-openid'
 gem 'slim-rails'
+gem 'slim_assets', '~> 0.0.2'
+gem 'simple_form'
 
 # Gems used only for assets and not required
 # in production environments by default.
