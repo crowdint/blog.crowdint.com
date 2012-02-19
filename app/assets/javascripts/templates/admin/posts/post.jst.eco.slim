@@ -1,5 +1,8 @@
 td <%= @post.title %>
 td <%= @post.author_email %>
-td.span1= link_to 'Delete', '#', class: 'btn btn-danger delete span1'
 td.span1
-  a.btn.btn-info.edit.span1 href="#edit/<%= @post.id %>" Edit
+  a.btn.publish.span1 href="#" Publish
+td.span1
+  a.btn.delete.span1 Delete
+td.span1
+  a.btn.edit.span1 href="#edit/<%= @post.id %>" Edit

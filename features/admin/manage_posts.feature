@@ -1,9 +1,9 @@
+@javascript
 Feature: Manage Posts
 
   Background:
     Given I am signed in as "test@test.com"
 
-  @javascript
   Scenario: Posts CRUD
     Given I go to the posts page
     And I click on "New Post"
@@ -21,3 +21,14 @@ Feature: Manage Posts
     When I click "Delete" for "Another Great Post Title"
     Then I should not see "Another Great Post Title"
 
+  Scenario: Publish unpublish post
+    Given An author with name "Johan Crupps" and email "johan@crupps.com"
+    And the following posts by "Johan Crupps":
+      | title               | body                            | published |
+      | The great gatsby    | Lorem Ipsum Cohiben Allen       | false     |
+    And I go to the posts page
+    When I click on "Publish"
+    Then the post titled "The great gatsby" is marked as published
+    And current user is set as its publisher
+    When I click on "Publish"
+    Then the post titled "The great gatsby" is marked as drafted

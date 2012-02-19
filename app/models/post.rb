@@ -12,6 +12,8 @@ class Post < ActiveRecord::Base
 
   validates :title, length: { minimum: 5, maximum: 90 }
 
+  attr_accessible :title, :body
+
   state_machine initial: :drafted do
     state :drafted
     state :published
@@ -31,7 +33,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.all_posts_json
-    Post.all.to_json only: [:id, :title], methods: [:author_email]
+    Post.all.to_json only: [:id, :title, :state], methods: [:author_email, :published?]
   end
 
   def self.for_index

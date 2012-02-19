@@ -32,7 +32,18 @@ class Admin::PostsController < Admin::BaseController
     @post.update_attributes(params[:post])
     if @post.allowed_to_update_permalink?
       @post.regenerate_permalink
-      @post.save
+      @post.save!
+    end
+
+    # TODO: Move this to model with a different param
+    # that receives the new state, or the transition
+    #
+    if params[:state] == 'published'
+      @post.publisher = current_user
+      @post.save!
+      @post.publish
+    else
+      @post.draft
     end
 
     respond_with @post
