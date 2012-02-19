@@ -3,7 +3,7 @@ class Admin::PostsController < Admin::BaseController
 
   def index
     respond_to do |format|
-      format.json { render json: Post.all }
+      format.json { render json: Post.all_posts_json }
       format.html
     end
   end
