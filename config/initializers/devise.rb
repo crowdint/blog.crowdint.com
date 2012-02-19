@@ -1,3 +1,5 @@
+#require 'openid/store/filesystem'
+#
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -213,6 +215,9 @@ Devise.setup do |config|
   #config.omniauth :google_oauth2, '289799840893.apps.googleusercontent.com', '6DYqOtdhC8S5WARlkiOwS3zb'
   config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_SECRET_KEY'],
       {:client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
+
+  config.omniauth :google_apps, :domain => 'crowdint.com'
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
