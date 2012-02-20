@@ -12,6 +12,8 @@ Crowdblog::Application.routes.draw do
 
   match '/archive', to: 'archive#show', as: 'archive'
 
+  match '/atom.(:format)', to: 'feeds/atom_feeds#show'
+
   namespace :admin do
     root to: 'posts#index'
     match '/authors', to: 'authors#index', as: 'authors'

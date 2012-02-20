@@ -39,12 +39,20 @@ class Post < ActiveRecord::Base
     Post.order('created_at desc').to_json only: [:id, :title, :state, :published_at], methods: [:author_email, :published?]
   end
 
+  def self.all_for_feed
+    Post.published_and_ordered.limit(15)
+  end
+
   def self.for_index
-    Post.limit(3).where(state: 'published').order('published_at DESC')
+    Post.published_and_ordered.limit(3)
   end
 
   def self.for_history
-    Post.limit(13).where(state: 'published').order('published_at DESC')
+    Post.published_and_ordered.limit(13)
+  end
+
+  def self.published_and_ordered
+    Post.where(state: 'published').order('published_at DESC').includes(:author)
   end
 
   def regenerate_permalink
