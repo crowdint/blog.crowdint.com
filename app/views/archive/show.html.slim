@@ -1,0 +1,11 @@
+.posts
+  h2 Archive
+
+  ul.archive
+    - @posts.each do |post|
+      li
+        = post.published_at
+        '  -
+        = link_to post.title, post_path(*post.url_params)
+        '  -
+        = post.author_name

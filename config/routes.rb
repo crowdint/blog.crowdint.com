@@ -10,6 +10,8 @@ Crowdblog::Application.routes.draw do
 
   match '/preview/:id', to: 'posts#show', constraints: { id: /\d+/ }
 
+  match '/archive', to: 'archive#show', as: 'archive'
+
   namespace :admin do
     root to: 'posts#index'
     resources :posts do
