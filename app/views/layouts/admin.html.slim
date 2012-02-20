@@ -14,10 +14,12 @@ html
       .navbar-inner
         .container
           .row
-            .span10
+            .span9
               = image_tag 'logo_03.png'
-            .span2
+            .span3
               ul.nav
+                li= link_to 'Posts', admin_posts_path
+                li= link_to 'Authors', admin_authors_path
                 li= link_to 'Sign out', destroy_user_session_path
 
     .container= yield
