@@ -12,7 +12,7 @@ Crowdblog::Application.routes.draw do
 
   match '/archive', to: 'archive#show', as: 'archive'
 
-  match '/atom.(:format)', to: 'feeds/atom_feeds#show'
+  match '/atom.(:format)', to: 'feeds/atom_feeds#show', as: 'atom_feed'
 
   namespace :admin do
     root to: 'posts#index'
