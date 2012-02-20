@@ -1,21 +1,24 @@
-.posts= render @post
-#disqus_thread
-
-coffee:
-  disqus_developer = 1
-  disqus_shortname = 'crowdinttech'
-
-  dsq = document.createElement('script')
-  dsq.type = 'text/javascript'
-  dsq.async = true
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
+.posts
+  = render @post
+  #disqus_thread
 
 
-a href="http://disqus.com" class="dsq-brlink"
-  | blog comments powered by
-  span class="logo-disqus" Disqus
+  coffee:
+    disqus_developer = 1
+    disqus_shortname = 'crowdinttech'
+
+    dsq = document.createElement('script')
+    dsq.type = 'text/javascript'
+    dsq.async = true
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
+
+
+  a href="http://disqus.com" class="dsq-brlink"
+    | blog comments powered by
+    span class="logo-disqus" Disqus
 
 
 - content_for :page_title do
   | :: #{@post.title}
+
