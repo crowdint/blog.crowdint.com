@@ -8,8 +8,6 @@ class Post < ActiveRecord::Base
   delegate :gravatar_url, to: :author
 
   delegate :year, to: :published_at
-  delegate :month, to: :published_at
-  delegate :day, to: :published_at
 
   validates :title, length: { minimum: 5, maximum: 90 }
 
@@ -51,6 +49,14 @@ class Post < ActiveRecord::Base
 
   def formatted_published_date
     published_at.strftime("%b %d, %Y")
+  end
+
+  def month
+    "%02d" % published_at.month
+  end
+
+  def day
+    "%02d" % published_at.day
   end
 
   def html_body

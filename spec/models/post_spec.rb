@@ -67,4 +67,28 @@ describe Post do
       end
     end
   end
+
+  describe "#month" do
+    context "published at in february" do
+      before do
+        subject.published_at = stub(:month => 2)
+      end
+
+      it "returns 02" do
+        subject.month.should == "02"
+      end
+    end
+  end
+
+  describe "#day" do
+    context "published at in february" do
+      before do
+        subject.published_at = stub(:day => 2)
+      end
+
+      it "returns 02" do
+        subject.day.should == "02"
+      end
+    end
+  end
 end
