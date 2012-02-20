@@ -15,6 +15,8 @@ class Post < ActiveRecord::Base
 
   attr_accessible :title, :body, :updated_by
 
+  LEGACY_TITLE_REGEXP = /(\d+-\d+-\d+)-(.*)/
+
   state_machine initial: :drafted do
     state :drafted
     state :published
@@ -63,6 +65,16 @@ class Post < ActiveRecord::Base
 
   def day
     "%02d" % published_at.day
+  end
+
+  def legacy(string, email)
+    results = string.match(LEGACY_TITLE_REGEXP)
+    self.published_at = "#{results[1]}"
+    user = User.find_by_email(email) || User.create!(email: email)
+    self.author = user
+    self.save
+    self.publish
+    self.update_attribute(:permalink, results[2])
   end
 
   #
