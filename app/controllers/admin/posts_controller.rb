@@ -32,7 +32,7 @@ class Admin::PostsController < Admin::BaseController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(params[:post])
+    @post.update_attributes(params[:post], updated_by: current_user)
     if @post.allowed_to_update_permalink?
       @post.regenerate_permalink
       @post.save!
