@@ -1,11 +1,14 @@
 .posts= render @post
-#discus_thread
+#disqus_thread
 
 coffee:
+  disqus_developer = 1
+  disqus_shortname = 'crowdinttech'
+
   dsq = document.createElement('script')
   dsq.type = 'text/javascript'
   dsq.async = true
-  dsq.src = 'http://crowdinttech.disqus.com/embed.js'
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
 
 
