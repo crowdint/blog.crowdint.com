@@ -14,7 +14,10 @@ html
       .navbar-inner
         .container
           .row
-            .span7
+            .span10
               = image_tag 'logo_03.png'
+            .span2
+              ul.nav
+                li= link_to 'Sign out', destroy_user_session_path
 
     .container= yield
