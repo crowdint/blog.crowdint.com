@@ -1,7 +1,7 @@
 td
   a href="/preview/<%= @post.id %>" target="_BLANK" <%= @post.title %>
 td <%= @post.author_email %>
-td <%= @post.published_at %>
+td.span2 <%= @post.published_at %>
 td.span1
   | <% if @publisher: %>
   a.btn.publish.span1 href="#" Publish
