@@ -14,9 +14,9 @@
   .body #{post.html_body}
   - if index_view
     .links
-      = link_to 'Comments', post_path(post.year, post.month, post.day, post.permalink, 'html') + '#disqus_thread'
+      = link_to 'Comments', post_path(*post.url_params) + '#disqus_thread'
   - else
     .social
       .tweet.span2= render 'twitter'
       .plusone.span3= render 'plusone'
-      .facebook.span3= render 'facebook', url: post_url(post.year, post.month, post.day, post.permalink, 'html')
+      .facebook.span3= render 'facebook', url: post_url(*post.url_params)
