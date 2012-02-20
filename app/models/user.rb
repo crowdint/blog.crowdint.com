@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
 
   gravtastic :gravatar_email
 
+  validate :email, uniqueness: true
+
   def publisher!
     update_attribute(:is_publisher, true)
   end
