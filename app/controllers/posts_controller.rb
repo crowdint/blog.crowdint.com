@@ -8,6 +8,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_permalink(params[:id])
+    unless @post
+      @post = Post.find(params[:id])
+      @post.published_at = Date.today
+    end
     @history = Post.for_history - [@post]
   end
 end

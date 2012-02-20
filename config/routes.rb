@@ -8,6 +8,8 @@ Crowdblog::Application.routes.draw do
   match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
       constraints: { year: /\d+/ }
 
+  match '/preview/:id', to: 'posts#show', constraints: { id: /\d+/ }
+
   namespace :admin do
     root to: 'posts#index'
     resources :posts do

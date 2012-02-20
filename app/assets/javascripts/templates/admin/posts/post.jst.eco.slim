@@ -1,4 +1,5 @@
-td <%= @post.title %>
+td
+  a href="/preview/<%= @post.id %>" target="_BLANK" <%= @post.title %>
 td <%= @post.author_email %>
 td <%= @post.published_at %>
 td.span1
