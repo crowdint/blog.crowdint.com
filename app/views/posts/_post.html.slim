@@ -15,3 +15,8 @@
   - if index_view
     .links
       = link_to 'Comments', post_path(post.year, post.month, post.day, post.permalink, 'html') + '#disqus_thread'
+  - else
+    .social
+      .tweet
+        a.twitter-share-button href="http://twitter.com/share" data-text=@post.title data-count="none" data-via="crowdint" data-related="#{@post.author_email}:with" Tweet
+        script type="text/javascript" src="http://platform.twitter.com/widgets.js"
