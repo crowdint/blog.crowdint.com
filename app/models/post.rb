@@ -36,8 +36,14 @@ class Post < ActiveRecord::Base
   end
 
   def self.all_posts_json
-    Post.order('created_at desc').to_json only: [:id, :title, :state, :published_at], methods: [:author_email, :published?]
+    order('created_at desc').to_json only: [:id, :title, :state, :published_at],
+        methods: [:author_email, :published?]
   end
+
+  def self.scoped_for(user)
+    user.is_publisher? ? Post : user.authored_posts
+  end
+
 
   def self.all_for_feed
     Post.published_and_ordered.limit(15)
