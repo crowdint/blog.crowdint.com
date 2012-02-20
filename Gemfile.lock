@@ -141,6 +141,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.3.0)
+    newrelic_rpm (3.3.2)
     nokogiri (1.5.0)
     oauth2 (0.5.2)
       faraday (~> 0.7)
@@ -287,6 +288,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   less-rails-bootstrap (~> 2.0.4)
+  newrelic_rpm
   omniauth-google-apps
   omniauth-google-oauth2
   pg
