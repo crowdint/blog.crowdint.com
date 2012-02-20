@@ -15,10 +15,13 @@ $ ->
       this
 
     deletePost: ->
+      e.preventDefault()
       if confirm('Are you sure?')
         this.model.destroy()
 
-    togglePublish: ->
+    togglePublish: (e) ->
+      e.preventDefault()
+
       if this.model.get('published?')
         this.model.save
           transition: 'draft'
