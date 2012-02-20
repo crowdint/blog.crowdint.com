@@ -15,7 +15,7 @@ gem 'less-rails-bootstrap', '~> 2.0.4'
 gem 'newrelic_rpm'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-google-apps'
-gem 'psych'
+#gem 'psych'
 gem 'pg'
 gem 'redcarpet'
 gem 'ruby-openid'
@@ -24,7 +24,9 @@ gem 'slim_assets', '~> 0.0.2'
 gem 'simple_form'
 gem 'state_machine'
 gem 'unicorn'
+gem 'vestal_versions', git: 'https://github.com/jodosha/vestal_versions.git'
 gem 'yui-compressor'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/jodosha/vestal_versions.git
+  revision: cb59c8c85b89b3cefe1be3152c31ff98e38bd1f5
+  specs:
+    vestal_versions (1.2.2)
+      activerecord (>= 3.1.0)
+      activesupport (>= 3.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,7 +178,6 @@ GEM
     orm_adapter (0.0.6)
     pg (0.13.1)
     polyglot (0.3.3)
-    psych (1.2.2)
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -299,7 +306,6 @@ DEPENDENCIES
   omniauth-google-apps
   omniauth-google-oauth2
   pg
-  psych
   rails (= 3.2.1)
   redcarpet
   rspec-rails
@@ -312,4 +318,5 @@ DEPENDENCIES
   state_machine
   uglifier (>= 1.0.3)
   unicorn
+  vestal_versions!
   yui-compressor

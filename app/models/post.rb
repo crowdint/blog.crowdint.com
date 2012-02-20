@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  versioned
+
   belongs_to :author, class_name: 'User'
   belongs_to :publisher, class_name: 'User'
   has_many :assets
@@ -11,7 +13,7 @@ class Post < ActiveRecord::Base
 
   validates :title, length: { minimum: 5, maximum: 90 }
 
-  attr_accessible :title, :body
+  attr_accessible :title, :body, :updated_by
 
   state_machine initial: :drafted do
     state :drafted
