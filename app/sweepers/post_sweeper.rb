@@ -21,5 +21,6 @@ class PostSweeper < ActionController::Caching::Sweeper
                   year: post.year, month: post.month, day: post.day, id: post.permalink, format: 'html')
       expire_page atom_feed_path(format: 'xml')
     end
+    expire_page preview_path(post.to_param)
   end
 end
