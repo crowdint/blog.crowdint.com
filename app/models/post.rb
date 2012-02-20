@@ -39,6 +39,10 @@ class Post < ActiveRecord::Base
     Post.limit(3).where(state: 'published').order('published_at DESC')
   end
 
+  def self.for_history
+    Post.limit(13).where(state: 'published').order('published_at DESC')
+  end
+
   def regenerate_permalink
     self.permalink = title.parameterize
   end
@@ -57,6 +61,18 @@ class Post < ActiveRecord::Base
 
   def day
     "%02d" % published_at.day
+  end
+
+  #
+  # Use this methods to generate the post url
+  # always use with the splat
+  # operator
+  #
+  # Example:
+  #   post_url(*post.url_params)
+  #
+  def url_params
+    [self.year, self.month, self.day, self.permalink, 'html']
   end
 
   def html_body

@@ -9,7 +9,7 @@
         .date #{post.formatted_published_date}
       .title
         h1
-          = link_to post.title, post_path(post.year, post.month, post.day, post.permalink, 'html')
+          = link_to post.title, post_path(*post.url_params)
 
   .body #{post.html_body}
   - if index_view
