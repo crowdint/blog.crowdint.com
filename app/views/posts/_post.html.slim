@@ -12,3 +12,6 @@
           = link_to post.title, post_path(post.year, post.month, post.day, post.permalink, 'html')
 
   .body #{post.html_body}
+  - if index_view
+    .links
+      = link_to post.title, post_path(post.year, post.month, post.day, post.permalink, 'html') + '#disqus_thread'
