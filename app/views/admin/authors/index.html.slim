@@ -1,0 +1,16 @@
+h1 Authors
+
+table.table.table-striped
+  thead
+    tr
+      th
+      th Name
+      th Email
+      th Posts
+  tbody
+    - @authors.each do |author|
+      tr
+        th= image_tag author.gravatar_url
+        td= author.name
+        td= author.email
+        td= author.authored_posts.count

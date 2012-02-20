@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include Gravtastic
 
+  has_many :authored_posts, inverse_of: :author, foreign_key: 'author_id', class_name: 'Post'
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :token_authenticatable, :trackable, :omniauthable

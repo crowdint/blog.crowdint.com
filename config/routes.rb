@@ -14,6 +14,8 @@ Crowdblog::Application.routes.draw do
 
   namespace :admin do
     root to: 'posts#index'
+    match '/authors', to: 'authors#index'
+
     resources :posts do
       resources :assets
     end
