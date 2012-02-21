@@ -19,8 +19,8 @@ h2 <%= (if @isNew then 'New' else 'Edit') %> Post
       h2 Attachments
       .span8.attachment-list
         | <% for asset in @post.assets: %>
-          <%= asset.attachment.url %>
-          <% end %>
+        .attachment <%= asset.attachment.url %>
+        | <% end %>
       .span4
         #uploader
 

@@ -28,7 +28,10 @@ $ ->
             'onComplete' : this.uploadComplete
 
     uploadComplete: (e, id, file, response, data) ->
-      $('.attachment-list').append($.parseJSON(response).attachment.url)
+      attachment = new PostsApp.AttachmentView
+          url: $.parseJSON(response).attachment.url
+
+      $('.attachment-list').append(attachment.render().el)
 
       true
 
