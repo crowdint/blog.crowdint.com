@@ -21,4 +21,9 @@ class User < ActiveRecord::Base
   def gravatar_email
     (gravatar_alias || email)
   end
+
+  def last_post_at
+    authored_posts.published_and_ordered.first.try(:published_at)
+  end
 end
+
