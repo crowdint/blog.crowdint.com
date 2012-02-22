@@ -14,7 +14,7 @@ $ ->
       this.paintButtons()
       this
 
-    deletePost: ->
+    deletePost: (e) ->
       e.preventDefault()
       if confirm('Are you sure?')
         this.model.destroy()
