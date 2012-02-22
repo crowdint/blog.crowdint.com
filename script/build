@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Set default variables (if not before with ENV variables)
+if [ -z $CC_RUBY ]; then CC_RUBY=1.9.2; fi
+if [ -z $CC_GEMSET ]; then CC_GEMSET=crowdblog; fi
+
+# Initialize RVM
+source "$HOME/.rvm/scripts/rvm"
+
+# Change to the gemset
+rvm $CC_RUBY@$CC_GEMSET --create --install
+
+# Is bundler installed?
+which bundle || gem install bundler
+
+echo "-- Install Gem dependencies"
+bundle install
+
+echo "-- Build project"
+export DISPLAY=:0.0
+bundle exec rake db:migrate
+bundle exec rake
+EXIT_CODE=$?
+
+echo "-- METRICS"
+which metrical || gem install metrical
+metrical > /dev/null 2>&1
+
+#if [ $EXIT_CODE -eq "0" ]; then
+#  if [ -z $HEROKU_BRANCH ]; then HEROKU_BRANCH=master; fi
+#  if [ -z $HEROKU_URL ]; then HEROKU_URL=http://crowdblog.heroku.com; fi
+
+#  echo "-- Heroku deploy"
+#  git push heroku $HEROKU_BRANCH:master
+#  bundle exec heroku run rake db:migrate
+#  wget $HEROKU_URL -O /tmp/crowdblog_$HERKOU_BRANCH.html
+#  EXIT_CODE=$? # break the build if the server returns an error
+#fi
+
+exit $EXIT_CODE
