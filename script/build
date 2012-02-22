@@ -19,7 +19,7 @@ bundle install
 echo "-- Build project"
 export DISPLAY=:0.0
 bundle exec rake db:migrate
-bundle exec rake
+bundle exec rake spec # run also cucumbers (TODO: after fixing the error in the CI)
 EXIT_CODE=$?
 
 echo "-- METRICS"
