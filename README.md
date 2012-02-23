@@ -1,6 +1,9 @@
-# blog.crowdint.com
+blog.crowdint.com
+=================
 
-Welcome to our, kind of new, blog.
+---
+
+## Welcome to our, kind of new, blog.
 
 It was time. A rewrite for this site was due since last year. So, I decided to
 do something about it this weekend.
@@ -9,18 +12,18 @@ We were using [Jekyll](https://github.com/mojombo/jekyll) on our old version,
 and it was great! until it became too slow to compile once we reached around 60
 posts and it was a bit frustrating, discouraging us from blogging.
 
-# Open Sourced
+### Open Sourced
 
 As we did with the old version, the code for this blog is open sourced.
 You will find it on [its github page](https://github.com/crowdint/crowdblog).
 
-# Rails 3.2.1
+### Rails 3.2.1
 
 I know, even that there is probably a thousand blog services / gems / templates
 out there to set up a blog immediately, but, there was a couple of things I
 wanted to learn so, I decided to code it myself.
 
-# Really? Another Rails blog example
+### Really? Another Rails blog example
 
 Well, yes. I know this is the example by choice when someone is trying to
 learn Rails, but I still wanted to open source it for the following reasons.
@@ -33,8 +36,8 @@ Google Apps login so only people with a @crowdint.com email account can access
 the backend.
 
 Another interesting bit is how I was able to preprocess JST templates through
-[slim](http://slim-lang.com/) and [eco](https://github.com/sstephenson/eco).
-*WARNING: THIS MIGHT NOT BE A GOOD PRACTICE*.
+[slim](http://slim-lang.com/) and [eco](https://github.com/sstephenson/eco).  
+**WARNING: THIS MIGHT NOT BE A GOOD PRACTICE**.
 
 I am, by no means, an expert of what I just described. So, it is important for me
 that someone else takes a look at the code and let me know how to improve it.
@@ -61,3 +64,4 @@ Hope browsing through this code encourages to teach me something.
 
 Issues and Pull requests are more than welcome.
 
+---
