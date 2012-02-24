@@ -21,7 +21,7 @@ I know, even that there is probably a thousand blog services / gems / templates
 out there to set up a blog immediately, but, there was a couple of things I
 wanted to learn so, I decided to code it myself.
 
-![image1](http://github.com/mariozaizar/dotfiles/raw/master/images/image1.png)
+![image1](http://github.com/crowdint/crowdblog-app/raw/master/doc/images/image1.png)
 
 ### Really? Another Rails blog example
 
@@ -48,7 +48,7 @@ on "real life" applications.
 I lie to myself and think that it was because I really didn't know
 what I was doing, but, its still a lie. Promise to make up for that soon.
 
-![image2](http://github.com/mariozaizar/dotfiles/raw/master/images/image2.png)
+![image2](http://github.com/crowdint/crowdblog-app/raw/master/doc/images/image2.png)
 
 You won't see any Javascript tests because I don't have that much experience with
 those, but, I am sure that soon, one of my [awesome teammates](https://github.com/crowdint)
