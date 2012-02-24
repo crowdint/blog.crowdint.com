@@ -2,7 +2,7 @@
 
 # Set default variables (if not before with ENV variables)
 if [ -z $CC_RUBY ]; then CC_RUBY=1.9.2; fi
-if [ -z $CC_GEMSET ]; then CC_GEMSET=crowdblog; fi
+if [ -z $CC_GEMSET ]; then CC_GEMSET=crowdblog-app; fi
 
 # Initialize RVM
 source "$HOME/.rvm/scripts/rvm"
