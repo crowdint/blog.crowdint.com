@@ -55,7 +55,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'tap'
+  gem 'taps'
 end
 
 # To use ActiveModel has_secure_password
