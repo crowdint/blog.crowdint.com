@@ -1,5 +1,5 @@
 Given /^I go to the posts page$/ do
-  visit admin_posts_path
+  visit crowdblog_path
 end
 
 Given /^I fill "([^"]*)" as the post title$/ do |text|
@@ -12,7 +12,7 @@ end
 
 Then /^the post "([^"]*)" should be authored by current user$/ do |post_title|
   post = Post.find_by_title(post_title)
-  post.author.should == @current_user
+  post.author.email.should == @current_user.email
 end
 
 Then /^the post "([^"]*)" should have "([^"]*)" as its permalink$/ do |post_title, permalink|
@@ -26,7 +26,7 @@ Then /^the post titled "([^"]*)" is marked as published$/ do |post_title|
 end
 
 Then /^current user is set as its publisher$/ do
-  @current_post.publisher.should == @current_user
+  @current_post.publisher.email.should == @current_user.email
 end
 
 Then /^the post titled "([^"]*)" is marked as drafted$/ do |post_title|
