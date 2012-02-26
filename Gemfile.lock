@@ -88,6 +88,8 @@ GEM
       gherkin (~> 2.7.1)
       json (>= 1.4.6)
       term-ansicolor (>= 1.0.6)
+    cucumber-ajaxer (0.0.4)
+      cucumber
     cucumber-debug (0.0.1)
       cucumber-rails
       launchy
@@ -317,6 +319,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   crowdblog
   cucumber (= 1.1.4)
+  cucumber-ajaxer
   cucumber-debug
   cucumber-rails
   database_cleaner
