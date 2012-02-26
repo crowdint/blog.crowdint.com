@@ -69,7 +69,7 @@ GEM
     coffee-script-source (1.2.0)
     commonjs (0.2.0)
       therubyracer (~> 0.9.9)
-    crowdblog (0.0.2)
+    crowdblog (0.0.3)
       backbone-rails
       carrierwave
       devise
