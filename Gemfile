@@ -28,7 +28,6 @@ gem 'unicorn'
 gem 'vestal_versions', git: 'https://github.com/jodosha/vestal_versions.git'
 gem 'yui-compressor'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -54,6 +53,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spork'
   gem 'sqlite3'
+end
+
+group :development do
+  gem 'taps'
 end
 
 # To use ActiveModel has_secure_password

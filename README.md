@@ -1,8 +1,6 @@
 blog.crowdint.com
 =================
 
----
-
 ## Welcome to our, kind of new, blog.
 
 It was time. A rewrite for this site was due since last year. So, I decided to
@@ -22,6 +20,8 @@ You will find it on [its github page](https://github.com/crowdint/crowdblog).
 I know, even that there is probably a thousand blog services / gems / templates
 out there to set up a blog immediately, but, there was a couple of things I
 wanted to learn so, I decided to code it myself.
+
+![image1](http://github.com/crowdint/crowdblog-app/raw/master/doc/images/image1.png)
 
 ### Really? Another Rails blog example
 
@@ -47,6 +47,8 @@ do follow the [TATFT](http://smartic.us/tag/tatft/) philosophy that I follow
 on "real life" applications.
 I lie to myself and think that it was because I really didn't know
 what I was doing, but, its still a lie. Promise to make up for that soon.
+
+![image2](http://github.com/crowdint/crowdblog-app/raw/master/doc/images/image2.png)
 
 You won't see any Javascript tests because I don't have that much experience with
 those, but, I am sure that soon, one of my [awesome teammates](https://github.com/crowdint)
