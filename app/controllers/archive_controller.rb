@@ -1,5 +1,7 @@
 class ArchiveController < ApplicationController
+  caches_page :show
+
   def show
-    @posts = Post.order('published_at DESC').where(state: 'published')
+    @posts = Post.grouped_for_archive
   end
 end

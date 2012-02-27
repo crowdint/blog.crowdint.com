@@ -1,11 +1,13 @@
 .posts
-  h2 Archive
+  h1 Archive
 
-  ul.archive
-    - @posts.each do |post|
-      li
-        = post.published_at
-        '  -
-        = link_to post.title, post_path(*post.url_params)
-        '  -
-        = post.author_name
+  #archive.row
+    - @posts.each do |year, posts|
+      .offset1
+        h2= year
+        - posts.each do |month, posts|
+          .offset1
+            h3= month
+            - posts.each do |post|
+              .span8
+                = link_to post.title, post_path(*post.url_params)
