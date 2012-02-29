@@ -1,0 +1,17 @@
+.row
+  .span1
+    = image_tag @author.gravatar_url
+  .span3
+    h2 #{@author.name}
+    h3 #{@author.email}
+
+table.table.table-striped
+  thead
+    tr
+      th Title
+      th Published At
+  tbody
+    - @posts.each do |post|
+      tr
+        td= link_to post.title, post_path(*post.url_params)
+        td= post.published_at

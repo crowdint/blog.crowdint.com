@@ -61,6 +61,10 @@ class Post < ActiveRecord::Base
     Post.where(state: 'published').order('published_at DESC').includes(:author)
   end
 
+  def self.by_author(author_id)
+    Post.published_and_ordered.where(author_id: author_id)
+  end
+
   def regenerate_permalink
     self.permalink = title.parameterize
   end

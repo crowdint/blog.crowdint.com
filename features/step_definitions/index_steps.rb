@@ -14,3 +14,7 @@ end
 When /^I go to the index page$/ do
   visit root_path
 end
+
+When /^I go to the "([^"]*)" posts page$/ do |author_name|
+  visit posts_by_author_path(author_name)
+end

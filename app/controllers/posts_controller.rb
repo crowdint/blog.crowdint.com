@@ -14,4 +14,10 @@ class PostsController < ApplicationController
     end
     @history = Post.for_history - [@post]
   end
+
+  def author
+    @author = User.where(['email like ?', params[:author] + '@%']).first
+    raise ActionController::RoutingError.new('Author Not Found') unless @author
+    @posts = Post.by_author(@author.id)
+  end
 end

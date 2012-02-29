@@ -23,6 +23,8 @@ Crowdblog::Application.routes.draw do
     end
   end
 
+  match '/:author', to: 'posts#author', as: 'posts_by_author', :constraints => { author: /.+/ }
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
