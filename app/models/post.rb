@@ -13,7 +13,11 @@ class Post < ActiveRecord::Base
 
   validates :title, length: { minimum: 5, maximum: 90 }
 
-  attr_accessible :title, :body, :updated_by
+  attr_accessible :title, :body, :updated_by, :ready_for_review
+
+  before_save do
+    self.marked_for_review_at = Time.now if ready_for_review_changed? && ready_for_review
+  end
 
   LEGACY_TITLE_REGEXP = /(\d+-\d+-\d+)-(.*)/
 
@@ -36,7 +40,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.all_posts_json
-    order('published_at desc, created_at desc').to_json only: [:id, :title, :state, :published_at],
+    order('published_at desc, created_at desc').to_json only: [:id, :title, :state, :published_at, :ready_for_review],
         methods: [:author_email, :published?]
   end
 
