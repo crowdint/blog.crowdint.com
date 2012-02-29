@@ -40,8 +40,9 @@ class Post < ActiveRecord::Base
   end
 
   def self.all_posts_json
-    order('published_at desc, created_at desc').to_json only: [:id, :title, :state, :published_at, :ready_for_review],
-        methods: [:author_email, :published?]
+    order('published_at desc, created_at desc').includes(:author).
+        to_json only: [:id, :title, :state, :published_at, :ready_for_review],
+            methods: [:author_email, :published?]
   end
 
   def self.scoped_for(user)
