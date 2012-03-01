@@ -25,6 +25,16 @@ Then /^the post titled "([^"]*)" is marked as published$/ do |post_title|
   @current_post.should be_published
 end
 
+Then /^the post titled "([^"]*)" is marked as ready for review$/ do |post_title|
+  @current_post = Post.find_by_title(post_title)
+  @current_post.should be_ready_for_review
+end
+
+Then /^the post titled "([^"]*)" is not marked as ready for review$/ do |post_title|
+  @current_post = Post.find_by_title(post_title)
+  @current_post.should_not be_ready_for_review
+end
+
 Then /^current user is set as its publisher$/ do
   @current_post.publisher.should == @current_user
 end

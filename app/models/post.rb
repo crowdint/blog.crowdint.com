@@ -13,7 +13,11 @@ class Post < ActiveRecord::Base
 
   validates :title, length: { minimum: 5, maximum: 90 }
 
-  attr_accessible :title, :body, :updated_by
+  attr_accessible :title, :body, :updated_by, :ready_for_review
+
+  before_save do
+    self.marked_for_review_at = Time.now if ready_for_review_changed? && ready_for_review
+  end
 
   LEGACY_TITLE_REGEXP = /(\d+-\d+-\d+)-(.*)/
 
@@ -36,8 +40,9 @@ class Post < ActiveRecord::Base
   end
 
   def self.all_posts_json
-    order('published_at desc, created_at desc').to_json only: [:id, :title, :state, :published_at],
-        methods: [:author_email, :published?]
+    order('published_at desc, created_at desc').includes(:author).
+        to_json only: [:id, :title, :state, :published_at, :ready_for_review],
+            methods: [:author_email, :published?]
   end
 
   def self.scoped_for(user)
@@ -75,6 +80,12 @@ class Post < ActiveRecord::Base
 
   def formatted_published_date
     published_at.strftime("%b %d, %Y")
+  end
+
+  def self.grouped_for_archive
+    published_and_ordered.group_by {|p| p.published_at.year }.
+        inject({}) { |mem, value| mem[value[0]] = value[1].
+            group_by {|p| p.published_at.strftime("%B")}; mem }
   end
 
   def month

@@ -40,7 +40,17 @@ Feature: Manage Posts
     And the following posts by "Johan Crupps":
       | title               | body                            | published |
       | The great gatsby    | Lorem Ipsum Cohiben Allen       | false     |
-    And I go to the posts page
+    When I go to the posts page
     Then I should not see "The great gatsby"
 
-
+  Scenario: Mark a post as ready for review
+    Given An author with name "Johan Crupps" and email "johan@crupps.com"
+    And I am signed in as "johan@crupps.com"
+    And the following posts by "Johan Crupps":
+      | title               | body                            | published |
+      | The great gatsby    | Lorem Ipsum Cohiben Allen       | false     |
+    When I go to the posts page
+    And I click on "Review"
+    Then the post titled "The great gatsby" is marked as ready for review
+    And I click on "Review"
+    Then the post titled "The great gatsby" is not marked as ready for review
