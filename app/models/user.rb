@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
     authored_posts.published_and_ordered.first.try(:published_at)
   end
 
-  def url_params
+  def to_param
     [email.split('@').first]
   end
 end

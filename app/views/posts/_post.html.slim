@@ -4,7 +4,7 @@
       .span1
         = image_tag post.gravatar_url
       .span3
-        .author #{link_to post.author_name, posts_by_author_path(post.author.url_params)}
+        .author #{link_to post.author_name, posts_by_author_path(post.author.to_param)}
         .email #{post.author_email}
         .date #{post.formatted_published_date}
       .title
