@@ -42,7 +42,7 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.2.7)
-    arel (3.0.0)
+    arel (3.0.2)
     autotest-rails (4.1.2)
       ZenTest (~> 4.5)
     backbone-rails (0.9.0)
@@ -69,12 +69,27 @@ GEM
     coffee-script-source (1.2.0)
     commonjs (0.2.0)
       therubyracer (~> 0.9.9)
+    crowdblog (0.0.3)
+      backbone-rails
+      carrierwave
+      devise
+      eco
+      gravtastic
+      jquery-rails
+      less-rails-bootstrap
+      rails (~> 3.2)
+      redcarpet
+      slim-rails
+      slim_assets
+      state_machine
     cucumber (1.1.4)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
       gherkin (~> 2.7.1)
       json (>= 1.4.6)
       term-ansicolor (>= 1.0.6)
+    cucumber-ajaxer (0.0.4)
+      cucumber
     cucumber-debug (0.0.1)
       cucumber-rails
       launchy
@@ -125,7 +140,7 @@ GEM
       term-ansicolor (~> 1.0.5)
     hike (1.2.1)
     i18n (0.6.0)
-    journey (1.0.1)
+    journey (1.0.3)
     jquery-rails (2.0.0)
       railties (>= 3.2.0.beta, < 5.0)
       thor (~> 0.14)
@@ -140,7 +155,7 @@ GEM
     less-rails (2.1.6)
       actionpack (>= 3.1)
       less (~> 2.0.7)
-    less-rails-bootstrap (2.0.5)
+    less-rails-bootstrap (2.0.6)
       less-rails (~> 2.1.0)
     libv8 (3.3.10.4)
     mail (2.4.1)
@@ -302,7 +317,9 @@ DEPENDENCIES
   backbone-rails
   carrierwave
   coffee-rails (~> 3.2.1)
+  crowdblog
   cucumber (= 1.1.4)
+  cucumber-ajaxer
   cucumber-debug
   cucumber-rails
   database_cleaner

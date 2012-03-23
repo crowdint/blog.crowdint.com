@@ -1,0 +1,17 @@
+travis: &travis
+  adapter: postgresql
+  database: blog
+  username: postgres
+
+development:
+  <<: *travis
+
+test: &test
+  <<: *travis
+  database: blog_test
+
+cucumber:
+  <<: *test
+
+production:
+  <<: *travis
