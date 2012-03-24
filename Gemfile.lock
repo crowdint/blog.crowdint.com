@@ -68,7 +68,7 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     commonjs (0.2.5)
-    crowdblog (0.0.6)
+    crowdblog (0.0.7)
       backbone-rails
       carrierwave
       devise
