@@ -14,6 +14,8 @@ Crowdblog::Application.routes.draw do
 
   mount Crowdblog::Engine => '/admin'
 
+  match '/:author', to: 'posts_by_author#index', as: 'posts_by_author', :constraints => { author: /.+/ }
+
   root to: "posts#index"
 
 end
