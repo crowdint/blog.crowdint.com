@@ -2,6 +2,7 @@ doctype html
 html
   head
     title Crowd Interactive Tech Blog #{yield :page_title}
+    = yield :meta
 
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Arvo"
