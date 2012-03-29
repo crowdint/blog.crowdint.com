@@ -23,6 +23,7 @@ Crowdblog::Application.routes.draw do
     end
   end
 
+  match 'sitemap.(:format)', to: 'sitemap#show'
   match '/:author', to: 'posts_by_author#index', as: 'posts_by_author', :constraints => { author: /.+/ }
 
   # The priority is based upon order of creation:
