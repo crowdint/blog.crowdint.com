@@ -14,3 +14,10 @@ Given /^current user is publisher$/ do
   @current_user.update_attribute(:is_publisher, true)
 end
 
+Given /^(?:|I )(?:am in|go to) the admin page$/ do
+  visit crowdblog_path
+end
+
+When /^(?:|I )Sign Out$/ do
+  click_link 'Sign out'
+end

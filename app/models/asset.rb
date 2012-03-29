@@ -1,5 +1,2 @@
-class Asset < ActiveRecord::Base
-  belongs_to :post
-
-  mount_uploader :attachment, AttachmentUploader
+class Asset < Crowdblog::Asset
 end
