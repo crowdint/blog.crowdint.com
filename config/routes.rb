@@ -2,7 +2,7 @@ Crowdblog::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   devise_scope :user do
-    match 'user_sign_in', to: 'users/omniauth_callbacks#crowdint'
+    match 'crowdblog_sign_in', to: 'users/omniauth_callbacks#crowdint'
   end
 
   match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
