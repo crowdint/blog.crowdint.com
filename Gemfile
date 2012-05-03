@@ -16,8 +16,6 @@ gem 'less-rails-bootstrap', '~> 2.0.4'
 gem 'newrelic_rpm'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-google-apps'
-#gem 'psych'
-gem 'pg'
 gem 'redcarpet'
 gem 'ruby-openid'
 gem 'slim-rails'
@@ -54,23 +52,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spork'
   gem 'sqlite3'
-end
-
-group :development do
   gem 'taps'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :production do
+  gem 'pg'
+  gem 'therubyracer'
+end
