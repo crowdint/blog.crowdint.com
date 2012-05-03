@@ -193,6 +193,8 @@ GEM
     orm_adapter (0.0.7)
     pg (0.13.2)
     polyglot (0.3.3)
+    quiet_assets (1.0.0)
+      rails (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -335,6 +337,7 @@ DEPENDENCIES
   omniauth-google-apps
   omniauth-google-oauth2
   pg
+  quiet_assets
   rails (= 3.2.1)
   redcarpet
   rspec-rails
