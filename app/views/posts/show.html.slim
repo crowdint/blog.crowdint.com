@@ -22,6 +22,6 @@
   | :: #{@post.title}
 
 - content_for :meta do
-  meta name='og:title' content="#{@post.title}"
-  meta name='og:url' content="#{post_url(*@post.url_params).html_safe}"
-  meta name='og:image' content='http://assets0.crowdint.com/assets/logo/ocre.png'
+  meta property='og:title' content="#{@post.title}"
+  meta property='og:url' content="#{post_url(*@post.url_params).html_safe}"
+  meta property='og:image' content='http://assets0.crowdint.com/assets/logo/ocre.png'
