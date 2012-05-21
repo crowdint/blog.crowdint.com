@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  caches_page :index, :show
+  #caches_page :index, :show
 
   def index
     @posts = Post.for_index
