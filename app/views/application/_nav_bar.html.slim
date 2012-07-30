@@ -1,14 +1,9 @@
-.navbar
+.navbar.navbar-fixed-top
   .navbar-inner
     .container
       .row
-        .span6
+        .span10
           = link_to image_tag('crowdint.png', alt: 'Crowd Interactive'), root_path
-        .span6
+        .span2
           ul.nav
-            li= link_to 'Who', 'http://www.crowdint.com#who'
-            li= link_to 'How', 'http://www.crowdint.com#how'
-            li= link_to 'What', 'http://www.crowdint.com#what'
-            li= link_to 'The Crowd', 'http://www.crowdint.com#the_crowd'
-            li.active= link_to 'Blog', root_path
-            li= link_to 'Contact Us', 'http://www.crowdint.com#contact'
+            li= link_to 'About Us', 'http://www.crowdint.com'
