@@ -57,3 +57,4 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 # Wait for AJAX calls
 require 'cucumber/ajaxer'
+Capybara.javascript_driver = :webkit

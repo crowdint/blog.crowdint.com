@@ -56,11 +56,14 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    capybara-webkit (0.12.1)
+      capybara (>= 1.0.0, < 1.2)
+      json
     carrierwave (0.6.2)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
-    childprocess (0.3.2)
-      ffi (~> 1.0.6)
+    childprocess (0.3.5)
+      ffi (~> 1.0, >= 1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -115,7 +118,7 @@ GEM
       multi_json (~> 1.0)
     faraday (0.8.0)
       multipart-post (~> 1.1)
-    ffi (1.0.11)
+    ffi (1.1.5)
     fog (1.3.1)
       builder
       excon (~> 0.13.0)
@@ -155,7 +158,7 @@ GEM
     less-rails-bootstrap (2.0.12)
       less-rails (~> 2.2.0)
     libv8 (3.3.10.4)
-    libwebsocket (0.1.3)
+    libwebsocket (0.1.5)
       addressable
     mail (2.4.4)
       i18n (>= 0.4.0)
@@ -169,7 +172,7 @@ GEM
     net-ssh (2.3.0)
     netrc (0.7.1)
     newrelic_rpm (3.3.4.1)
-    nokogiri (1.5.2)
+    nokogiri (1.5.5)
     oauth2 (0.6.1)
       faraday (~> 0.7)
       httpauth (~> 0.1)
@@ -245,15 +248,14 @@ GEM
     ruby-openid (2.1.8)
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
-    rubyzip (0.9.8)
+    rubyzip (0.9.9)
     sass (3.1.16)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    selenium-webdriver (2.21.2)
+    selenium-webdriver (2.25.0)
       childprocess (>= 0.2.5)
-      ffi (~> 1.0)
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
@@ -316,6 +318,7 @@ PLATFORMS
 DEPENDENCIES
   autotest-rails
   backbone-rails
+  capybara-webkit
   carrierwave
   coffee-rails (~> 3.2.1)
   crowdblog
