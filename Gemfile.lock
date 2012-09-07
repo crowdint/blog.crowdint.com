@@ -1,4 +1,22 @@
 GIT
+  remote: https://github.com/crowdint/crowdblog.git
+  revision: 47631e17fbacd4515cb9054b855f3af3269039ff
+  specs:
+    crowdblog (0.0.16)
+      backbone-rails
+      carrierwave
+      devise
+      eco
+      gravtastic
+      jquery-rails
+      less-rails-bootstrap
+      rails (~> 3.2)
+      redcarpet
+      slim-rails
+      slim_assets
+      state_machine
+
+GIT
   remote: https://github.com/jodosha/vestal_versions.git
   revision: ef4334ccadf1077f4fa0e72ae515ddf7d00a8ad7
   specs:
@@ -72,19 +90,6 @@ GEM
       execjs
     coffee-script-source (1.3.3)
     commonjs (0.2.6)
-    crowdblog (0.0.16)
-      backbone-rails
-      carrierwave
-      devise
-      eco
-      gravtastic
-      jquery-rails
-      less-rails-bootstrap
-      rails (~> 3.2)
-      redcarpet
-      slim-rails
-      slim_assets
-      state_machine
     cucumber (1.1.4)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -321,7 +326,7 @@ DEPENDENCIES
   capybara-webkit
   carrierwave
   coffee-rails (~> 3.2.1)
-  crowdblog
+  crowdblog!
   cucumber (= 1.1.4)
   cucumber-ajaxer
   cucumber-debug
