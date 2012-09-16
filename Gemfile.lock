@@ -1,13 +1,6 @@
 GIT
-  remote: https://github.com/jodosha/vestal_versions.git
-  revision: ef4334ccadf1077f4fa0e72ae515ddf7d00a8ad7
-  specs:
-    vestal_versions (1.2.2)
-      activerecord (>= 3.1.0)
-      activesupport (>= 3.1.0)
-
-PATH
-  remote: ../crowdblog
+  remote: https://github.com/crowdint/crowdblog.git
+  revision: 0657e3d07e4fe3722716b228039bc1a7bb4ab849
   specs:
     crowdblog (0.0.16)
       backbone-rails
@@ -22,6 +15,14 @@ PATH
       slim-rails
       slim_assets
       state_machine
+
+GIT
+  remote: https://github.com/jodosha/vestal_versions.git
+  revision: ef4334ccadf1077f4fa0e72ae515ddf7d00a8ad7
+  specs:
+    vestal_versions (1.2.2)
+      activerecord (>= 3.1.0)
+      activesupport (>= 3.1.0)
 
 GEM
   remote: https://rubygems.org/
