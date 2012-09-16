@@ -15,6 +15,11 @@ When /^I click "([^"]*)" for "([^"]*)"$/ do |link_text, row_text|
   find("tr:contains('#{row_text}')").find("a:contains('#{link_text}')").click
 end
 
+When /^I press "([^"]*)" for "([^"]*)"$/ do |link_text, row_text|
+  page.execute_script 'window.confirm = function() { return true }'
+  find("tr:contains('#{row_text}')").find("button:contains('#{link_text}')").click
+end
+
 Then /^I should not see "([^"]*)"$/ do |expectation|
   page.should_not have_content expectation
 end
