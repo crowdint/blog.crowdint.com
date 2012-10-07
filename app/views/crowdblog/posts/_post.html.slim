@@ -1,0 +1,13 @@
+= content_tag_for :tr, post, :"data-post-id" => post.id, :"data-state" => post.state, :"data-ready-for-review" => post.ready_for_review do
+  td= link_to post.title, main_app.preview_path(post)
+  td= post.author_email
+  td.span2.published-at = post.published_at.try(:to_s, :crowdblog_short)
+  td.span1
+    - if current_user.is_publisher?
+      = link_to 'Publish', '#', :class => "btn btn-small publish #{(post.published? ? 'btn-success' : 'btn-danger')}"
+  td.span1
+    = link_to 'Review', '#', :class => "btn btn-small review #{(post.ready_for_review ? 'btn-warning' : '')}"
+  td.span1
+    = link_to 'Delete', crowdblog.post_path(post), :method => :delete, :confirm => 'Are you sure?', :class => "btn btn-small"
+  td.span1
+    = link_to 'Edit', crowdblog.edit_post_path(post), :class => "btn btn-small"
