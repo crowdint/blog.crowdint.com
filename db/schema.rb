@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229160314) do
+ActiveRecord::Schema.define(:version => 20121007212919) do
 
-  create_table "assets", :force => true do |t|
+  create_table "crowdblog_assets", :force => true do |t|
     t.integer  "post_id"
     t.string   "attachment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "posts", :force => true do |t|
+  create_table "crowdblog_posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
     t.string   "permalink"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120229160314) do
     t.datetime "marked_for_review_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "crowdblog_users", :force => true do |t|
     t.string   "name"
     t.boolean  "is_publisher"
     t.datetime "created_at",                           :null => false
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20120229160314) do
     t.string   "gravatar_alias"
   end
 
-  add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
-  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "crowdblog_users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
+  add_index "crowdblog_users", ["email"], :name => "index_users_on_email", :unique => true
 
   create_table "versions", :force => true do |t|
     t.integer  "versioned_id"
