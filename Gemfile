@@ -6,7 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'crowdblog', :git => 'https://github.com/crowdint/crowdblog.git', :branch => '0-1'
-gem 'crowdint_auth'
+gem 'crowdint_auth', '~> 0.0.3'
 gem 'fog'
 gem 'newrelic_rpm'
 gem 'quiet_assets'
