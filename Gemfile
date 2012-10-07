@@ -6,12 +6,10 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'crowdblog', :git => 'https://github.com/crowdint/crowdblog.git', :branch => '0-1'
+gem 'crowdint_auth'
 gem 'fog'
 gem 'newrelic_rpm'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-google-apps'
 gem 'quiet_assets'
-gem 'ruby-openid'
 gem 'unicorn'
 gem 'vestal_versions', git: 'https://github.com/jodosha/vestal_versions.git'
 gem 'yui-compressor'
@@ -21,6 +19,7 @@ gem 'yui-compressor'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  gem 'less-rails-bootstrap', '~> 2.1.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
