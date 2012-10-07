@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'crowdblog', :git => 'https://github.com/crowdint/crowdblog.git', :branch => '0-1'
+gem 'crowdblog', '~> 0.1.0'
 gem 'crowdint_auth', '~> 0.0.3'
 gem 'fog'
 gem 'newrelic_rpm'
