@@ -1,5 +1,5 @@
 class PostSweeper < ActionController::Caching::Sweeper
-  observe Post
+  observe Crowdblog::Post
 
   def after_create(post)
     expire_all(post)
@@ -16,12 +16,11 @@ class PostSweeper < ActionController::Caching::Sweeper
   private
   def expire_all(post)
     if post.published?
-      expire_page(controller: '/posts', action: 'index')
-      expire_page(controller: '/posts', action: 'show',
-                  year: post.year, month: post.month, day: post.day, id: post.permalink, format: 'html')
-      expire_page atom_feed_path(format: 'xml')
-      expire_page archive_path
+      expire_action main_app.post_url(*post.url_params)
     end
-    expire_page preview_path(post.to_param)
+    expire_action main_app.atom_feed_url(:format => 'xml')
+    expire_action main_app.archive_url
+    expire_action main_app.root_url
+    expire_action main_app.preview_url(post.to_param)
   end
 end

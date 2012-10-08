@@ -7,6 +7,7 @@ gem 'rails', '3.2.8'
 
 gem 'crowdblog', '~> 0.1.0'
 gem 'crowdint_auth', '~> 0.0.3'
+gem 'dalli'
 gem 'fog'
 gem 'newrelic_rpm'
 gem 'quiet_assets'
