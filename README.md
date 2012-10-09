@@ -36,7 +36,7 @@ Google Apps login so only people with a @crowdint.com email account can access
 the backend.
 
 Another interesting bit is how I was able to preprocess JST templates through
-[slim](http://slim-lang.com/) and [eco](https://github.com/sstephenson/eco).  
+[slim](http://slim-lang.com/) and [eco](https://github.com/sstephenson/eco).
 **WARNING: THIS MIGHT NOT BE A GOOD PRACTICE**.
 
 I am, by no means, an expert of what I just described. So, it is important for me
@@ -67,3 +67,4 @@ Hope browsing through this code encourages to teach me something.
 Issues and Pull requests are more than welcome.
 
 ---
+
