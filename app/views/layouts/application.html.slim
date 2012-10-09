@@ -3,7 +3,8 @@ html
   head
     title Crowd Interactive Tech Blog #{yield :page_title}
     = yield :meta
-    meta property="fb:admins" content="#{ENV['FB_ADMINS']}"
+    - ENV['FB_ADMINS'].split(',').each do |admin|
+      meta property="fb:admins" content=admin
 
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Arvo"
