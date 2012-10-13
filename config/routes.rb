@@ -5,6 +5,10 @@ Crowdblog::Application.routes.draw do
     match 'google_apps_sign_in', to: 'crowdint_auth/omniauth_callbacks#google_apps_sign_in'
   end
 
+  namespace :admin do
+    resource :dropbox_authorization
+  end
+
   match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
       constraints: { year: /\d+/ }
 
@@ -15,6 +19,7 @@ Crowdblog::Application.routes.draw do
   match '/atom.(:format)', to: 'feeds/atom_feeds#show', as: 'atom_feed'
 
   mount Crowdblog::Engine => '/admin'
+
 
   match 'sitemap.(:format)', to: 'sitemap#show'
   match '/:author', to: 'posts_by_author#index', as: 'posts_by_author', :constraints => { author: /.+/ }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007212919) do
+ActiveRecord::Schema.define(:version => 20121013181226) do
 
   create_table "crowdblog_assets", :force => true do |t|
     t.integer  "post_id"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(:version => 20121007212919) do
 
   add_index "crowdblog_users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "crowdblog_users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "user_dropbox_sessions", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "dropbox_session"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "versions", :force => true do |t|
     t.integer  "versioned_id"
