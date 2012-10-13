@@ -1,1 +1,6 @@
-= link_to 'Link to Dropbox', new_admin_dropbox_authorization_path
+.span12
+  - unless @user_dropbox_session
+    = link_to 'Link to Dropbox', new_admin_dropbox_authorization_path, :class => 'btn btn-primary'
+  - else
+    h2 Account already linked to dropbox
+    = link_to 'ReLink to Dropbox', new_admin_dropbox_authorization_path, :class => 'btn btn-primary'

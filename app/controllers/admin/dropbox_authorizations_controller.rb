@@ -3,11 +3,11 @@ require 'dropbox_sdk'
 class Admin::DropboxAuthorizationsController < Crowdblog::ApplicationController
   def show
     if params[:uid]
-      user_dropbox_session = UserDropboxSession.find_by_user_id current_user.id
-      dropbox_session = user_dropbox_session.dropbox_session
+      @user_dropbox_session = current_user.user_dropbox_session
+      dropbox_session = @user_dropbox_session.dropbox_session
       dropbox_session.get_access_token
-      user_dropbox_session.dropbox_session = dropbox_session
-      user_dropbox_session.save!
+      @user_dropbox_session.dropbox_session = dropbox_session
+      @user_dropbox_session.save!
     end
   end
 

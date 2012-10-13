@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'crowdblog', :path => '../crowdblog' #'~> 0.1.2'
+gem 'crowdblog', :git => 'git://github.com/crowdint/crowdblog.git', :branch => '1-3'
 gem 'crowdint_auth', '~> 0.0.3'
 gem 'dalli'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
