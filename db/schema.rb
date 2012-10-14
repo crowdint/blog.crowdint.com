@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013181226) do
+ActiveRecord::Schema.define(:version => 20121013225156) do
 
   create_table "crowdblog_assets", :force => true do |t|
     t.integer  "post_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20121013181226) do
     t.text     "dropbox_session"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "delta_cursor"
   end
 
   create_table "versions", :force => true do |t|
