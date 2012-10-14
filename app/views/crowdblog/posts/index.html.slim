@@ -1,0 +1,26 @@
+.span12
+  h1 Posts
+
+  .row
+    .span3.new-link
+      = link_to 'New Post', crowdblog.new_post_path, :class => "btn btn-primary btn-small"
+      - if current_user.user_dropbox_session
+        = link_to 'Dropbox Sync', main_app.new_admin_dropbox_sync_path, :class => 'btn btn-small'
+    .span3.offset6
+      ul.nav.nav-pills
+        li class="#{@state ? '' : 'active'}"
+          = link_to 'All', posts_path
+        li class="#{@state == 'published' ? 'active' : ''}"
+          = link_to 'Published', posts_by_state_path('published')
+        li class="#{@state == 'drafted' ? 'active' : ''}"
+          = link_to 'Drafted', posts_by_state_path('drafted')
+
+  #posts.container
+    table.table.table-striped= render @posts
+
+  - content_for :scripts do
+    coffee:
+      $ ->
+        $('tr.post').each (index, el) ->
+          new Crowdblog.Views.PostView
+            el: el

@@ -7,6 +7,7 @@ Crowdblog::Application.routes.draw do
 
   namespace :admin do
     resource :dropbox_authorization
+    resource :dropbox_sync
   end
 
   match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
