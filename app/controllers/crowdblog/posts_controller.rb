@@ -1,5 +1,9 @@
 class Crowdblog::PostsController < ApplicationController
-  caches_action :index, :show
+  caches_action :index
+  caches_action :show, :cache_path => proc {
+    main_app.post_url(params[:year], params[:month], params[:day], params[:id])
+  }
+  #caches_action :index, :show
 
   def index
     @posts = Crowdblog::Post.for_index
