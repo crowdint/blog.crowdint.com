@@ -5,15 +5,16 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'crowdblog', :git => 'git://github.com/crowdint/crowdblog.git', :branch => '1-3'
+gem 'crowdblog', :git => 'git://github.com/crowdint/crowdblog.git'
 gem 'crowdint_auth', '~> 0.0.3'
 gem 'dalli'
+gem 'devise'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
 gem 'fog'
+gem 'gravtastic'
 gem 'newrelic_rpm'
 gem 'quiet_assets'
 gem 'unicorn'
-gem 'vestal_versions', git: 'https://github.com/jodosha/vestal_versions.git'
 gem 'yui-compressor'
 
 # Gems used only for assets and not required

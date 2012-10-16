@@ -1,16 +1,22 @@
 class User < Crowdblog::User
+  include Gravtastic
+
+  has_one :user_dropbox_session
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  attr_accessible :email, :password, :password_confirmation, :remember_me
 
   gravtastic :gravatar_email
 
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :token_authenticatable, :trackable, :omniauthable
+  def gravatar_email
+    gravatar_alias || email
+  end
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :name
-
-
-  validate :email, uniqueness: true
-
+  def self.publishers
+    where(:is_publisher => true)
+  end
 end
 
+Crowdblog::User.set_table_name 'users'

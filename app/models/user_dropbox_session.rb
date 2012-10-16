@@ -9,8 +9,11 @@ class UserDropboxSession < ActiveRecord::Base
   serialize :dropbox_session
 
   def put_post(post)
-    file = StringIO.new post.body
-    client.put_file post.dropbox_name, file, 'True'
+    decorated_post = Post.find(post.id)
+    decorated_post.regenerate_permalink
+    file = StringIO.new decorated_post.body
+
+    client.put_file decorated_post.dropbox_name, file, 'True'
   end
 
   def sync
@@ -20,11 +23,11 @@ class UserDropboxSession < ActiveRecord::Base
     delta_hash.each do |k, v|
       if v
         if k.match /\d+/
-          post = Crowdblog::Post.scoped_for(user).find k
+          post = Post.scoped_for(user).find k
           post.body = client.get_file k
           post.save!
         elsif k.match /^(.+).md/
-          post = Crowdblog::Post.new
+          post = Post.new
           post.title = $1.gsub(NAME_TO_TITLE_BLANK, ' ')
           post.body = client.get_file k
           post.author = user

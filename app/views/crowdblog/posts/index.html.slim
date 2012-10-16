@@ -1,26 +1,20 @@
-.span12
-  h1 Posts
+.posts
+  = render @posts, index_view: true
 
-  .row
-    .span3.new-link
-      = link_to 'New Post', crowdblog.new_post_path, :class => "btn btn-primary btn-small"
-      - if current_user.user_dropbox_session
-        = link_to 'Dropbox Sync', main_app.new_admin_dropbox_sync_path, :class => 'btn btn-small'
-    .span3.offset6
-      ul.nav.nav-pills
-        li class="#{@state ? '' : 'active'}"
-          = link_to 'All', posts_path
-        li class="#{@state == 'published' ? 'active' : ''}"
-          = link_to 'Published', posts_by_state_path('published')
-        li class="#{@state == 'drafted' ? 'active' : ''}"
-          = link_to 'Drafted', posts_by_state_path('drafted')
-
-  #posts.container
-    table.table.table-striped= render @posts
+- if Rails.env.production?
+  coffee:
+    s = document.createElement('script')
+    s.async = true
+    s.src = 'http://disqus.com/forums/crowdinttech/count.js'
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s)
 
   - content_for :scripts do
-    coffee:
-      $ ->
-        $('tr.post').each (index, el) ->
-          new Crowdblog.Views.PostView
-            el: el
+    javascript:
+      disqus_shortname = 'crowdinttech';
+
+- content_for :meta do
+  meta property='og:title' content='Crowd Interactive Tech Blog'
+  meta property='og:url' content='http://blog.crowdint.com'
+  meta property='og:image' content='http://assets0.crowdint.com/assets/logo/ocre.png'
+  meta property='og:description' content='Crowd Interactive is a leading Ruby on Rails consultancy working from Mexico. We share as much knowledge as we can on our blog.'
+  meta property='og:type' content='website'

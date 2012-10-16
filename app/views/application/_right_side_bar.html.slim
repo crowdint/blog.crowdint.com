@@ -39,7 +39,7 @@ ul
   ul
     = render partial: 'historic_post', collection: @history
     li
-      b= link_to 'Read More...', archive_path
+      b= link_to 'Read More...', main_app.archive_path
 
 - if Rails.env.production?
   iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FCrowd-Interactive%2F63293958828&amp;width=190&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;height=380px" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:190px; height:380px;" allowTransparency="true"

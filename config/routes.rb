@@ -10,7 +10,7 @@ Crowdblog::Application.routes.draw do
     resource :dropbox_sync
   end
 
-  match '/:year/:month/:day/:id(.:format)', to: 'posts#show', as: 'post',
+  match '/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
       constraints: { year: /\d+/ }
 
   match '/preview/:id', to: 'posts#show', constraints: { id: /\d+/ }, as: 'preview'
@@ -19,7 +19,7 @@ Crowdblog::Application.routes.draw do
 
   match '/atom.(:format)', to: 'feeds/atom_feeds#show', as: 'atom_feed'
 
-  mount Crowdblog::Engine => '/admin'
+  mount Crowdblog::Engine => '/'
 
 
   match 'sitemap.(:format)', to: 'sitemap#show'

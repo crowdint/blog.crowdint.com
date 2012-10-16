@@ -1,11 +1,9 @@
 GIT
   remote: git://github.com/crowdint/crowdblog.git
-  revision: 288042744b8cbbabe3cbc7ecd91f32933b3d8b2d
-  branch: 1-3
+  revision: 992661c0111b4b935df6730b72f563b6b88f5cff
   specs:
-    crowdblog (0.1.3)
+    crowdblog (0.2.0)
       carrierwave
-      devise
       gravtastic
       jbuilder
       jquery-rails
@@ -14,14 +12,6 @@ GIT
       slim
       state_machine
       strong_parameters
-
-GIT
-  remote: https://github.com/jodosha/vestal_versions.git
-  revision: ef4334ccadf1077f4fa0e72ae515ddf7d00a8ad7
-  specs:
-    vestal_versions (1.2.2)
-      activerecord (>= 3.1.0)
-      activesupport (>= 3.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -308,8 +298,10 @@ DEPENDENCIES
   cucumber-rails
   dalli
   database_cleaner
+  devise
   dropbox-sdk
   fog
+  gravtastic
   jquery-rails
   launchy
   less-rails-bootstrap (~> 2.1.1)
@@ -325,5 +317,4 @@ DEPENDENCIES
   therubyracer
   uglifier (>= 1.0.3)
   unicorn
-  vestal_versions!
   yui-compressor

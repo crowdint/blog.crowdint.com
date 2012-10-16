@@ -55,13 +55,13 @@ module Crowdblog
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.assets.version = '1.1'
 
     config.to_prepare do
       ENV['FB_ADMINS'] ||= ''
-      Dir[Rails.root.join("app", "**/*_decorator*.rb")].each do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
-      end
+
+      Crowdblog::Post.send(:belongs_to, :author, :class_name => '::User')
+      Crowdblog::Post.send(:belongs_to, :publisher, :class_name => '::User')
     end
   end
 end
