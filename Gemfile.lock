@@ -136,14 +136,6 @@ GEM
       json (>= 1.4.6)
     gravtastic (3.2.6)
     hashie (1.2.0)
-    heroku (2.32.8)
-      heroku-api (~> 0.3.5)
-      launchy (>= 0.3.2)
-      netrc (~> 0.7.7)
-      rest-client (~> 1.6.1)
-      rubyzip
-    heroku-api (0.3.5)
-      excon (~> 0.16.1)
     hike (1.2.1)
     i18n (0.6.1)
     jbuilder (0.8.2)
@@ -177,7 +169,6 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.6.0)
       jruby-pageant (>= 1.1.1)
-    netrc (0.7.7)
     newrelic_rpm (3.4.2.1)
     nokogiri (1.5.5)
     omniauth (1.1.1)
@@ -319,7 +310,6 @@ DEPENDENCIES
   database_cleaner
   dropbox-sdk
   fog
-  heroku
   jquery-rails
   launchy
   less-rails-bootstrap (~> 2.1.1)

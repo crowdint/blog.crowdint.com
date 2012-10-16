@@ -39,7 +39,6 @@ group :development, :test do
   gem 'cucumber-debug'
   gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'heroku'
   gem 'launchy'
   gem 'rspec-rails'
   gem 'spork'
