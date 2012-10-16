@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'crowdblog', :git => 'git://github.com/crowdint/crowdblog.git'
+#gem 'crowdblog', :path => '../crowdblog'
 gem 'crowdint_auth', '~> 0.0.3'
 gem 'dalli'
 gem 'devise'
