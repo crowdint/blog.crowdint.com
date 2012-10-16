@@ -63,6 +63,8 @@ module Crowdblog
       Crowdblog::Post.send(:belongs_to, :author, :class_name => '::User')
       Crowdblog::Post.send(:belongs_to, :publisher, :class_name => '::User')
     end
+
+    config.assets.initialize_on_precompile = false
   end
 end
 
