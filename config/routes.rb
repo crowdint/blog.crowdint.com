@@ -13,7 +13,7 @@ Crowdblog::Application.routes.draw do
   match '/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
       constraints: { year: /\d+/ }
 
-  match '/preview/:id', to: 'posts#show', constraints: { id: /\d+/ }, as: 'preview'
+  match '/preview/:id', to: 'crowdblog/posts#show', constraints: { id: /\d+/ }, as: 'preview'
 
   match '/archive', to: 'archive#show', as: 'archive'
 
