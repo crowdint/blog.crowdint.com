@@ -7,7 +7,12 @@ Given /^I am signed in as "([^"]*)"$/ do |email|
 end
 
 Given /^An author with name "([^"]*)" and email "([^"]*)"$/ do |name, email|
-  User.create!(name: name, email: email)
+  user = User.new
+  user.name = name
+  user.email = email
+  user.password = '123456'
+  user.password_confirmation = user.password
+  user.save!
 end
 
 Given /^current user is publisher$/ do
