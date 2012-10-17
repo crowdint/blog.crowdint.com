@@ -1,5 +1,5 @@
 .posts
-  = render @post, index_view: false
+  = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
   #disqus_thread
 
   - if Rails.env.production?

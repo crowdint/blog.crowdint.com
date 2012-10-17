@@ -17,6 +17,6 @@
       = link_to 'Comments', main_app.post_path(*post.url_params) + '#disqus_thread'
   - else
     .social
-      .tweet.span2= render 'twitter'
-      .plusone.span3= render 'plusone'
-      .facebook.span3= render 'facebook', url: main_app.post_url(*post.url_params)
+      .tweet.span2= render 'crowdblog/posts/twitter'
+      .plusone.span3= render 'crowdblog/posts/plusone'
+      .facebook.span3= render 'crowdblog/posts/facebook', url: main_app.post_url(*post.url_params)
