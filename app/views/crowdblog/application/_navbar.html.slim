@@ -1,0 +1,9 @@
+.navbar
+  .navbar-inner
+    = link_to 'Crowdblog', crowdblog.admin_root_path, :class => 'brand'
+    - if current_user
+      ul.nav
+        li.brand= current_user.email
+        li= link_to 'Posts', crowdblog.admin_posts_path
+        li= link_to 'Authors', main_app.admin_authors_path
+        li= link_to 'Sign out', '#'

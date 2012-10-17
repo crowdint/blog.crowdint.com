@@ -8,6 +8,8 @@ Crowdblog::Application.routes.draw do
   namespace :admin do
     resource :dropbox_authorization
     resource :dropbox_sync
+
+    resources :authors, :only => :index
   end
 
   match '/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
