@@ -25,7 +25,7 @@ Crowdblog::Application.routes.draw do
 
 
   match 'sitemap.(:format)', to: 'sitemap#show'
-  match '/:author', to: 'posts_by_author#index', as: 'posts_by_author', :constraints => { author: /.+/ }
+  match '/author/:id', to: 'posts_by_author#index', as: 'posts_by_author'
 
   root to: "posts#index"
 

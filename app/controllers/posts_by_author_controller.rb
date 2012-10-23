@@ -2,7 +2,7 @@ class PostsByAuthorController < ApplicationController
   respond_to :html
 
   def index
-    @author = User.where(['email like ?', params[:author] + '@%']).first
+    @author = User.find(params[:id])
     raise ActionController::RoutingError.new('Author Not Found') unless @author
     @posts = Post.by_author(@author.id)
     @history = Post.for_history
