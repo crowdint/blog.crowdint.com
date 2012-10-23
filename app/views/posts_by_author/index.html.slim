@@ -10,3 +10,6 @@
     - @posts.each do |post|
       .span2.offset1= post.published_at
       .span5= link_to post.title, post_path(*post.url_params)
+
+- content_for :page_title do
+  = " :: #{@author.name}"
