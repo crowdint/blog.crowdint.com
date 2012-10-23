@@ -9,7 +9,7 @@ Feature: Posts by Author Page
       | The great gatsby    | Lorem Ipsum Cohiben Allen       | true      |
       | Johnny was a sailor | Then the water must run deep    | false     |
       | Pipilium            | I heard Ramona sing             | true      |
-    When I go to the "johan" posts page
+    When I go to the "Johan Crupps" posts page
         Then I should see:
           | The great gatsby                |
           | Pipilium                        |
