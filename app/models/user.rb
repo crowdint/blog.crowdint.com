@@ -18,6 +18,10 @@ class User < Crowdblog::User
     where(:is_publisher => true)
   end
 
+  def self.published_authors
+    includes(:published_posts).select {|u| u.published_posts.size > 0}
+  end
+
   def to_param
     "#{id}-#{name.parameterize}"
   end

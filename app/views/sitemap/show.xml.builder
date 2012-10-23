@@ -16,4 +16,11 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
       xml.lastmod post.updated_at.to_s :w3c
     end
   end
+
+  @authors.each do |author|
+    xml.url do
+      xml.loc posts_by_author_url(author)
+      xml.lastmod author.published_posts.last.updated_at.to_s :w3c
+    end
+  end
 end
