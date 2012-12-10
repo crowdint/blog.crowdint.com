@@ -9,7 +9,6 @@ CarrierWave.configure do |config|
       #:region                 => 'us-east-1'
     }
     config.fog_directory  = ENV['AWS_BUCKET']
-    config.fog_host       = 'http://blogassets.crowdint.com'
     config.fog_public     = true
     config.fog_attributes = {'Cache-Control' => 'max-age=315576000'}
   else
