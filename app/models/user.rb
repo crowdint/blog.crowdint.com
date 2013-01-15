@@ -25,6 +25,10 @@ class User < Crowdblog::User
   def to_param
     "#{id}-#{name.parameterize}"
   end
+
+  def is_publisher?
+    self.is_publisher
+  end
 end
 
 Crowdblog::User.set_table_name 'users'
