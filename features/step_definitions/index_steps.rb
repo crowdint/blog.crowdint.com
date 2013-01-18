@@ -6,7 +6,7 @@ Given /^the following posts by "([^"]*)":$/ do |name, table|
     p.author = author
     p.regenerate_permalink
     p.save!
-    p.publish if hash[:published] == 'true'
+    p.publish_as_publisher if hash[:published] == 'true'
     p.update_attribute(:published_at, time_index.days.ago)
   end
 end
