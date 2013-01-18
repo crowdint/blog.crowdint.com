@@ -9,4 +9,12 @@ class PostObserver < ActiveRecord::Observer
       end
     end
   end
+
+  def after_finish(post, transition)
+    Notifier.post_finished(post).deliver
+  end
+
+  def after_review_as_publisher(post, transition)
+    Notifier.post_reviewed(post).deliver
+  end
 end

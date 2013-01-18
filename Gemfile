@@ -6,7 +6,8 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 ruby '1.9.3'
 
-gem 'crowdblog', :git => 'git://github.com/crowdint/crowdblog.git'
+gem 'crowdblog', :git => 'git://github.com/crowdint/crowdblog.git',
+    branch: 'post_status_improvements'
 #gem 'crowdblog', :path => '../crowdblog'
 gem 'crowdint_auth', '~> 0.0.3'
 gem 'dalli'
