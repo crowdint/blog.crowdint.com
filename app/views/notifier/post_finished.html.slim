@@ -1,1 +1,1 @@
-p The blog post #{@post.title} from #{@post.author} has been marked as finished, you can review it #{ link_to 'here', crowdblog.admin_post_url(@post) }
+p The blog post #{@post.title} from #{@post.author_name} has been marked as finished, you can review it #{ link_to 'here', crowdblog.edit_admin_post_url(@post) }
