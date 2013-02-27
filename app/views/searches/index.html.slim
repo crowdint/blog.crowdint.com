@@ -1,0 +1,11 @@
+.posts
+  h2
+    | Search results for
+    i= " #{@query}"
+
+  #search
+    - @posts.each do |post|
+      .post
+        = link_to post.title, post_url(*post.url_params)
+        .description
+          = post.short_description

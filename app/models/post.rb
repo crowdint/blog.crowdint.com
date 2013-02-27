@@ -13,7 +13,7 @@ class Post < Crowdblog::Post
   end
 
   def short_description
-    body.first(200).gsub(/\n/, '')
+    body.first(300).gsub(/\n/, '') + "..."
   end
 
   searchable do
