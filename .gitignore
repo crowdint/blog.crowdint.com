@@ -22,3 +22,5 @@ public/uploads
 public/asset
 
 *.sql
+log/sunspot-solr-development.log.lck
+/solr
