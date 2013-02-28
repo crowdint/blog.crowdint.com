@@ -2,8 +2,11 @@
   .navbar-inner
     .container
       .row
-        .span10
+        .span7
           = link_to image_tag('crowdint.png', alt: 'Crowd Interactive'), root_path
         .span2
           ul.nav
             li= link_to 'About Us', 'http://www.crowdint.com'
+            li
+              = form_tag main_app.search_path, method: :post do
+                = search_field_tag :q, nil, placeholder: 'Search...'
