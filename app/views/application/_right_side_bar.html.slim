@@ -8,17 +8,17 @@ p
     with companies we believe in.
 p
   | You can find out more about us on
-  = link_to ' our website.', 'http://www.crowdint.com', class: 'link'
+  = link_to ' our website.', 'http://www.crowdint.com', class: 'link', onclick: event_link_click('Our website (Right bar)')
 
 h2 Our Favorite Sites
 ul
-  li= link_to 'Crowd Interactive', 'http://www.crowdint.com'
+  li= link_to 'Crowd Interactive', 'http://www.crowdint.com', onclick: event_link_click('Crowd Interactive (Right bar)')
   li= link_to 'Ruby on Rails', 'http://rubyonrails.org'
   li= link_to 'Github', 'http://www.github.com/crowdint'
 
 h2 Our conference
 ul
-  li= link_to 'Magma Conf', 'http://www.magmaconf.com'
+  li= link_to 'Magma Conf', 'http://www.magmaconf.com', onclick: event_link_click('MagmaConf')
 
 h2 Conferences we attend
 ul
@@ -31,9 +31,9 @@ ul
 
 h2 Stuff we've built
 ul
-  li= link_to 'Github Profile', 'http://www.github.com/crowdint'
-  li= link_to 'Retrospectus', 'http://www.retrospectus.com'
-  li= link_to 'This blog', 'https://github.com/crowdint/blog.crowdint.com'
+  li= link_to 'Github Profile', 'http://www.github.com/crowdint', onclick: event_link_click('Github Profile')
+  li= link_to 'Retrospectus', 'http://www.retrospectus.com', onclick: event_link_click('Retrospectus')
+  li= link_to 'This blog', 'https://github.com/crowdint/blog.crowdint.com', onclick: event_link_click('Blog code page')
 
 - if @history
   h2 Earlier Posts
