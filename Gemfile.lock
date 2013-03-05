@@ -59,7 +59,7 @@ GEM
       execjs
     coffee-script-source (1.6.1)
     commonjs (0.2.6)
-    crowdblog (0.3.1)
+    crowdblog (0.3.2)
       carrierwave
       gravtastic
       jbuilder
@@ -289,7 +289,7 @@ PLATFORMS
 DEPENDENCIES
   capybara-webkit
   coffee-rails (~> 3.2.1)
-  crowdblog (~> 0.3.1)
+  crowdblog (~> 0.3.2)
   crowdint_auth (~> 0.0.3)
   cucumber (= 1.1.4)
   cucumber-ajaxer

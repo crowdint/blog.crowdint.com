@@ -1,22 +1,23 @@
-.post
-  .header
-    .row
-      .span1
-        = image_tag post.gravatar_url
-      .span3
-        .author #{link_to post.author_name, main_app.posts_by_author_path(post.author.to_param)}
-        .email #{post.author_email}
-        .date #{post.formatted_published_date}
-      .title
-        h1
-          = link_to post.title, main_app.post_path(*post.url_params)
+= cache post do
+  .post
+    .header
+      .row
+        .span1
+          = image_tag post.gravatar_url
+        .span3
+          .author #{link_to post.author_name, main_app.posts_by_author_path(post.author.to_param)}
+          .email #{post.author_email}
+          .date #{post.formatted_published_date}
+        .title
+          h1
+            = link_to post.title, main_app.post_path(*post.url_params)
 
-  .body #{post.html_body}
-  - if index_view
-    .links
-      = link_to 'Comments', main_app.post_path(*post.url_params) + '#disqus_thread'
-  - else
-    .social
-      .tweet.span2= render 'crowdblog/posts/twitter'
-      .plusone.span3= render 'crowdblog/posts/plusone'
-      .facebook.span3= render 'crowdblog/posts/facebook', url: main_app.post_url(*post.url_params)
+    .body #{post.html_body}
+    - if index_view
+      .links
+        = link_to 'Comments', main_app.post_path(*post.url_params) + '#disqus_thread'
+    - else
+      .social
+        .tweet.span2= render 'crowdblog/posts/twitter'
+        .plusone.span3= render 'crowdblog/posts/plusone'
+        .facebook.span3= render 'crowdblog/posts/facebook', url: main_app.post_url(*post.url_params)
