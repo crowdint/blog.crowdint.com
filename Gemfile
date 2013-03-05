@@ -6,7 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 ruby '1.9.3'
 
-gem 'crowdblog', '~> 0.3.0'
+gem 'crowdblog', '~> 0.3.1'
 #gem 'crowdblog', :path => '../crowdblog'
 gem 'crowdint_auth', '~> 0.0.3'
 gem 'dalli'
@@ -36,7 +36,6 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
-  gem 'autotest-rails'
   gem 'capybara-webkit'
   gem 'cucumber', '1.1.4'
   gem 'cucumber-ajaxer'
@@ -53,5 +52,4 @@ end
 
 group :production do
   gem 'pg'
-  gem 'therubyracer'
 end
