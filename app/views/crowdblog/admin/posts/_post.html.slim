@@ -1,4 +1,4 @@
-= cache post do
+= cache [:admin, post] do
   = content_tag_for :tr, post, :"data-post-id" => post.id, :"data-state" => post.state, :"data-ready-for-review" => post.ready_for_review do
     td= link_to post.title, main_app.preview_path(post)
     td= post.author_email
