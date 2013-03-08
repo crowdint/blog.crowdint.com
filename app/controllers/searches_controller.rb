@@ -5,8 +5,4 @@ class SearchesController < ApplicationController
     @query = params[:q]
     @posts = Post.query(@query).results
   end
-
-  def search
-    redirect_to "/search/#{params[:q]}"
-  end
 end

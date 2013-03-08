@@ -1,7 +1,5 @@
 Crowdblog::Application.routes.draw do
-  match 'search/:q', to: 'searches#index'
-  post 'search', to: 'searches#search', as: 'search'
-  match 'search', to: 'searches#index'
+  match 'search/(:q)', to: 'searches#index', as: 'search'
 
   devise_for :users, controllers: { omniauth_callbacks: 'crowdint_auth/omniauth_callbacks' }
 

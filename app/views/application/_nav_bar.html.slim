@@ -8,5 +8,5 @@
           ul.nav
             li= link_to 'About Us', 'http://www.crowdint.com', onclick: event_link_click('About Us')
             li
-              = form_tag main_app.search_path, method: :post do
+              = form_tag main_app.search_path, method: :get, id: :search_form do
                 = search_field_tag :q, nil, placeholder: 'Search...'
