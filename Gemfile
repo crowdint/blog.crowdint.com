@@ -36,6 +36,9 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-unicorn'
+  gem 'capistrano-rbenv'
   gem 'capybara-webkit'
   gem 'cucumber', '1.1.4'
   gem 'cucumber-ajaxer'
