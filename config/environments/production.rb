@@ -15,7 +15,7 @@ Crowdblog::Application.configure do
   config.assets.compress = true
 
   # Use YUI compressor
-  config.assets.css_compressor = :yui
+  #config.assets.css_compressor = :yui
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
