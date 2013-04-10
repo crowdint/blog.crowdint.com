@@ -1,6 +1,7 @@
 worker_processes 2 # amount of unicorn workers to spin up
 timeout 30         # restarts workers that hang for 30 seconds
 preload_app true
+listen "127.0.0.1:3002"
 
 before_fork do |server, worker|
   # Replace with MongoDB or whatever
