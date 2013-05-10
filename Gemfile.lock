@@ -82,10 +82,10 @@ GEM
       slim
       state_machine
       strong_parameters
-    crowdint_auth (0.0.3)
+    crowdint_auth (0.1.1)
       devise
       omniauth-google-apps
-      rails (~> 3.2.8)
+      rails (> 3.2)
     cucumber (1.1.4)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -103,7 +103,7 @@ GEM
       nokogiri (>= 1.5.0)
     dalli (2.6.2)
     database_cleaner (0.9.1)
-    devise (2.2.3)
+    devise (2.2.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (~> 3.1)
@@ -130,7 +130,7 @@ GEM
     gherkin (2.7.7)
       json (>= 1.4.6)
     gravtastic (3.2.6)
-    hashie (2.0.3)
+    hashie (2.0.4)
     highline (1.6.16)
     hike (1.2.2)
     i18n (0.6.1)
@@ -157,7 +157,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    multi_json (1.7.2)
+    multi_json (1.7.3)
     net-scp (1.1.0)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.1)
@@ -311,7 +311,7 @@ DEPENDENCIES
   capybara-webkit
   coffee-rails (~> 3.2.1)
   crowdblog (~> 0.3.2)
-  crowdint_auth (~> 0.0.3)
+  crowdint_auth (~> 0.1.0)
   cucumber (= 1.1.4)
   cucumber-ajaxer
   cucumber-debug

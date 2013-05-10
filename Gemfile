@@ -8,7 +8,7 @@ ruby '1.9.3'
 
 gem 'crowdblog', '~> 0.3.2'
 #gem 'crowdblog', :path => '../crowdblog'
-gem 'crowdint_auth', '~> 0.0.3'
+gem 'crowdint_auth', '~> 0.1.0'
 gem 'dalli'
 gem 'devise'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
