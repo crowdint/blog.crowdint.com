@@ -3,6 +3,8 @@ html
   head
     title Crowd Interactive Tech Blog #{yield :page_title}
     = yield :meta
+    meta property="twitter:account_id" content="1494951575"
+
     - ENV['FB_ADMINS'].split(',').each do |admin|
       meta property="fb:admins" content=admin
 
