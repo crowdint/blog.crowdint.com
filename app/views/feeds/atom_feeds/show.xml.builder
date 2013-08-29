@@ -6,7 +6,7 @@ atom_feed do |feed|
     feed.entry(post, url: post_url(*post.url_params)) do |entry|
       entry.title post.title
       entry.content post.html_body, type: 'html'
-      entry.photo post.gravatar_url
+      #entry.photo post.gravatar_url
       entry.author do |author|
         author.name post.author_name
         author.email post.author_email
