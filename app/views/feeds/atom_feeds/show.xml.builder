@@ -1,7 +1,7 @@
 atom_feed do |feed|
   feed.title 'Crowd Interactive Tech Blog'
   feed.updated @posts.first.updated_at
-  feed.image "http://www.crowdint.com/assets/logo/ocre.png"
+  feed.logo "http://www.crowdint.com/assets/logo/ocre.png"
   feed.icon "http://www.crowdint.com/favicon.ico"
 
   @posts.each do |post|
