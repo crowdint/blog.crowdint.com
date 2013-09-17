@@ -1,3 +1,8 @@
+h1 {
+    font-size: 20pt;
+    @media (min-width: 768px) {  font-size: 24pt;}
+}
+
 .post {
   h1 {
     a {
@@ -17,7 +22,8 @@
     padding: 15px;
   }
   .author {
-    font-size: 18pt;
+    font-size: 16pt;
+    @media (min-width: 768px) {  font-size: 18pt;}
 
     a {
       color: #159288;

@@ -1,5 +1,5 @@
 .posts
-  h2
+  h1
     | Search results for
     i= " #{@query}"
 
@@ -7,7 +7,7 @@
     - unless @posts.empty?
       - @posts.each do |post|
         .post
-          = link_to post.title, post_url(*post.url_params)
+          h2= link_to post.title, post_url(*post.url_params)
           .description
             = post.short_description
     - else
