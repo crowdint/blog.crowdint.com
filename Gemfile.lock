@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
+  revision: 0e88056ac5d58fb0bbd23d3fe929eac01712d964
+  branch: 3
+  specs:
+    bootstrap-sass (3.0.0.0)
+      sass (~> 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -31,8 +39,6 @@ GEM
     addressable (2.3.5)
     arel (3.0.2)
     bcrypt-ruby (3.1.2)
-    bootstrap-sass (2.3.2.2)
-      sass (~> 3.2)
     builder (3.0.4)
     capistrano (2.15.5)
       highline
@@ -294,7 +300,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
+  bootstrap-sass!
   capistrano
   capistrano-rbenv
   capistrano-unicorn

@@ -9,7 +9,7 @@ ruby '2.0.0'
 gem 'crowdblog', '~> 0.3.2'
 #gem 'crowdblog', :path => '../crowdblog'
 gem 'crowdint_auth', '~> 0.1.0'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'dalli'
 gem 'devise', '~> 2.2.4'
 gem 'dropbox-sdk', :require => "dropbox_sdk"

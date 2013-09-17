@@ -4,6 +4,7 @@ html
     title Crowd Interactive Tech Blog #{yield :page_title}
     = yield :meta
     meta property="twitter:account_id" content="1494951575"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
 
     - ENV['FB_ADMINS'].split(',').each do |admin|
       meta property="fb:admins" content=admin
@@ -23,11 +24,11 @@ html
 
   body
     = render 'nav_bar'
-    .container.bordered
+    .container
       .row
-        .span9
+        .col-sm-9
           = yield
-        .span3
-          .right= render 'right_side_bar'
+        .col-sm-3
+          = render 'right_side_bar'
 
     = render 'footer'
