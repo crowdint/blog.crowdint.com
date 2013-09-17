@@ -1,11 +1,39 @@
 .post {
+  h1 {
+    a {
+      color: #E0643A;
+    }
+  }
   .post-well {
+    border-width: 0px;
+    box-shadow: none;
     padding: 0px;
+  }
+  .header {
+    padding: 15px;
   }
   .body {
     background-color: #F5F5F5;
+    padding: 15px;
   }
   .author {
+    font-size: 18pt;
+
+    a {
+      color: #159288;
+    }
+  }
+
+  .email {
+    font-weight: bold;
+  }
+
+  .bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .links {
     font-size: 18pt;
 
     a {
