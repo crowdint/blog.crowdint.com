@@ -14,6 +14,7 @@ gem 'devise'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
 gem 'fog'
 gem 'gravtastic'
+gem 'memcachier'
 gem 'newrelic_rpm'
 gem 'quiet_assets'
 gem 'sunspot_rails'
