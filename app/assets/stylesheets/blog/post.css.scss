@@ -4,9 +4,19 @@ h1 {
 }
 
 .post {
+  margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 0
+  }
+
   h1 {
     a {
       color: #E0643A;
+      font-weight: 700;
+      font-family: 'Open Sans Condensed';
+    }
+    &:first-child:first-letter{
+      text-transform: capitalize
     }
   }
   .post-well {
@@ -16,18 +26,33 @@ h1 {
   }
   .header {
     padding: 15px;
+    text-align: right;
   }
   .body {
     background-color: #F5F5F5;
     padding: 15px;
+    pre {
+      padding: 4.5px;
+    }
   }
   .author {
     font-size: 16pt;
-    @media (min-width: 768px) {  font-size: 18pt;}
+    @media (min-width: 768px) {
+      font-size: 18pt;
+
+    }
 
     a {
       color: #159288;
     }
+  }
+  .image {
+    display: none;
+    @media (min-width: 768px) { display: block;}
+    img {
+      margin-left: 20px;
+    }
+
   }
 
   .email {

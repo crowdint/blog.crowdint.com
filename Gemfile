@@ -20,6 +20,7 @@ gem 'quiet_assets'
 gem 'sunspot_rails'
 gem 'unicorn'
 gem 'yui-compressor'
+gem 'will_paginate-bootstrap'
 
 # Gems used only for assets and not required
 # in production environments by default.

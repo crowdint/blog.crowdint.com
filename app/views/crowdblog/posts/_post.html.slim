@@ -3,9 +3,13 @@
     h1= link_to post.title, main_app.post_path(*post.url_params)
     .well.well-sm.post-well
       .header
-        .author #{link_to post.author_name, main_app.posts_by_author_path(post.author.to_param)}
-        .email
-          #{post.author_email} - #{post.formatted_published_date}
+        .pull-right.col-md-6
+          .image #{image_tag post.gravatar_url, class: 'img-circle pull-right' }
+          .author #{link_to post.author_name, main_app.posts_by_author_path(post.author.to_param)}
+          .email
+            #{post.author_email}
+            #{post.formatted_published_date}
+        .clearfix
       .body #{post.html_body}
       .bottom
         - if index_view
