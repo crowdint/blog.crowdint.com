@@ -17,6 +17,14 @@
       | blog comments powered by
       span class="logo-disqus" Disqus
 
+- content_for :scripts do
+  javascript:
+    var switchTo5x=true;
+
+  = javascript_include_tag "http://w.sharethis.com/button/buttons.js"
+
+  javascript:
+    stLight.options({publisher: "406c02f2-35b6-48c1-a07d-97a8ab815cdd", doNotHash: false, doNotCopy: false, hashAddressBar: false});
 
 - content_for :page_title do
   | :: #{@post.title}

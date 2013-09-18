@@ -74,4 +74,17 @@ h1 {
       color: #159288;
     }
   }
+
+  .social-links {
+    .social-link {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    span {
+      -webkit-box-sizing: content-box;
+         -moz-box-sizing: content-box;
+          box-sizing: content-box;
+    }
+  }
 }

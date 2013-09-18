@@ -17,8 +17,12 @@
             center
               = link_to 'Comments', main_app.post_path(*post.url_params) + '#disqus_thread'
         - else
-          .row
-            .col-xs-6.col-sm-3.col-sm-offset-1= render 'crowdblog/posts/twitter'
-            .col-xs-6.col-sm-2.col-sm-push-5= render 'crowdblog/posts/plusone'
-            .col-xs-12.col-sm-5.col-sm-pull-3= render 'crowdblog/posts/facebook', url: main_app.post_url(*post.url_params)
-
+          .social-links.row
+            .col-xs-6.col-sm-3.social-link
+              span class='st_facebook_hcount' displayText='Facebook'
+            .col-xs-6.col-sm-3.social-link
+              span class='st_twitter_hcount' displayText='Tweet'
+            .col-xs-6.col-sm-3.social-link
+              span class='st_linkedin_hcount' displayText='LinkedIn'
+            .col-xs-6.col-sm-3.social-link
+              span class='st_googleplus_hcount' displayText='Google +'
