@@ -20,32 +20,32 @@ footer {
     .sprite-c-logo{ background-position: 0 0; width: 82px; height: 100px; z-index: 7; border: 0; margin-right: -6px;}
     .sprite-fb{ background-position: 0 -238px; width: 48px; height: 48px; z-index: 6;
       &:hover{
-        background-position: 0 -140px; width: 48px; height: 48px;
+        background-position: 0 -140px; width: 48px; height: 48px; top: -7px;
       }
     }
     .sprite-twt{ background-position: 0 -1218px; width: 48px; height: 48px; z-index: 5;
       &:hover{
-        background-position: 0 -1120px; width: 48px; height: 48px;
+        background-position: 0 -1120px; width: 48px; height: 48px; top: -7px;
       }
     }
     .sprite-google{ background-position: -0 -629px; width: 48px; height: 48px; z-index: 4;
       &:hover{
-        background-position: 0 -531px; width: 48px; height: 48px;
+        background-position: 0 -531px; width: 48px; height: 48px; top: -7px;
       }
     }
     .sprite-foursquare{ background-position: -0 -433px; width: 48px; height: 48px; z-index: 3;
       &:hover{
-        background-position: 0 -335px; width: 48px; height: 48px;
+        background-position: 0 -335px; width: 48px; height: 48px; top: -7px;
       }
     }
     .sprite-inst{ background-position: -0 -825px; width: 49px; height: 48px; z-index: 2;
       &:hover{
-        background-position: 0 -727px; width: 49px; height: 48px;
+        background-position: 0 -727px; width: 49px; height: 48px; top: -7px;
       }
     }
     .sprite-pin{ background-position: -0 -1021px; width: 49px; height: 48px; z-index: 1;
       &:hover{
-        background-position: 0 -923px; width: 49px; height: 48px;
+        background-position: 0 -923px; width: 49px; height: 48px; top: -7px;
       }
     }
   }
