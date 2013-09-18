@@ -54,7 +54,22 @@
         = render partial: 'historic_post', collection: @history
         li
           b= link_to 'Read More...', main_app.archive_path
-
+  .visible-xs.visible-sm
+    .col-xs-12
+      h2 Social
+      ul.footer-links.list-unstyled
+        li
+          = link_to 'Facebook', 'https://www.facebook.com/CrowdInteractive', target: '_blank'
+        li
+          = link_to 'Twitter', 'https://twitter.com/Crowdint', target: '_blank'
+        li
+          = link_to 'Google +', 'https://plus.google.com/100816706068922064575/posts', target: '_blank'
+        li
+          = link_to 'Foursquare', 'https://foursquare.com/crowdint', target: '_blank'
+        li
+          = link_to 'Instagram', 'http://instagram.com/crowdint', target: '_blank'
+        li
+          = link_to 'Pinterest', 'http://pinterest.com/crowdint', target: '_blank'
   .hidden-xs
     .col-sm-12
       h2 Subscribe
