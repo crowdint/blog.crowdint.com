@@ -1,5 +1,5 @@
 .right-side-bar.row
-  .col-sm-12
+  .col-sm-12#about-us
     h2 About Crowd Interactive
     p
       strong= link_to 'Crowd Interactive ', 'http://www.crowdint.com', class: 'link brand', onclick: event_link_click('Our website (Right bar)')
@@ -48,7 +48,7 @@
 
   - if @history
     .clearfix
-    .col-sm-12
+    .col-sm-12#earlier
       h2 Earlier Posts
       ul
         = render partial: 'historic_post', collection: @history
@@ -81,5 +81,7 @@
               a href="http://feeds.feedburner.com/CrowdInteractiveTechBlog" rel="alternate" type="application/rss+xml"
                 |  Feed
 
-      h2 Search
+  .visible-xs
+    .col-sm-12
+      h2#search-form Search
       = render 'search_form'

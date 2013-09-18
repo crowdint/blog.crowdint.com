@@ -1,3 +1,16 @@
 .navbar.navbar-default
   = link_to image_tag('crowdint.png', alt: 'Crowd Interactive', height: 50), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
+  .navbar-header
+    button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"
+      span class="sr-only"
+      span class="icon-bar"
+      span class="icon-bar"
+      span class="icon-bar"
+
+  .collapse.navbar-collapse.navbar-ex1-collapse
+    ul.nav.navbar-nav.visible-xs.visible-sm
+      li= link_to 'About', '#about-us'
+      li= link_to 'Earlier Posts', '#earlier'
+      li= link_to 'Search', '#search-form'
+
   /*= link_to 'About Us', 'http://www.crowdint.com', onclick: event_link_click('About Us')*/

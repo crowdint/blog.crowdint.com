@@ -9,7 +9,18 @@ $panel-inner-border: #EAEAEA;
 $brand-primary: $color3;
 $navbar-default-bg: $color4;
 
+$navbar-border-radius: 0px;
+
+$navbar-default-toggle-border-color: white;
+$navbar-default-toggle-icon-bar-bg: $color3;
+$navbar-default-toggle-hover-bg: $color2;
+
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: $color2;
+$navbar-default-link-hover-bg: white;
+
 $font-family-sans-serif: 'Open Sans', sans-serif;
 
+$grid-float-breakpoint: 992px;
 
 @import "bootstrap";
