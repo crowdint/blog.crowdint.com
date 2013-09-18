@@ -17,12 +17,4 @@
             center
               = link_to 'Comments', main_app.post_path(*post.url_params) + '#disqus_thread'
         - else
-          .social-links.row
-            .col-xs-6.col-sm-3.social-link
-              span class='st_facebook_hcount' displayText='Facebook'
-            .col-xs-6.col-sm-3.social-link
-              span class='st_twitter_hcount' displayText='Tweet'
-            .col-xs-6.col-sm-3.social-link
-              span class='st_linkedin_hcount' displayText='LinkedIn'
-            .col-xs-6.col-sm-3.social-link
-              span class='st_googleplus_hcount' displayText='Google +'
+          .social-links.row= render 'social'
