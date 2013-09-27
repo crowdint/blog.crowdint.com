@@ -1,5 +1,5 @@
 .navbar.navbar-default
-  = link_to image_tag('crowdint.png', alt: 'Crowd Interactive', height: 50), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
+  = link_to image_tag('2013/header_logo.png', alt: 'Crowd Interactive', height: 50), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
   .navbar-header
     button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"
       span class="sr-only"
@@ -7,6 +7,8 @@
       span class="icon-bar"
       span class="icon-bar"
 
+  .share.pull-right
+    h2 Sharing Knowledge
   .collapse.navbar-collapse.navbar-ex1-collapse
     ul.nav.navbar-nav.visible-xs.visible-sm
       li= link_to 'About', '#about-us'

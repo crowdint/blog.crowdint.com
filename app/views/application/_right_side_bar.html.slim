@@ -1,8 +1,10 @@
 .right-side-bar.row
   .col-sm-12#about-us
-    .panel.panel-default
-      .panel-heading
-        h1.panel-title About Crowd Interactive
+    .panel.panel-default.pull-20
+      .panel-heading.no-padding.visible-lg
+        = image_tag '2013/right-side-logo.png', alt: 'About Us', width: 261
+      .panel-heading.hidden-lg
+        h1.panel-title About Us
       .panel-body
         p
           strong= link_to 'Crowd Interactive ', 'http://www.crowdint.com', class: 'link brand', onclick: event_link_click('Our website (Right bar)')

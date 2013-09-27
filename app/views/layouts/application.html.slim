@@ -5,6 +5,7 @@ html
     = yield :meta
     meta property="twitter:account_id" content="1494951575"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    link rel="icon" type="image/png" href="favicon.png"
 
     - ENV['FB_ADMINS'].split(',').each do |admin|
       meta property="fb:admins" content=admin
@@ -23,8 +24,12 @@ html
     = yield :scripts
 
   body
-    = render 'nav_bar'
     .container
+      header.row
+        .col-md-9
+          = link_to image_tag('2013/header_logo.png', alt: 'Crowd Interactive', height: 50), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
+        .col-md-3.share.visible-lg.visible-md
+          h2 Sharing Knowledge
       .row
         .col-md-9
           = yield
