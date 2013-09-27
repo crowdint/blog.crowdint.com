@@ -1,6 +1,5 @@
 .posts
   = render @posts, index_view: true
-.centered= will_paginate @posts, renderer: BootstrapPagination::Rails, bootstrap: 3
 - if Rails.env.production?
   coffee:
     s = document.createElement('script')
