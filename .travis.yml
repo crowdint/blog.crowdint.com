@@ -7,3 +7,6 @@ before_script:
   - "cp ./config/travis_database.yml ./config/database.yml"
   - "bundle exec rake db:setup"
   - "bundle exec rake db:test:prepare"
+  - "bundle exec rake sunspot:solr:start"
+
+script: "bundle exec rake cucumber"
