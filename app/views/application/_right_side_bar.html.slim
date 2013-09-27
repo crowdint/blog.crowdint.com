@@ -1,85 +1,109 @@
 .right-side-bar.row
   .col-sm-12#about-us
-    h2 About Crowd Interactive
-    p
-      strong= link_to 'Crowd Interactive ', 'http://www.crowdint.com', class: 'link brand', onclick: event_link_click('Our website (Right bar)')
-      | is a leading Ruby and Rails consultancy firm based in
-        Mexico currently doing business with startups in the United States.
-    p
-      | We specialize in building and growing Rails applications, by increasing your
-        IT crew onsite or offsite. We pick our projects carefully, as we only work
-        with companies we believe in.
-    p
-      | You can find out more about us on
-      = link_to ' our website.', 'http://www.crowdint.com', class: 'link', onclick: event_link_click('Our website (Right bar)')
+    .panel.panel-default
+      .panel-heading
+        h1.panel-title About Crowd Interactive
+      .panel-body
+        p
+          strong= link_to 'Crowd Interactive ', 'http://www.crowdint.com', class: 'link brand', onclick: event_link_click('Our website (Right bar)')
+          | is a leading Ruby and Rails consultancy firm based in
+            Mexico currently doing business with startups in the United States.
+        p
+          | We specialize in building and growing Rails applications, by increasing your
+            IT crew onsite or offsite. We pick our projects carefully, as we only work
+            with companies we believe in.
+        p
+          | You can find out more about us on
+          = link_to ' our website.', 'http://www.crowdint.com', class: 'link', onclick: event_link_click('Our website (Right bar)')
 
   .hidden-xs
     .col-sm-6.col-md-12
-      h2 Our Favorite Sites
-      ul
-        li= link_to 'Crowd Interactive', 'http://www.crowdint.com', onclick: event_link_click('Crowd Interactive (Right bar)')
-        li= link_to 'Ruby on Rails', 'http://rubyonrails.org'
-        li= link_to 'Github', 'http://www.github.com/crowdint'
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Our Favorite Sites
+        .panel-body
+          ul
+            li= link_to 'Crowd Interactive', 'http://www.crowdint.com', onclick: event_link_click('Crowd Interactive (Right bar)')
+            li= link_to 'Ruby on Rails', 'http://rubyonrails.org'
+            li= link_to 'Github', 'http://www.github.com/crowdint'
 
     .col-sm-6.col-md-12
-      h2 Our conference
-      ul
-        li= link_to 'Magma Conf', 'http://www.magmaconf.com', onclick: event_link_click('MagmaConf')
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Our conference
+        .panel-body
+          ul
+            li= link_to 'Magma Conf', 'http://www.magmaconf.com', onclick: event_link_click('MagmaConf')
 
     .clearfix
     .col-sm-6.col-md-12
-      h2 Conferences we attend
-      ul
-        li= link_to 'Heroku Waza'  , 'http://waza.heroku.com'
-        li= link_to 'Spreeconf'    , 'http://www.spreeconf.com'
-        li= link_to 'Railsconf'    , 'http://www.railsconf.com'
-        li= link_to 'GoGaRuCo'     , 'http://www.gogaruco.com'
-        li= link_to 'Re:Design'    , 'http://www.redesignconference.com'
-        li= link_to 'Rubyconf'     , 'http://www.rubyconf.org'
-        li= link_to 'Ruby Kaigi'   , 'http://www.rubykaigi.org'
-        li= link_to 'Rails Israel' , 'http://railsisrael2013.events.co.il/speakers-list'
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Conferences we attend
+        .panel-body
+          ul
+            li= link_to 'Heroku Waza'  , 'http://waza.heroku.com'
+            li= link_to 'Spreeconf'    , 'http://www.spreeconf.com'
+            li= link_to 'Railsconf'    , 'http://www.railsconf.com'
+            li= link_to 'GoGaRuCo'     , 'http://www.gogaruco.com'
+            li= link_to 'Re:Design'    , 'http://www.redesignconference.com'
+            li= link_to 'Rubyconf'     , 'http://www.rubyconf.org'
+            li= link_to 'Ruby Kaigi'   , 'http://www.rubykaigi.org'
+            li= link_to 'Rails Israel' , 'http://railsisrael2013.events.co.il/speakers-list'
 
     .col-sm-6.col-md-12
-      h2 Stuff we've built
-      ul
-        li= link_to 'Github Profile', 'http://www.github.com/crowdint', onclick: event_link_click('Github Profile')
-        li= link_to 'Retrospectus', 'http://www.retrospectus.com', onclick: event_link_click('Retrospectus')
-        li= link_to 'This blog', 'https://github.com/crowdint/blog.crowdint.com', onclick: event_link_click('Blog code page')
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Stuff we've built
+        .panel-body
+          ul
+            li= link_to 'Github Profile', 'http://www.github.com/crowdint', onclick: event_link_click('Github Profile')
+            li= link_to 'Retrospectus', 'http://www.retrospectus.com', onclick: event_link_click('Retrospectus')
+            li= link_to 'This blog', 'https://github.com/crowdint/blog.crowdint.com', onclick: event_link_click('Blog code page')
 
   - if @history
     .clearfix
     .col-sm-12#earlier
-      h2 Earlier Posts
-      ul
-        = render partial: 'historic_post', collection: @history
-        li
-          b= link_to 'Read More...', main_app.archive_path
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Earlier Posts
+        .panel-body
+          ul
+            = render partial: 'historic_post', collection: @history
+            li
+              b= link_to 'Read More...', main_app.archive_path
   .visible-xs.visible-sm
     .col-xs-12
-      h2 Social
-      ul.footer-links.list-unstyled
-        li
-          = link_to 'Facebook', 'https://www.facebook.com/CrowdInteractive', target: '_blank'
-        li
-          = link_to 'Twitter', 'https://twitter.com/Crowdint', target: '_blank'
-        li
-          = link_to 'Google +', 'https://plus.google.com/100816706068922064575/posts', target: '_blank'
-        li
-          = link_to 'Foursquare', 'https://foursquare.com/crowdint', target: '_blank'
-        li
-          = link_to 'Instagram', 'http://instagram.com/crowdint', target: '_blank'
-        li
-          = link_to 'Pinterest', 'http://pinterest.com/crowdint', target: '_blank'
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Social
+        .panel-body
+          ul.footer-links.list-unstyled
+            li
+              = link_to 'Facebook', 'https://www.facebook.com/CrowdInteractive', target: '_blank'
+            li
+              = link_to 'Twitter', 'https://twitter.com/Crowdint', target: '_blank'
+            li
+              = link_to 'Google +', 'https://plus.google.com/100816706068922064575/posts', target: '_blank'
+            li
+              = link_to 'Foursquare', 'https://foursquare.com/crowdint', target: '_blank'
+            li
+              = link_to 'Instagram', 'http://instagram.com/crowdint', target: '_blank'
+            li
+              = link_to 'Pinterest', 'http://pinterest.com/crowdint', target: '_blank'
   .hidden-xs
     .col-sm-12
-      h2 Subscribe
-      p
-        ul
-          li
-            a href="http://feeds.feedburner.com/CrowdInteractiveTechBlog" rel="alternate" type="application/rss+xml"
-              img src="//feedburner.google.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"
-              a href="http://feeds.feedburner.com/CrowdInteractiveTechBlog" rel="alternate" type="application/rss+xml"
-                |  Feed
+      .panel.panel-default
+        .panel-heading
+          h1.panel-title Subscribe
+        .panel-body
+          p
+            ul
+              li
+                a href="http://feeds.feedburner.com/CrowdInteractiveTechBlog" rel="alternate" type="application/rss+xml"
+                  img src="//feedburner.google.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"
+                  a href="http://feeds.feedburner.com/CrowdInteractiveTechBlog" rel="alternate" type="application/rss+xml"
+                    |  Feed
 
   .col-sm-12
     h2#search-form Search
