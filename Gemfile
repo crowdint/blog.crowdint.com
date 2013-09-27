@@ -44,7 +44,7 @@ group :development, :test do
   gem 'cucumber', '1.1.4'
   gem 'cucumber-ajaxer'
   gem 'cucumber-debug'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rspec-rails'
