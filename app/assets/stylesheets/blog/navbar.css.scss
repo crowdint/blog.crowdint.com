@@ -1,31 +1,53 @@
-/*.navbar-collapse {
-  background-color: red;
+.bottom-tip {
+  background: url(/assets/tip.png) no-repeat center;
+  width: 20px;
+  height: 25px;
+  position: absolute;
+  right: 20px;
 }
-ul.nav {
-  li {
-    background-color: red;
-  }
-} */
 
 .navbar {
   border-width: 0px;
-}
-
-.share {
-  background-color: #EAEAEA;
-  height: 50px;
+  margin-bottom: 0px;
+  height: 84px;
 }
 
 header {
-  background-color: #1D8073;
-  text-align: center;
+  background-color: #008074;
+}
 
-  .share {
-    h2 {
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      background-color: #EAEAEA;
-    }
+#sharing-knowledge {
+  ul {
+    background-color: #EAEAEA;
+
+    li {
+      padding: 0 26px;
+      &:first-child a { border: none }
+
+      a {
+        padding: 10px 46px 10px;
+        border-top: 1px solid #008074;
+        color: #333;
+        &:hover { background-color: #EAEAEA }
+      }
+    } //li
+  } //ul
+
+  &:after {
+    @extend .bottom-tip;
   }
+}
+
+
+//share knowledge links with icons
+.about-us {
+  background: image-url('about_ico.png') no-repeat 10px center;
+}
+
+.earlier-posts {
+  background: image-url('earlier_posts.png') no-repeat 10px center;
+}
+
+.search {
+  background: image-url('search_ico.png') no-repeat 10px center;
 }
