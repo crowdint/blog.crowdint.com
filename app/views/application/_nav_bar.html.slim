@@ -1,18 +1,12 @@
 .navbar.navbar-default
-  = link_to image_tag('2013/header_logo.png', alt: 'Crowd Interactive', height: 50), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
   .navbar-header
-    button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"
-      span class="sr-only"
-      span class="icon-bar"
-      span class="icon-bar"
-      span class="icon-bar"
+    #sk-button.navbar-toggle data= { toggle: 'collapse', target: '#sk-menu' }
+    = link_to image_tag('2013/blog_logo.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
+    #sk-image.visible-lg.visible-md
+      = image_tag('2013/sharingtxt.png', alt: 'Sharing Knowledge')
 
-  .share.pull-right
-    h2 Sharing Knowledge
-  .collapse.navbar-collapse.navbar-ex1-collapse
+  #sk-menu.collapse
     ul.nav.navbar-nav.visible-xs.visible-sm
-      li= link_to 'About', '#about-us'
-      li= link_to 'Earlier Posts', '#earlier'
-      li= link_to 'Search', '#search-form'
-
-  /*= link_to 'About Us', 'http://www.crowdint.com', onclick: event_link_click('About Us')*/
+      li= link_to 'About', '#about-us', class: 'about-us'
+      li= link_to 'Earlier Posts', '#earlier', class: 'earlier-posts'
+      li= link_to 'Search', '#search-form', class: 'search'

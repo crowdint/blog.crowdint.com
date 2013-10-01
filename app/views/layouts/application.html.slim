@@ -26,10 +26,7 @@ html
   body
     .container
       header.row
-        .col-md-9
-          = link_to image_tag('2013/header_logo.png', alt: 'Crowd Interactive', height: 50), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
-        .col-md-3.share.visible-lg.visible-md
-          h2 Sharing Knowledge
+        = render 'nav_bar'
       .row
         .col-md-9
           = yield
