@@ -1,31 +1,85 @@
-/*.navbar-collapse {
-  background-color: red;
+.bottom-tip {
+  content: image-url('2013/tip.png');
+  width: 20px;
+  height: 25px;
+  position: absolute;
+  bottom: -25px;
 }
-ul.nav {
-  li {
-    background-color: red;
-  }
-} */
 
 .navbar {
   border-width: 0px;
+  margin-bottom: 0px;
 }
 
-.share {
-  background-color: #EAEAEA;
-  height: 50px;
+.navbar-header {
+  background: image-url('2013/bg_header.png') no-repeat left;
 }
 
-header {
-  background-color: #1D8073;
-  text-align: center;
+.navbar-default {
+  background-color: #008074;
+  .navbar-collapse { border-color: #EAEAEA }
+}
 
-  .share {
-    h2 {
-      font-size: 16px;
-      font-weight: bold;
-      color: white;
-      background-color: #EAEAEA;
-    }
+// sharing knowledge header elements
+#sk-image {
+  position: absolute;
+  right: 0;
+  &:after {
+    @extend .bottom-tip;
+    right: 50%;
   }
+}
+
+#sk-button {
+  background: image-url('2013/menu_btn_down.png') no-repeat center;
+  border-radius: 0px;
+  border: none;
+  height: 84px;
+  margin: 0;
+  width: 69px;
+
+  &.collapsed {
+    background-image: image-url('2013/menu_btn_up.png');
+  }
+
+  &:hover {
+    background: image-url('2013/menu_btn_down.png');
+    cursor: pointer;
+  }
+}
+
+#sk-menu {
+  ul {
+    background-color: #EAEAEA;
+    margin: 0px;
+
+    li {
+      padding: 0 26px;
+      &:first-child a { border: none }
+
+      a {
+        border-top: 1px solid #008074;
+        color: #333;
+        padding: 10px 46px 10px;
+        &:hover { background-color: #EAEAEA }
+      }
+    } //li
+    &:after {
+      @extend .bottom-tip;
+      right: 20px;
+    }
+  } //ul
+}
+
+//share knowledge menu links with icons
+.about-us {
+  background: image-url('2013/about_ico.png') no-repeat 10px center;
+}
+
+.earlier-posts {
+  background: image-url('2013/earlier_posts.png') no-repeat 10px center;
+}
+
+.search {
+  background: image-url('2013/search_ico.png') no-repeat 10px center;
 }
