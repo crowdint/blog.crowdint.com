@@ -1,6 +1,5 @@
 .posts
   = render @posts, index_view: true
-
 - if Rails.env.production?
   coffee:
     s = document.createElement('script')

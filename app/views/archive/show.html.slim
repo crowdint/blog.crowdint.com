@@ -1,16 +1,16 @@
 .posts
   h1 Archive
 
-  #archive.row
+  #archive
     - @posts.each do |year, posts|
-      .offset1
         h2= year
         - posts.each do |month, posts|
-          .offset1
-            h3= month
-            - posts.each do |post|
-              .span8
-                = link_to post.title, post_path(*post.url_params)
+          .row
+            .col-xs-10.col-sm-offset-1
+              h3= month
+              - posts.each do |post|
+                .row
+                  .col-xs-10.col-sm-offset-1= link_to post.title, post_path(*post.url_params)
 
 - content_for :page_title do
   = " :: Archive"

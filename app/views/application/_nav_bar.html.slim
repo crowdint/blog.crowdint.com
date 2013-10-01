@@ -1,9 +1,12 @@
-.navbar.navbar-fixed-top
-  .navbar-inner
-    .container
-      .row
-        .span9
-          = link_to image_tag('crowdint.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo')
-        .span2
-          ul.nav
-            li= link_to 'About Us', 'http://www.crowdint.com', onclick: event_link_click('About Us')
+.navbar.navbar-default
+  .navbar-header
+    #sk-button.navbar-toggle data= { toggle: 'collapse', target: '#sk-menu' }
+    = link_to image_tag('2013/blog_logo.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
+    #sk-image.visible-lg.visible-md
+      = image_tag('2013/sharingtxt.png', alt: 'Sharing Knowledge')
+
+  #sk-menu.collapse
+    ul.nav.navbar-nav.visible-xs.visible-sm
+      li= link_to 'About', '#about-us', class: 'about-us'
+      li= link_to 'Earlier Posts', '#earlier', class: 'earlier-posts'
+      li= link_to 'Search', '#search-form', class: 'search'
