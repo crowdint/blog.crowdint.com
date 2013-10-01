@@ -1,9 +1,9 @@
 .bottom-tip {
-  background: image-url('2013/tip.png') no-repeat center;
+  content: image-url('2013/tip.png');
   width: 20px;
   height: 25px;
   position: absolute;
-  right: 20px;
+  bottom: -25px;
 }
 
 .navbar {
@@ -24,7 +24,10 @@
 #sk-image {
   position: absolute;
   right: 0;
-  &:before { @extend .bottom-tip }
+  &:after {
+    @extend .bottom-tip;
+    right: 50%;
+  }
 }
 
 #sk-button {
@@ -61,8 +64,11 @@
         &:hover { background-color: #EAEAEA }
       }
     } //li
+    &:after {
+      @extend .bottom-tip;
+      right: 20px;
+    }
   } //ul
-  &:after { @extend .bottom-tip }
 }
 
 //share knowledge menu links with icons

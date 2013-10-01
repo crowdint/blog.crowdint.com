@@ -2,7 +2,8 @@
   .navbar-header
     #sk-button.navbar-toggle data= { toggle: 'collapse', target: '#sk-menu' }
     = link_to image_tag('2013/blog_logo.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
-    = image_tag('2013/sharingtxt.png', alt: 'Sharing Knowledge', class: 'visible-lg visible-md', id: 'sk-image')
+    #sk-image.visible-lg.visible-md
+      = image_tag('2013/sharingtxt.png', alt: 'Sharing Knowledge')
 
   #sk-menu.collapse
     ul.nav.navbar-nav.visible-xs.visible-sm
