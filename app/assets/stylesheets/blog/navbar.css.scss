@@ -1,5 +1,5 @@
 .bottom-tip {
-  background: url(/assets/tip.png) no-repeat center;
+  background: image-url('2013/tip.png') no-repeat center;
   width: 20px;
   height: 25px;
   position: absolute;
@@ -11,23 +11,24 @@
   margin-bottom: 0px;
 }
 
-.navbar-default .navbar-collapse {
-  border-color: #EAEAEA;
+.navbar-header {
+  background: image-url('2013/bg_header.png') no-repeat left;
 }
 
-header {
+.navbar-default {
   background-color: #008074;
+  .navbar-collapse { border-color: #EAEAEA }
 }
-
 
 // sharing knowledge header elements
 #sk-image {
-  right: 0;
   position: absolute;
+  right: 0;
+  &:before { @extend .bottom-tip }
 }
 
 #sk-button {
-  background: image-url('menu_btn_down.png') no-repeat center;
+  background: image-url('2013/menu_btn_down.png') no-repeat center;
   border-radius: 0px;
   border: none;
   height: 84px;
@@ -35,11 +36,11 @@ header {
   width: 69px;
 
   &.collapsed {
-    background-image: image-url('menu_btn_up.png');
+    background-image: image-url('2013/menu_btn_up.png');
   }
 
   &:hover {
-    background: image-url('menu_btn_down.png');
+    background: image-url('2013/menu_btn_down.png');
     cursor: pointer;
   }
 }
@@ -61,19 +62,18 @@ header {
       }
     } //li
   } //ul
-
   &:after { @extend .bottom-tip }
 }
 
 //share knowledge menu links with icons
 .about-us {
-  background: image-url('about_ico.png') no-repeat 10px center;
+  background: image-url('2013/about_ico.png') no-repeat 10px center;
 }
 
 .earlier-posts {
-  background: image-url('earlier_posts.png') no-repeat 10px center;
+  background: image-url('2013/earlier_posts.png') no-repeat 10px center;
 }
 
 .search {
-  background: image-url('search_ico.png') no-repeat 10px center;
+  background: image-url('2013/search_ico.png') no-repeat 10px center;
 }
