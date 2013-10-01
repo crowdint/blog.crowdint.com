@@ -12,6 +12,9 @@
   height: 84px;
 }
 
+.navbar-default .navbar-collapse {
+  border-color: #EAEAEA;
+}
 header {
   background-color: #008074;
 }
@@ -38,6 +41,22 @@ header {
   }
 }
 
+.button-share-knowledge {
+  background: image-url('menu_btn_down.png') no-repeat center;
+  &.collapsed {
+    background-image: image-url('menu_btn_up.png');
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: image-url('menu_btn_down.png');
+  }
+  height: 84px;
+  margin: 0;
+  width: 69px;
+  border: none;
+  border-radius: 0px;
+}
 
 //share knowledge links with icons
 .about-us {

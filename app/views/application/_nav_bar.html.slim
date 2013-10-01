@@ -1,10 +1,6 @@
 .navbar.navbar-default
   .navbar-header
-    button.navbar-toggle data= { toggle: 'collapse', target: '#sharing-knowledge' }
-      span class='sr-only'
-      span class='icon-bar'
-      span class='icon-bar'
-      span class='icon-bar'
+    .navbar-toggle.collapsed.button-share-knowledge data= { toggle: 'collapse', target: '#sharing-knowledge' }
     = link_to image_tag('Crowdint_blog_logo.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
 
   #sharing-knowledge.collapse.navbar-collapse
