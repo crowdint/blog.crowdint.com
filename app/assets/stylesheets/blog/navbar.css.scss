@@ -9,56 +9,63 @@
 .navbar {
   border-width: 0px;
   margin-bottom: 0px;
-  height: 84px;
 }
 
 .navbar-default .navbar-collapse {
   border-color: #EAEAEA;
 }
+
 header {
   background-color: #008074;
 }
 
-#sharing-knowledge {
+
+// sharing knowledge header elements
+#sk-image {
+  right: 0;
+  position: absolute;
+}
+
+#sk-button {
+  background: image-url('menu_btn_down.png') no-repeat center;
+  border-radius: 0px;
+  border: none;
+  height: 84px;
+  margin: 0;
+  width: 69px;
+
+  &.collapsed {
+    background-image: image-url('menu_btn_up.png');
+  }
+
+  &:hover {
+    background: image-url('menu_btn_down.png');
+    cursor: pointer;
+  }
+}
+
+#sk-menu {
   ul {
     background-color: #EAEAEA;
+    margin: 0px;
 
     li {
       padding: 0 26px;
       &:first-child a { border: none }
 
       a {
-        padding: 10px 46px 10px;
         border-top: 1px solid #008074;
         color: #333;
+        padding: 10px 46px 10px;
         &:hover { background-color: #EAEAEA }
       }
     } //li
   } //ul
 
-  &:after {
-    @extend .bottom-tip;
-  }
+  &:after { @extend .bottom-tip }
 }
 
-.button-share-knowledge {
-  background: image-url('menu_btn_down.png') no-repeat center;
-  &.collapsed {
-    background-image: image-url('menu_btn_up.png');
-  }
-
-  &:hover {
-    cursor: pointer;
-    background: image-url('menu_btn_down.png');
-  }
-  height: 84px;
-  margin: 0;
-  width: 69px;
-  border: none;
-  border-radius: 0px;
-}
-
-//share knowledge links with icons
+//share knowledge menu links with icons
 .about-us {
   background: image-url('about_ico.png') no-repeat 10px center;
 }

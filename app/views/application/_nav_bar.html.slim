@@ -1,10 +1,11 @@
 .navbar.navbar-default
   .navbar-header
-    .navbar-toggle.collapsed.button-share-knowledge data= { toggle: 'collapse', target: '#sharing-knowledge' }
+    #sk-button.navbar-toggle data= { toggle: 'collapse', target: '#sk-menu' }
     = link_to image_tag('Crowdint_blog_logo.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
+    = image_tag('sharingtxt.png', alt: 'Sharing Knowledge', class: 'visible-lg visible-md', id: 'sk-image')
 
-  #sharing-knowledge.collapse.navbar-collapse
-    ul.nav.navbar-nav
+  #sk-menu.collapse
+    ul.nav.navbar-nav.visible-xs.visible-sm
       li= link_to 'About', '#about-us', class: 'about-us'
       li= link_to 'Earlier Posts', '#earlier', class: 'earlier-posts'
       li= link_to 'Search', '#search-form', class: 'search'
