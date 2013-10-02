@@ -5,7 +5,7 @@ html
     = yield :meta
     meta property="twitter:account_id" content="1494951575"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    link rel="icon" type="image/png" href="favicon.png"
+    = favicon_link_tag 'favicon.png', type: 'image/png'
 
     - ENV['FB_ADMINS'].split(',').each do |admin|
       meta property="fb:admins" content=admin
