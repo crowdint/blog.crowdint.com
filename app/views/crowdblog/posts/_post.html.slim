@@ -1,7 +1,7 @@
 = cache [index_view, post] do
   .post
     h1= link_to post.title, main_app.post_path(*post.url_params)
-    .well.well-sm.post-well
+    .well.well-sm.post-well class=(index_view ? "hidden-xs" : "")
       .header
         .pull-right.col-md-6
           .image #{image_tag post.gravatar_url, class: 'img-circle pull-right' }
