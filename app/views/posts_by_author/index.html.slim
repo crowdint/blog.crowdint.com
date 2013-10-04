@@ -1,15 +1,20 @@
-.posts
+.page-header.posts#author
   .row
-    .span1
-      = image_tag @author.gravatar_url
-    .span7
-      h2 #{@author.name}
+    .col-xs-3.col-sm-2
+      = image_tag @author.gravatar_url, class: 'img-circle'
+    .col-xs-9.col-sm-10
+      h1 All posts by #{@author.name}
       h3 #{@author.email}
 
-  #archive.row style="margin-top: 20px"
-    - @posts.each do |post|
-      .span2.offset1= post.published_at
-      .span5= link_to post.title, post_path(*post.url_params)
+- @posts.each do |post|
+  .row
+    .col-xs-1
+    .col-xs-11
+      h3= link_to post.title, post_path(*post.url_params)
+  .row
+    .col-xs-1
+    .col-xs-11
+      = post.published_at
 
 - content_for :page_title do
   = " :: #{@author.name}"
