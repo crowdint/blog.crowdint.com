@@ -1,14 +1,18 @@
 .posts
-  h1
-    | Search results for
-    i= " #{@query}"
+  .visible-xs.pull-20
+    = render 'search_form'
+  - if @query
+    h1
+      | Search results for
+      i= " #{@query}"
 
-  #search
-    - unless @posts.empty?
-      - @posts.each do |post|
-        .post
-          h2= link_to post.title, post_url(*post.url_params)
-          .description
-            = post.short_description
-    - else
-      | No result matches your criteria
+    #search
+      - unless @posts.empty?
+        - @posts.each do |post|
+          .post.well.well-sm
+            h2= link_to post.title, post_url(*post.url_params)
+            .description
+             - cache(post) do
+                = post.short_description
+      - else
+        | No result matches your criteria
