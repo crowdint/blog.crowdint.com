@@ -1,6 +1,9 @@
 = cache [index_view, post] do
   .post
     h1= link_to post.title, main_app.post_path(*post.url_params)
+    .visible-xs
+      = post.formatted_published_date
+      hr
     .well.well-sm.post-well class=(index_view ? "hidden-xs" : "")
       .header
         .pull-right.col-md-6
@@ -18,4 +21,3 @@
               = link_to 'Read More...', main_app.post_path(*post.url_params)
         - else
           .social-links.row= render 'crowdblog/posts/social', post: post
-  hr.visible-xs
