@@ -10,11 +10,11 @@
             #{post.author_email}
             #{post.formatted_published_date}
         .clearfix
-      .body #{post.html_body}
+      .body #{(index_view ? post.short_description : post.html_body)}
       .bottom
         - if index_view
           .links
             center
-              = link_to 'Comments', main_app.post_path(*post.url_params) + '#disqus_thread'
+              = link_to 'Read More...', main_app.post_path(*post.url_params)
         - else
           .social-links.row= render 'crowdblog/posts/social', post: post

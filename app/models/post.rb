@@ -1,6 +1,7 @@
 class Post < Crowdblog::Post
   belongs_to :author, :class_name => "User"
   belongs_to :publisher, :class_name => "User"
+  SHORT_DESCRIPTION_SIZE = 500
 
   searchable do
     text :title, :body
@@ -17,8 +18,21 @@ class Post < Crowdblog::Post
     "#{id}-#{permalink}.md"
   end
 
+  #
+  # This is probably not very performant, but should be alleviated
+  # with caching. If it doesn't, it should be a better idea to store it on
+  # the DB after_save.
+  #
   def short_description
-    body.first(300).gsub(/\n/, '') + "..."
+    description = ""
+    paragraphs = body.split("\n")
+    paragraphs.cycle do |p|
+      description << p << "\n"
+      break if description.size > SHORT_DESCRIPTION_SIZE
+    end
+    @@renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+                                           :autolink => true, :space_after_headers => true)
+    @@renderer.render(description).html_safe
   end
 
   def self.query(query)

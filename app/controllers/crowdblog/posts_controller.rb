@@ -1,8 +1,8 @@
 class Crowdblog::PostsController < ApplicationController
 
   def index
-    @posts = Crowdblog::Post.for_index.paginate(:page => params[:page], :per_page => 3)
-    @history = Crowdblog::Post.for_history - @posts
+    @posts = ::Post.for_index.paginate(:page => params[:page], :per_page => 5)
+    @history = ::Post.for_history - @posts
   end
 
   def show
