@@ -4,6 +4,15 @@ h1 {
 }
 
 .post {
+  h1 { font-size: 20pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 14pt; }
+  @media (min-width: 768px) {
+    h1 { font-size: 24pt; }
+    h2 { font-size: 20pt; }
+    h3 { font-size: 18pt; }
+  }
+
   margin-bottom: 60px;
   &:last-child {
     margin-bottom: 0
