@@ -16,7 +16,13 @@
           = link_to 'Drafted', crowdblog.admin_posts_by_state_path('drafted')
 
   #posts.container
-    table.table.table-striped= render :partial => 'post', :collection => @posts
+    table.table.table-striped
+      thead
+        tr
+          th Title
+          th Author
+          th Published at
+      = render :partial => 'post', :collection => @posts
 
   - content_for :scripts do
     javascript:
