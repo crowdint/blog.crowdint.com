@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 ruby '2.0.0'
 
-gem 'crowdblog', '~> 0.3.2'
+gem 'crowdblog', '0.3.2'
 #gem 'crowdblog', :path => '../crowdblog'
 gem 'crowdint_auth', '~> 0.1.0'
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+gem 'bootstrap-sass', '3.0.0.0.rc2' #, github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'dalli'
 gem 'devise', '~> 2.2.4'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
