@@ -1,0 +1,30 @@
+.span12
+  h1 Posts
+
+  .row
+    .span3.new-link
+      = link_to 'New Post', crowdblog.new_admin_post_path, :class => "btn btn-primary btn-small"
+    .span4.offset5
+      ul.nav.nav-pills
+        li class="#{@state ? '' : 'active'}"
+          = link_to 'All', crowdblog.admin_posts_path
+        li class="#{@state == 'finished' ? 'active' : ''}"
+          = link_to 'Finished', main_app.admin_finished_posts_path('finished')
+        li class="#{@state == 'published' ? 'active' : ''}"
+          = link_to 'Published', crowdblog.admin_posts_by_state_path('published')
+        li class="#{@state == 'drafted' ? 'active' : ''}"
+          = link_to 'Drafted', crowdblog.admin_posts_by_state_path('drafted')
+
+  #posts.container
+    table.table.table-striped= render :partial => 'post', :collection => @posts
+
+  - content_for :scripts do
+    javascript:
+        $(function() {
+          return $('tr.post').each(function(index, el) {
+            Crowdblog.adminPostsPath = '#{crowdblog.admin_posts_path}';
+            return new Crowdblog.Views.PostView({
+              el: el
+            });
+          });
+        });

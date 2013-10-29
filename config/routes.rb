@@ -24,7 +24,6 @@ Crowdblog::Application.routes.draw do
 
   match '/atom.(:format)', to: 'feeds/atom_feeds#show', as: 'atom_feed'
 
-  mount Crowdblog::Engine => '/'
 
 
   match 'sitemap.(:format)', to: 'sitemap#show'
@@ -32,4 +31,15 @@ Crowdblog::Application.routes.draw do
 
   root to: "posts#index"
 
+  match 'admin/posts/:state',
+      to: 'crowdblog/admin/posts#index',
+      constraints: { :state => /(finished)/ },
+      via: :get,
+      as: :admin_finished_posts
+
+  mount Crowdblog::Engine => '/'
 end
+
+Crowdblog::Engine.routes.draw do
+end
+
