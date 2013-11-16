@@ -26,7 +26,7 @@ class Post < Crowdblog::Post
   def short_description
     description = ""
     paragraphs = body.split("\n")
-    paragraphs.cycle do |p|
+    paragraphs.each do |p|
       description << p << "\n"
       break if description.size > SHORT_DESCRIPTION_SIZE
     end
