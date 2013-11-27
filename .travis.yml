@@ -3,8 +3,10 @@ rvm:
   - 2.0.0
 before_script:
   - "export DISPLAY=:99.0"
+  - "export SESSION_SECRET='BC56FB924908AF3DC14A32B3FFE8E0D8B6A46D19'"
   - "sh -e /etc/init.d/xvfb start"
   - "cp ./config/travis_database.yml ./config/database.yml"
+  - "mkdir -p tmp/cache"
   - "bundle exec rake db:setup"
   - "bundle exec rake db:test:prepare"
   - "bundle exec rake sunspot:solr:start"

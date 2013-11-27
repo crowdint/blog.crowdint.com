@@ -29,7 +29,7 @@ Crowdblog::Application.routes.draw do
   match 'sitemap.(:format)', to: 'sitemap#show'
   match '/author/:id', to: 'posts_by_author#index', as: 'posts_by_author'
 
-  root to: "posts#index"
+  root to: "crowdblog/posts#index"
 
   match 'admin/posts/:state',
       to: 'crowdblog/admin/posts#index',
