@@ -1,0 +1,19 @@
+<header id='header' class='header-blog'>
+  <div class='l-wrapper header-body'>
+    <%= link_to root_path do %>
+      <h1 class='header-logo'>
+        <span class='is-hidden'>Crowd Interactive</span>
+      </h1>
+    <% end %>
+
+    <ul class='nav header-nav'>
+      <li class='nav-item'><%= link_to 'What we do', 'http://www.crowdint.com/we-do', id: 'we-do-menu', class: 'nav-link header-nav-link' %></li>
+      <li class='nav-item'><%= link_to 'Portfolio', 'http://www.crowdint.com/portfolio', id: 'portfolio-menu', class: 'nav-link header-nav-link' %></li>
+      <li class='nav-item'><%= link_to 'About Us', 'http://www.crowdint.com/about', class: 'nav-link header-nav-link' %></li>
+      <li class='nav-item'><%= link_to 'Team', 'http://www.crowdint.com/team', class: 'nav-link header-nav-link' %></li>
+      <li class='nav-item'><%= link_to 'Contact Us', 'http://www.crowdint.com/contact', id: 'contact-menu', class: "button button-blog header-button" %></li>
+    </ul>
+
+    <div class='header-mobile-menu header-mobile-blog'></div>
+  </div>
+</header>

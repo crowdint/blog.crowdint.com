@@ -12,6 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require_tree .
+//= require social-likes.min
+//= require jquery.stellar
 //= require highlight.pack
+//= require mixpanel
+//= require pages
+//= require mobile-menu
+
+$(document).ready(function() {
+  pages.menu.toggleMobileMenu();
+
+  offset = $('#header').height();
+
+  if(!/^((?!chrome).)*safari/i.test(navigator.userAgent)) {
+    $.stellar({
+       verticalOffset: offset
+    });
+  }
+
+  $('#footer').on('transitionend webkitTransitionEnd otransitionend MSTransitionEnd', function () {
+    $('body').removeClass('is-animating').toggleClass('is-menu-visible');
+    $('#header, #container, #footer').removeClass('is-moved-to-left is-moved-to-right');
+  });
+});
+

@@ -1,4 +1,5 @@
-class User < Crowdblog::User
+class User < ActiveRecord::Base
+  include Crowdblog::User
   include Gravtastic
 
   has_one :user_dropbox_session
@@ -6,9 +7,9 @@ class User < Crowdblog::User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+  #attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
-  gravtastic :gravatar_email
+  gravtastic :gravatar_email, size: 150
 
   def gravatar_email
     gravatar_alias || email
@@ -31,4 +32,4 @@ class User < Crowdblog::User
   end
 end
 
-Crowdblog::User.set_table_name 'users'
+#Crowdblog::User.set_table_name 'users'

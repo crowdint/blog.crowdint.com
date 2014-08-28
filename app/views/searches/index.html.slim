@@ -1,18 +1,22 @@
-.posts
-  .hidden-lg.pull-20
-    = render 'search_form'
+section#share
+  h3.is-not-mobile
+    = 'Your search '
+    br/
+    span.l-normal results
+  h3.is-mobile
+    = 'Your search '
+    span.l-normal results
+
+= render 'application/nav_bar'
+
+section.posts
   - if @query
-    h1
-      | Search results for
+    h4
+      | Your search results for
       i= " #{@query}"
 
     #search
       - unless @posts.empty?
-        - @posts.each do |post|
-          .post.well.well-sm
-            h2= link_to post.title, post_url(*post.url_params)
-            .description
-             - cache(post) do
-                = post.short_description
+        = render partial: 'crowdblog/posts/post', collection: @posts, locals: { index_view: true }
       - else
         | No result matches your criteria

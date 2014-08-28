@@ -1,0 +1,12 @@
+@mixin transition($property, $attrs) {
+  @if $property == 'transform' {
+    -webkit-transition: -webkit-transform $attrs;
+    -moz-transition: -moz-transform $attrs;
+    transition: transform $attrs;
+  } else {
+    -webkit-transition: $property $attrs;
+    -moz-transition: $property $attrs;
+    transition: $property $attrs;
+  }
+
+}

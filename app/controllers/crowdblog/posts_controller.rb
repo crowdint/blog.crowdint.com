@@ -11,7 +11,13 @@ class Crowdblog::PostsController < ApplicationController
       @post = Crowdblog::Post.find(params[:id])
       @post.published_at = Date.today
     end
+
+    # Ugly hack to set meta tags once we get the @post
+    set_meta
+    #######
+
+    @post_by_author = Crowdblog::Post.where(state: 'published').where('id <> ?', @post).where(author_id: @post.author).order('published_at DESC, id DESC').limit(3)
+
     @history = Crowdblog::Post.for_history - [@post]
   end
-
 end

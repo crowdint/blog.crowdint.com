@@ -24,6 +24,6 @@ module SocialHelper
   end
 
   def social_share_title(post)
-    Rack::Utils.escape(post.title)
+    "Crowd Interactive Blog: #{Rack::Utils.escape(post.title)}"
   end
 end

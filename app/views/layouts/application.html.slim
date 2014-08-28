@@ -1,21 +1,25 @@
 doctype html
 html
   head
-    title Crowd Interactive Tech Blog #{yield :page_title}
-    = yield :meta
     meta property="twitter:account_id" content="1494951575"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = display_meta_tags
+
     = favicon_link_tag 'favicon.png', type: 'image/png'
 
     - ENV['FB_ADMINS'].split(',').each do |admin|
       meta property="fb:admins" content=admin
 
     = stylesheet_link_tag "application", :media => "all"
-    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Arvo"
     = auto_discovery_link_tag :rss, 'http://feeds.feedburner.com/CrowdInteractiveTechBlog.rss'
+
+    javascript:
+      var mixpanel_key = '#{ENV["MIXPANEL_KEY"]}';
+
     = javascript_include_tag "application"
     = csrf_meta_tags
-    = render 'google_analytics'
+
+    = analytics_init if Rails.env.production?
 
     coffee:
       $ ->
@@ -24,13 +28,14 @@ html
     = yield :scripts
 
   body
-    .container
-      header.row
-        = render 'nav_bar'
-      .row
-        .col-md-9
-          = yield
-        .col-md-3.hidden-xs.hidden-sm
-          = render 'right_side_bar'
+    = render 'header'
+    = render 'mobile_menu'
 
-      = render 'footer'
+    #empty
+
+    .container
+      = yield
+
+    = render 'footer'
+
+

@@ -1,3 +1,5 @@
+require 'actionpack/action_caching'
+
 class ArchiveController < ApplicationController
   caches_action :show
 

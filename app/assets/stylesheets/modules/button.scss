@@ -1,0 +1,115 @@
+.button {
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+
+  border-radius: 5px;
+}
+
+@mixin button-page($color) {
+  color: #ffffff;
+  background-color: $color;
+
+  &:hover { opacity: 0.5; }
+}
+
+.button-home, .button-portfolio, .button-blog {
+  @include button-page($home-color);
+}
+
+.button-team {
+  @include button-page($team-color);
+}
+
+.button-about {
+  @include button-page($about-color);
+}
+
+.button-contact {
+  @include button-page($contact-color);
+}
+
+.button-we-do {
+  @include button-page($we-do-color);
+}
+
+.button-careers {
+  @include button-page($careers-color);
+
+  @include mq-mobile {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  }
+}
+
+.button-ui_designer {
+  @include button-page($ui-designer-color);
+}
+
+.button-senior_dev {
+  @include button-page($senior-dev-color);
+}
+
+.button-scrum_master {
+  @include button-page($scrum-master-color);
+}
+
+.button-senior_go_engineer {
+  @include button-page($senior-go-engineer-color);
+}
+
+.button-ui_practicas_profesionales {
+  @include button-page($practicas-profesionales-color);
+}
+
+.button-ui_programador_apasionado {
+  @include button-page($programador-apasionado-color);
+}
+
+.button-close {
+  background: url(/assets/btn-close.png) 0 0 no-repeat;
+  height: 30px;
+  width: 30px;
+}
+
+.button-continue {
+  background: white;
+  color: $contact-color;
+}
+
+.button-upload {
+  background: $gray;
+  color: white;
+  display: inline-block;
+  padding-top: 0.7em;
+  position: relative;
+
+  @include mq-mobile {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: 80%;
+  }
+}
+
+.button-upload input {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @include mq-mobile {
+    width: 100%;
+  }
+
+}
+
+.button-submit {
+  opacity: 1;
+  transition: all 0.5s !important;
+}

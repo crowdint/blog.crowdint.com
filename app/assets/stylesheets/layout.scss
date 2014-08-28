@@ -1,0 +1,62 @@
+#header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 2;
+  background-color: #ffffff;
+
+  @include mq-mobile() { height: 70px; }
+}
+
+#empty {
+  height: 100px;
+
+  @include mq-mobile() { height: 70px; }
+}
+
+#mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 270px;
+  margin: 0;
+  height: 100%;
+
+  background-color: #999999;
+}
+
+#container {
+  overflow: hidden;
+  position: relative;
+
+  background-color: white;
+
+  > section {
+    position: relative;
+  }
+}
+
+#footer {
+  background-image: image_url('footer_graphic.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  height: 440px;
+
+  @include mq-tablet('portrait') { height: 400px; }
+  @include mq-mobile() { height: 280px; background-position-y: -21px; position: relative; }
+}
+
+.l-wrapper {
+  margin: 0 auto;
+  width: 1024px;
+
+  @include mq('1040px') { width: 100%; }
+}
+
+.l-normal { font-weight: 400; }

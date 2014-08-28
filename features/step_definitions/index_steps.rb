@@ -16,7 +16,6 @@ When /^I go to the index page$/ do
 end
 
 When /^I go to the "([^"]*)" posts page$/ do |author_name|
-  puts User.all
   author = User.where(:name => author_name).first
   visit posts_by_author_path(author)
 end

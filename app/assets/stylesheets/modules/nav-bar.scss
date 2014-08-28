@@ -1,0 +1,27 @@
+.navbar {
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: right;
+
+  a {
+    color: $blog-color;
+    text-decoration: none;
+  }
+
+  div {
+    display: inline-block;
+
+    &:first-child {
+      margin-right: 1em;
+    }
+  }
+
+  .btn-default {
+    padding:4px 15px;
+    border:2px solid $blog-color;
+    background-color: $blog-color;
+    color: white;
+    border-radius: 3px;
+  }
+}

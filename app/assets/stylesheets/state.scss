@@ -1,0 +1,93 @@
+.is-hidden { display: none; }
+.is-mobile {
+  display: none;
+
+  @include mq-mobile() { display: block; }
+}
+
+.is-tablet {
+  display: none;
+
+  @include mq-tablet('portrait') { display: block; }
+}
+
+.is-not-mobile {
+  display: block;
+
+  @include mq-mobile() { display: none; }
+}
+
+// Animation states for showing/hiding the mobile menu
+.is-animating {
+  #mobile-menu { display: block; }
+
+  #header, #container, #footer {
+    transition: transform .50s ease-in-out;
+    -webkit-transition: -webkit-transform .50s ease-in-out;
+  }
+}
+
+.is-menu-visible {
+  #mobile-menu { display: block; }
+
+  #header, #container, #footer { left: -270px }
+}
+
+.is-visible {
+  display: block !important;
+}
+
+.is-not-active {
+  .member-opacity, .member-socials { @extend .is-hidden }
+}
+
+.is-active-member {
+  .member-opacity, .member-socials { @extend .is-visible }
+
+  .member-circle {
+    box-shadow: 0 0 0 0.125em $team-color;
+  }
+}
+
+.is-vacancy-active {
+  background-color: white;
+  border: solid 1px #eaeaea;
+  transition: none;
+
+  .vacancy-see-details {
+
+    .bar-icon {
+      background-color: #D04B20;
+
+      &:first-of-type {
+        @include transform(rotate(45deg) translate3d(5px, 4px, 0));
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-of-type {
+        @include transform(rotate(-45deg) translate3d(5px, -4px, 0));
+      }
+    }
+  }
+
+  .vacancy-close {
+    display: block;
+  }
+
+}
+
+.is-moved-to-left { transform: translate3d( -270px, 0, 0 ); -webkit-transform: translate3d( -270px, 0, 0 ); }
+.is-moved-to-right { transform: translate3d( 270px, 0, 0 ); -webkit-transform: translate3d( 270px, 0, 0 ); }
+
+.is-maximized {
+  @include transform(scale(1));
+
+  opacity: 1;
+}
+
+.is-faded {
+  opacity: 0;
+}

@@ -1,0 +1,87 @@
+.header-body {
+  padding: 17px 50px 17px 60px;
+  position: relative;
+  width: 914px;
+
+  @include mq('1040px') {
+    box-sizing: border-box;
+    padding: 17px 30px;
+    max-width: 914px;
+    width: 100%;
+  }
+}
+
+.header-logo {
+  height: 66px;
+  width: 156px;
+
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+
+  background: image_url('crowdint-logo.png') 0 0 no-repeat;
+
+  @include mq-mobile() {
+    width: 120px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -60px;
+    margin-top: -25px;
+
+    background: image_url('header.png') -120px 0px no-repeat;
+  }
+}
+
+.header-nav {
+  display: inline-block;
+  position: absolute;
+  right: 3.125em;
+  top: 50%;
+  margin-top: -0.625em;
+
+  @include mq('1040px') {
+    right: 0;
+  }
+
+  @include mq-mobile() { display: none; }
+}
+
+.header-nav-link {
+  color: rgb(155,155,155);
+}
+
+.header-button {
+  padding: 0.6em 1.95em;
+}
+
+.header-mobile-menu {
+  display: none;
+  width: 30px;
+  height: 28px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -14px;
+
+  background: $home-color image_url('header.png') -240px -11px no-repeat;
+
+  @include mq-mobile() {
+    display: block;
+    top: 100%;
+  }
+}
+
+.header-mobile-contact { background-color: $contact-color; }
+.header-mobile-team { background-color: $team-color; }
+.header-mobile-about { background-color: $about-color; }
+.header-mobile-we-do { background-color: $we-do-color; }
+.header-mobile-careers { background-color: $careers-color; }
+
+.header-home, .header-portfolio, .header-blog { border-bottom: solid 1px $home-color; }
+.header-team { border-bottom: solid 1px $team-color; }
+.header-about { border-bottom: solid 1px $about-color; }
+.header-we-do { border-bottom: solid 1px $we-do-color; }
+.header-contact { border-bottom: solid 1px $contact-color; }
+.header-careers { border-bottom: solid 1px $careers-color; }

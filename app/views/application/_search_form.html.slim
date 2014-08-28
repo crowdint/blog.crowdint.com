@@ -1,5 +1,4 @@
 = form_tag main_app.search_path, method: :get, id: :search_form, class: 'form-search' do
   .input-group
     = search_field_tag :q, nil, class: 'form-control', value: @query
-    span.input-group-btn
-      button.btn.btn-default Search
+    button.btn.btn-default Search

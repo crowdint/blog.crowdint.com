@@ -1,49 +1,37 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+ruby '2.1.1'
+gem 'rails', '4.1.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-ruby '2.0.0'
-
-gem 'crowdblog', '0.3.3'
+gem 'actionpack-action_caching'
+gem 'coffee-rails'
+gem 'crowdblog', '0.5.0'
 #gem 'crowdblog', :path => '../crowdblog'
 gem 'crowdint_auth', '~> 0.1.0'
-gem 'bootstrap-sass', '3.0.0.0.rc2' #, github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'dalli'
-gem 'devise', '~> 2.2.4'
+gem 'devise', '~> 3.3.0'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
 gem 'fog'
+gem 'foreman'
+gem 'google-analytics-rails'
 gem 'gravtastic'
-gem 'memcachier'
-gem 'newrelic_rpm'
-gem 'quiet_assets'
-gem 'sunspot_rails'
-gem 'unicorn'
-gem 'yui-compressor'
-gem 'will_paginate-bootstrap'
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'less-rails-bootstrap', '~> 2.1.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
-end
-
 gem 'jquery-rails'
+gem 'memcachier'
+gem 'meta-tags', :require => 'meta_tags'
+gem 'nokogiri', '= 1.6.3'
+gem 'rails-observers'
+gem 'puma'
+gem 'quiet_assets'
+gem 'sass-rails'
+gem 'sunspot_rails'
+gem 'uglifier'
+gem 'unicorn'
+gem 'will_paginate'
 
 group :development, :test do
-  gem 'capistrano'
-  gem 'capistrano-unicorn'
-  gem 'capistrano-rbenv'
+  gem 'better_errors'
   gem 'capybara-webkit'
-  gem 'cucumber', '1.1.4'
+  gem 'cucumber'
   gem 'cucumber-ajaxer'
   gem 'cucumber-debug'
   gem 'cucumber-rails', require: false
@@ -54,8 +42,12 @@ group :development, :test do
   gem 'sunspot_solr'
   gem 'sqlite3'
   gem 'taps'
+  gem 'pry-rails'
 end
 
 group :production do
+  gem 'asset_sync'
+  gem 'newrelic_rpm'
   gem 'pg'
+  gem 'rails_12factor'
 end

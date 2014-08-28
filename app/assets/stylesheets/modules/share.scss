@@ -1,0 +1,239 @@
+#share {
+  background-color: white;
+  padding-top: 2.5em;
+  width: 100%;
+
+  @include mq-tablet('portrait') { height: auto; }
+  @include mq-mobile { height: auto; }
+}
+
+.posts {
+  text-align: left;
+  max-width: 960px;
+  margin: 0 auto;
+
+  @include mq-tablet() {
+    max-width: 768px;
+
+    pre {
+      code {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @include mq-mobile() {
+    max-width: 640px;
+
+    pre {
+      code {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.post {
+  h1 {
+    font-size: 2.5em;
+    font-weight: 100;
+    line-height: 1.4em;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $blog-color;
+    text-decoration: none;
+  }
+
+  h3 {
+    text-align: left;
+    font-size: 1.7em;
+    margin: 1em 0;
+  }
+
+  h4 {
+    font-size: 1.4em;
+    font-weight: 100;
+  }
+
+  hr {
+    border-top: solid 1px $blog-color;
+    margin: 3em auto;
+    height: 0;
+    width: 80%;
+  }
+
+  .author {
+    margin-top: 0;
+    font-size: 0.8em;
+
+    a {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    span {
+      margin-left: 0.5em;
+      font-size: 1.2em;
+      color: lighten($gray, 30%);
+    }
+  }
+
+  .gravatar {
+    webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    //padding: 10px;
+    //border: solid 1px $blog-color;
+  }
+
+  ul {
+    list-style-type: circle;
+    padding-left: 2em;
+  }
+
+  .short {
+    h1, h2, h3 {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+  .more {
+    text-align: right;
+    display: block;
+  }
+
+  p {
+    line-height: 1.5em;
+    font-size: 1.1em;
+  }
+}
+
+.post-footer {
+  .author-box {
+    min-height: 12em;
+    vertical-align: middle;
+    text-align: center;
+    width: 50%;
+    display: inline-block;
+
+    @include mq-mobile() {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  .details {
+    text-align: left;
+
+    @include mq-mobile() {
+      text-align: center;
+      margin-top: 2.5em;
+    }
+  }
+
+  .author {
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 1em auto;
+  }
+
+  .more-posts {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #9b9b9b;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.3em;
+    line-height: 1.8em;
+
+    a {
+      color: $gray;
+    }
+  }
+
+  li {
+    margin-bottom: 1em;
+
+    span {
+      display: block;
+      font-size: 0.7em;
+      line-height: 0.8em;
+    }
+  }
+
+  .all-posts {
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+
+  .social-links {
+    margin: 2em auto;
+  }
+}
+
+.archive {
+  h1 {
+    font-size: 2em;
+    margin-top: 0.5em;
+  }
+
+  h3 {
+    text-align: left;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+}
+
+.share-box {
+  height: 18.125em;
+  width: 17.5em;
+
+  &:not(:first-of-type) { margin-left: 2.5em; }
+
+  @include mq-tablet('portrait') {
+    margin-bottom: 3.75em;
+
+    &:last-of-type { margin: 3.75em 0; }
+  }
+
+  @include mq-mobile() {
+    margin: 1.25em 0 3.438em 0;
+
+    &:not(:first-of-type) { margin-left: 0; }
+    &:last-of-type { margin: 20px 0 3.6em; }
+  }
+}
+
+.share-box-pages {
+  @extend .share-box;
+  height: 13.125em;
+  margin-bottom: 5em;
+}
+
+.share-box-ecommerce {
+  @extend .share-box;
+  height: 15em;
+  margin-bottom: 5em;
+}
+
+.share-box-partners {
+  @extend .share-box;
+  height: 16em;
+  margin-bottom: 3.3em;
+}
+
+.share-box-body {
+  margin-left: -7.5em;
+  top: 4.438em;
+  width: 15em;
+}

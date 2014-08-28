@@ -1,7 +1,10 @@
-.posts
+= render 'application/we_share'
+= render 'application/nav_bar'
+
+section.posts
   = render @posts, index_view: true
 
-  .centered= will_paginate @posts, renderer: BootstrapPagination::Rails, bootstrap: 3, page_links: false
+  .centered= will_paginate @posts, page_links: false
 - if Rails.env.production?
   coffee:
     s = document.createElement('script')
