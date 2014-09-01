@@ -10,6 +10,8 @@ module Crowdblog
   class Application < Rails::Application
     config.middleware.insert_before ActionDispatch::Static, Rack::Deflater
 
+    config.autoload_paths << Rails.root.join('lib')
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

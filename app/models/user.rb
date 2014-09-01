@@ -4,11 +4,6 @@ class User < ActiveRecord::Base
 
   has_one :user_dropbox_session
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
-
-  #attr_accessible :email, :password, :password_confirmation, :remember_me, :name
-
   gravtastic :gravatar_email, size: 150
 
   def gravatar_email
@@ -30,6 +25,10 @@ class User < ActiveRecord::Base
   def is_publisher?
     self.is_publisher
   end
-end
 
-#Crowdblog::User.set_table_name 'users'
+  class << self
+    def find_identity(uid, provider, email)
+      where(uid: uid, provider: provider).first || where(email: email).first
+    end
+  end
+end

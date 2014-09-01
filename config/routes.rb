@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
+  get '/sessions/destroy' => 'sessions#destroy', as: :destroy_user_session
+  get 'auth/:provider/callback' => 'sessions#create', as: :log_in
+
   get 'search/(:q)', to: 'searches#index', as: 'search'
   get 'about', to: 'about#show'
-
-  devise_for :users, controllers: { omniauth_callbacks: 'crowdint_auth/omniauth_callbacks' }
-
-  devise_scope :user do
-    get 'google_apps_sign_in', to: 'crowdint_auth/omniauth_callbacks#google_apps_sign_in'
-  end
 
   namespace :admin do
     resource :dropbox_authorization

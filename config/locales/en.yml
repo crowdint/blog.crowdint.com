@@ -1,4 +1,13 @@
 en:
+  sessions:
+    new:
+      log_in: 'Log in'
+    create:
+      unauthorized_domain: 'Sorry but your domain is not authorized'
+      logged_in: 'Welcome back!'
+    destroy:
+      logged_out: 'See you later!'
+
   seo:
     title: 'Crowd Interactive Blog | Leading eCommerce consultancy firm'
     description: 'We share what we know as code in our Github repository or as post in our blog | Crowd Interactive'

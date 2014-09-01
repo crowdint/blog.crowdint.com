@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140501164642) do
+ActiveRecord::Schema.define(version: 20140901214255) do
 
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"
     t.string   "attachment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "crowdblog_posts", force: true do |t|
@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20140501164642) do
     t.text     "body"
     t.string   "permalink"
     t.date     "published_at"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "author_id"
     t.string   "state"
     t.integer  "publisher_id"
@@ -39,31 +39,23 @@ ActiveRecord::Schema.define(version: 20140501164642) do
     t.integer  "user_id"
     t.integer  "post_id"
     t.string   "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "state_changes", force: true do |t|
-    t.integer  "post_id"
-    t.integer  "user_id"
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "user_dropbox_sessions", force: true do |t|
     t.integer  "user_id"
     t.text     "dropbox_session"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "delta_cursor"
   end
 
   create_table "users", force: true do |t|
     t.string   "name"
     t.boolean  "is_publisher"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "email",                default: "", null: false
     t.string   "encrypted_password",   default: "", null: false
     t.datetime "remember_created_at"
@@ -74,6 +66,8 @@ ActiveRecord::Schema.define(version: 20140501164642) do
     t.string   "last_sign_in_ip"
     t.string   "authentication_token"
     t.string   "gravatar_alias"
+    t.string   "uid"
+    t.string   "provider"
   end
 
   add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", unique: true
@@ -89,8 +83,8 @@ ActiveRecord::Schema.define(version: 20140501164642) do
     t.integer  "number"
     t.integer  "reverted_from"
     t.string   "tag"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "versions", ["created_at"], name: "index_versions_on_created_at"

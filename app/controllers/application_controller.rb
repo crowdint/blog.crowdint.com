@@ -13,7 +13,25 @@ class ApplicationController < ActionController::Base
     main_app.root_url
   end
 
+  def user_signed_in?
+    warden.authenticated?(:user)
+  end
+
+  def current_user
+    warden.user(scope: :user)
+  end
+
+  def authenticate_user!
+    redirect_to '/auth/google_oauth2' unless user_signed_in?
+  end
+
+  helper_method :user_signed_in?, :current_user
+
   private
+  def warden
+    request.env['warden']
+  end
+
   def set_meta
     title = @post ? t('seo.post.title', title: @post.title) : t("seo.#{controller_name}.title", default: :'seo.title')
     description = @post ? strip_tags(truncate(@post.html_body.html_safe, escape: false, length: 130)) : t("seo.#{controller_name}.description", default: :'seo.description')

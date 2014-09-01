@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.1.2'
 gem 'rails', '4.1.5'
 
 gem 'actionpack-action_caching'
 gem 'coffee-rails'
 gem 'crowdblog', '0.5.0'
 #gem 'crowdblog', :path => '../crowdblog'
-gem 'crowdint_auth', '~> 0.1.0'
+#gem 'crowdint_auth', '~> 0.1.0'
 gem 'dalli'
-gem 'devise', '~> 3.3.0'
+#gem 'devise', '~> 3.3.0'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
 gem 'fog'
 gem 'foreman'
@@ -19,14 +19,17 @@ gem 'jquery-rails'
 gem 'memcachier'
 gem 'meta-tags', :require => 'meta_tags'
 gem 'nokogiri', '= 1.6.3'
-gem 'rails-observers', git: 'https://github.com/rails/rails-observers.git'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
 gem 'puma'
 gem 'quiet_assets'
 gem 'rack-timeout'
+gem 'rails-observers', git: 'https://github.com/rails/rails-observers.git'
 gem 'sass-rails'
 gem 'sunspot_rails'
 gem 'uglifier'
 gem 'unicorn'
+gem 'warden'
 gem 'will_paginate'
 
 group :development, :test do
@@ -38,6 +41,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'mac_generators'
   gem 'rspec-rails'
   gem 'spork'
   gem 'sunspot_solr'
@@ -52,3 +56,4 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
