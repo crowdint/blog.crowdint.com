@@ -2,7 +2,7 @@
   - if controller_name == 'posts'
     div
       = link_to 'Earlier Posts', main_app.archive_path
-  - elsif controller_name == 'archive' || controller_name == 'searches'
+  - elsif controller_name == 'archive' || controller_name == 'searches' || controller_name = 'posts_by_author'
     div
       = link_to 'Current Posts', main_app.root_path
   div

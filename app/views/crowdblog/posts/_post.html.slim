@@ -9,7 +9,7 @@
       = (index_view ? post.short_description : post.html_body)
       = link_to 'Read more ...', main_app.post_path(*post.url_params), class: 'more' if index_view
 
-    = unless index_view
+    - unless index_view
       section.post-footer
         .social-links.row= render 'crowdblog/posts/social', post: post
         hr

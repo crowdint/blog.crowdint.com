@@ -12,6 +12,16 @@
   max-width: 960px;
   margin: 0 auto;
 
+  .pagination {
+    margin-top: 2em;
+    text-align: center;
+
+    a {
+      color: $blog-color;
+      text-decoration: none;
+    }
+  }
+
   @include mq-tablet() {
     max-width: 768px;
 
@@ -64,6 +74,12 @@
     width: 80%;
   }
 
+  p {
+    img {
+      width: 100%;
+    }
+  }
+
   .author {
     margin-top: 0;
     font-size: 0.8em;
@@ -78,16 +94,6 @@
       font-size: 1.2em;
       color: lighten($gray, 30%);
     }
-  }
-
-  .gravatar {
-    webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-    //padding: 10px;
-    //border: solid 1px $blog-color;
   }
 
   ul {
@@ -188,52 +194,33 @@
 
   h3 {
     text-align: left;
-    margin-bottom: 1em;
+    margin: 1em;
     font-size: 1.5em;
     font-weight: 400;
   }
 }
 
-.share-box {
-  height: 18.125em;
-  width: 17.5em;
-
-  &:not(:first-of-type) { margin-left: 2.5em; }
-
-  @include mq-tablet('portrait') {
-    margin-bottom: 3.75em;
-
-    &:last-of-type { margin: 3.75em 0; }
-  }
-
-  @include mq-mobile() {
-    margin: 1.25em 0 3.438em 0;
-
-    &:not(:first-of-type) { margin-left: 0; }
-    &:last-of-type { margin: 20px 0 3.6em; }
+.author-posts {
+  p {
+    margin: 0 1em 0 0;
   }
 }
 
-.share-box-pages {
-  @extend .share-box;
-  height: 13.125em;
-  margin-bottom: 5em;
+.author-header {
+  margin-top: 2em;
+  text-align: center;
+
+  h1 {
+    font-weight: 100;
+  }
 }
 
-.share-box-ecommerce {
-  @extend .share-box;
-  height: 15em;
-  margin-bottom: 5em;
-}
-
-.share-box-partners {
-  @extend .share-box;
-  height: 16em;
-  margin-bottom: 3.3em;
-}
-
-.share-box-body {
-  margin-left: -7.5em;
-  top: 4.438em;
-  width: 15em;
+.gravatar {
+  webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  //padding: 10px;
+  //border: solid 1px $blog-color;
 }
