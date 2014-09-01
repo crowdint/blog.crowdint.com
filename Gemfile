@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '2.1.1'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.5'
 
 gem 'actionpack-action_caching'
 gem 'coffee-rails'
@@ -22,6 +22,7 @@ gem 'nokogiri', '= 1.6.3'
 gem 'rails-observers', git: 'https://github.com/rails/rails-observers.git'
 gem 'puma'
 gem 'quiet_assets'
+gem 'rack-timeout'
 gem 'sass-rails'
 gem 'sunspot_rails'
 gem 'uglifier'
