@@ -1,0 +1,36 @@
+.nav {
+  margin: 0;
+}
+
+.nav-item {
+  float: left;
+
+  &:not(:first-child) { margin-left: 1.2em; }
+
+  &:last-child {
+    margin-left: 1.9em;
+
+    @include mq-tablet('portrait') {
+      margin: 0 1.9em;
+    }
+  }
+
+  @include mq-tablet {
+    padding: 0 0.5em;
+  }
+
+  @include mq('630px') {
+    padding: 0;
+  }
+}
+
+.nav-link {
+  font-size: 1.125em;
+  text-decoration: none;
+
+  &:hover { border-bottom: 1px dotted; }
+
+  @include mq-tablet('portrait') {
+    font-size: 0.9em;
+  }
+}

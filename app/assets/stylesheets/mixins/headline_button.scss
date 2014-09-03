@@ -1,0 +1,16 @@
+@mixin headline-button($color) {
+  background: $color;
+  color: $white;
+
+  &:hover {
+    background: $white;
+    color: $color;
+    transition: all 0.5s ease;
+
+    @include mq-tablet('portrait') {
+      background: none;
+      color: $white;
+      transition: none;
+    }
+  }
+}

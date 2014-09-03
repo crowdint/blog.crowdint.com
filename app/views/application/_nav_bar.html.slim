@@ -1,17 +1,9 @@
-.navbar.navbar-default
-  .navbar-header
-    button.navbar-toggle data-target="#sk-menu" data-toggle="collapse" type="button"
-      span.sr-only Toggle navigation
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-
-    = link_to image_tag('2013/blog_logo.png', alt: 'Crowd Interactive'), root_path, onclick: event_link_click('Logo'), class: 'navbar-brand'
-    #sk-image.visible-lg.visible-md
-      = image_tag('2013/sharingtxt.png', alt: 'Sharing Knowledge')
-
-  #sk-menu.collapse
-    ul.nav.navbar-nav.visible-xs.visible-sm
-      li= link_to 'About', main_app.about_path, class: 'about-us'
-      li= link_to 'Earlier Posts', main_app.archive_path, class: 'earlier-posts'
-      li= link_to 'Search', main_app.search_path, class: 'search'
+.navbar
+  - if controller_name == 'posts'
+    div
+      = link_to 'Earlier Posts', main_app.archive_path
+  - elsif controller_name == 'archive' || controller_name == 'searches' || controller_name == 'posts_by_author'
+    div
+      = link_to 'Current Posts', main_app.root_path
+  div
+    = render 'search_form'

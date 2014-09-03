@@ -20,10 +20,10 @@ module SocialHelper
   end
 
   def social_share_url(post)
-    Rack::Utils.escape(main_app.post_url(*post.url_params))
+    main_app.post_url(*post.url_params)
   end
 
   def social_share_title(post)
-    Rack::Utils.escape(post.title)
+    "Crowd Interactive Blog:: #{post.title}"
   end
 end

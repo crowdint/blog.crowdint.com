@@ -1,0 +1,29 @@
+.social-icons {}
+
+.social-icon {
+  display: inline-block;
+  padding: 3px;
+
+  border: 2px solid transparent;
+  border-radius: 20px;
+
+  &:not(:first-of-type) { margin-left: 1em; }
+  &:hover {
+    border-color: white;
+    transition: all 0.5s ease;
+    > .social-icon-link { opacity: 1; }
+  }
+}
+
+.social-icon-link {
+  display: block;
+  height: 30px;
+  opacity: 0.5;
+  width: 30px;
+}
+
+.social-icon-twitter { background: image_url('footer.png') 0px 0px no-repeat; }
+.social-icon-facebook { background: image_url('footer.png') -30px 0px no-repeat; }
+.social-icon-gplus { width: 31px; background: image_url('footer.png') -61px 0px no-repeat; }
+.social-icon-github { width: 30px; background: image_url('footer.png') -92px 0px no-repeat; }
+.social-icon-linkedin { width: 32px; background: image_url('footer.png') -123px 0px no-repeat; }

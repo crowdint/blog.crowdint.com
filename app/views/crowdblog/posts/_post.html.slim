@@ -1,23 +1,28 @@
 = cache [index_view, post] do
-  .post
+  article.post
     h1= link_to post.title, main_app.post_path(*post.url_params)
-    .visible-xs
-      = post.formatted_published_date
-      hr
-    .well.well-sm.post-well class=(index_view ? "hidden-xs" : "")
-      .header
-        .pull-right.col-md-6
-          .image #{image_tag post.gravatar_url, class: 'img-circle pull-right' }
-          .author #{link_to post.author_name, main_app.posts_by_author_path(post.author.to_param)}
-          .email
-            #{post.author_email}
-            #{post.formatted_published_date}
-        .clearfix
-      .body #{(index_view ? post.short_description : post.html_body)}
-      .bottom
-        - if index_view
-          .links
-            center
-              = link_to 'Read More...', main_app.post_path(*post.url_params)
-        - else
-          .social-links.row= render 'crowdblog/posts/social', post: post
+    p.author
+      = link_to post.author_name, main_app.posts_by_author_path(post.author.to_param)
+      span
+        = post.formatted_published_date
+    .body class=(index_view ? 'short' :  '')
+      = (index_view ? post.short_description : post.html_body)
+      = link_to 'Read more ...', main_app.post_path(*post.url_params), class: 'more' if index_view
+
+    - unless index_view
+      section.post-footer
+        .social-links.row= render 'crowdblog/posts/social', post: post
+        hr
+        .author-box
+          .image #{image_tag post.gravatar_url, class: 'gravatar' }
+          p.author=post.author_name
+        .author-box.details
+          p.more-posts More posts from #{post.author_name}
+          ul
+            - @post_by_author.each do |author_post|
+              li
+                = link_to author_post.title, main_app.post_path(*author_post.url_params)
+                span= post.formatted_published_date
+          p.all-posts
+            = link_to "All posts by #{post.author_name}", main_app.posts_by_author_path(post.author.to_param)
+        hr

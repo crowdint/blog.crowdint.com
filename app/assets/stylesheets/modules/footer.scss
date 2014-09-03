@@ -1,0 +1,66 @@
+.footer-about { background-color: $about-color; }
+.footer-careers { background-color: $careers-color; }
+.footer-contact { background-color: $contact-color; }
+.footer-home, .footer-portfolio, .footer-blog { background-color: $home-color; }
+.footer-team { background-color: $team-color; }
+.footer-we-do { background-color: $we-do-color; }
+
+.footer-blog {
+  margin-top: 3em;
+}
+
+.footer-body {
+  height: 374px;
+  padding-top: 4.125em;
+
+  @include mq-tablet('portrait') { height: auto; }
+  @include mq-mobile() { padding-top: 1.125em;  height: auto; }
+}
+
+.footer-title {
+  font-weight: 300;
+  margin-bottom: 3.7em;
+
+  @include mq-tablet('portrait') { margin-bottom: 1.7em; }
+  @include mq-mobile() { font-size: 1.625em; line-height: 1.2em; margin-bottom: 1.7em; }
+}
+
+.footer-nav {
+  margin: 0 auto;
+  display: table;
+
+  text-align: center;
+
+  @include mq-mobile() { display: none; }
+}
+
+.footer-nav-item {
+  &:not(:first-of-type) { margin-left: 2em; }
+}
+
+.footer-nav-link {
+  font-size: 1.25em;
+
+  color: white;
+}
+
+.footer-social-icons {
+  margin: 1.8em auto 0.2em;
+  display: table;
+
+  @include mq-tablet('portrait') { margin-bottom: 1.2em; }
+}
+
+.footer-social-icon {
+  @include mq-mobile() {
+    &:not(:first-of-type) { margin-left: 0.5em; }
+  }
+}
+
+.footer-ci {
+  margin: 0;
+  font-size: 0.875em;
+  text-align: center;
+
+  @include mq-mobile() { font-size: 0.875em; }
+}

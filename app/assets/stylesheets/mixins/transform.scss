@@ -1,0 +1,15 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+@mixin transform-origin($offsets) {
+  -webkit-transform-origin: $offsets;
+  -moz-transform-origin: $offsets;
+  -ms-transform-origin: $offsets;
+  -o-transform-origin: $offsets;
+  transform-origin: $offsets;
+}

@@ -4,7 +4,7 @@ class UserDropboxSession < ActiveRecord::Base
 
   belongs_to :user
 
-  attr_accessible :dropbox_session, :user_id
+  #attr_accessible :dropbox_session, :user_id
 
   serialize :dropbox_session
 

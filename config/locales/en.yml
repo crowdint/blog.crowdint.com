@@ -1,5 +1,17 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  sessions:
+    new:
+      log_in: 'Log in'
+    create:
+      unauthorized_domain: 'Sorry but your domain is not authorized'
+      logged_in: 'Welcome back!'
+    destroy:
+      logged_out: 'See you later!'
+
+  seo:
+    title: 'Crowd Interactive Blog | Leading eCommerce consultancy firm'
+    description: 'We share what we know as code in our Github repository or as post in our blog | Crowd Interactive'
+    tags: 'crowd interactive, ecommerce, spree, rails, ruby, user experience, innovation, shop, engineers, designers, blog'
+
+    post:
+      title: 'Crowd Interactive Blog | %{title}'

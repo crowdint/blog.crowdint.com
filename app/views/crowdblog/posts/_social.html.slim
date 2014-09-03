@@ -1,8 +1,4 @@
-.col-xs-6.col-sm-2.social-link.col-sm-offset-2
-  = facebook_share(post)
-.col-xs-6.col-sm-2.social-link
-  = twitter_share(post)
-.col-xs-6.col-sm-2.social-link
-  = gplus_share(post)
-.col-xs-6.col-sm-2.social-link
-  = linkedin_share(post)
+.social-likes{data-title=social_share_title(post) data-url=social_share_url(post)}
+  .facebook title="Share link on Facebook" Facebook
+  .twitter data-via="crowdint" title="Share link on Twitter" Twitter
+  .plusone title="Share link on Google+" Google+

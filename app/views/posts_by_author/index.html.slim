@@ -1,20 +1,26 @@
-.page-header.posts#author
-  .row
-    .col-xs-3.col-sm-2
-      = image_tag @author.gravatar_url, class: 'img-circle'
-    .col-xs-9.col-sm-10
-      h1 All posts by #{@author.name}
-      h3 #{@author.email}
+section#share
+  h3.is-not-mobile
+    = 'We like '
+    br/
+    span.l-normal to blog
+  h3.is-mobile
+    = 'We like '
+    span.l-normal to blog
 
-- @posts.each do |post|
-  .row
-    .col-xs-1
-    .col-xs-11
-      h3= link_to post.title, post_path(*post.url_params)
-  .row
-    .col-xs-1
-    .col-xs-11
-      = post.published_at
+= render 'application/nav_bar'
+
+section.posts.author-posts
+
+  .author-header
+    = image_tag @author.gravatar_url, class: 'gravatar'
+    h1 All posts by #{@author.name}
+
+  - @posts.each do |post|
+      article.post
+        h1= link_to post.title, post_path(*post.url_params)
+        p
+          = 'Published on '
+          = post.published_at
 
 - content_for :page_title do
   = " :: #{@author.name}"

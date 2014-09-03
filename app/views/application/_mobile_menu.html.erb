@@ -1,0 +1,20 @@
+<div id="mobile-menu">
+  <div class="mobile-menu-header"><span class="mobile-menu-logo"></span></div>
+
+  <ul class="mobile-menu-nav">
+    <li class="mobile-menu-item"><%= link_to 'What We Do', 'http://www.crowdint.com/we-do', class: 'mobile-menu-item-link' %></li>
+    <li class="mobile-menu-item"><%= link_to 'Portfolio', 'http://www.crowdint.com/portfolio', class: 'mobile-menu-item-link', id: 'portfolio-menu-mobile' %></li>
+    <li class="mobile-menu-item"><%= link_to 'About Us', 'http://www.crowdint.com/about', class: 'mobile-menu-item-link' %></li>
+    <li class="mobile-menu-item"><%= link_to 'Team', 'http://www.crowdint.com/team', class: 'mobile-menu-item-link' %></li>
+    <li class="mobile-menu-item"><%= link_to 'Contact Us', 'http://www.crowdint.com/contact', id: 'contact-menu-mobile', class: 'mobile-menu-item-link' %></li>
+  </ul>
+
+  <ul class="social-icons mobile-menu-social-icons">
+    <% %w(twitter facebook gplus github linkedin).each do |social| %>
+      <%= content_tag(:li, class: 'social-icon mobile-menu-social-icon') do
+        link_to '', send("#{social}_link"), class: "social-icon-link social-icon-#{social}", target: '_blank'
+      end %>
+    <% end %>
+  </ul>
+</div>
+

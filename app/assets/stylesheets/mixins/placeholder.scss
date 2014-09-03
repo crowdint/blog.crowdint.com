@@ -1,0 +1,17 @@
+@mixin placeholder {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    @content;
+  }
+
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    @content;
+  }
+
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    @content;
+  }
+}

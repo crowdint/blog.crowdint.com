@@ -1,16 +1,21 @@
-.posts
-  h1 Archive
+section#share
+  h3.is-not-mobile
+    = 'Our '
+    br/
+    span.l-normal archive
+  h3.is-mobile
+    = 'Our '
+    span.l-normal archive
 
-  #archive
-    - @posts.each do |year, posts|
-        h2= year
-        - posts.each do |month, posts|
-          .row
-            .col-xs-10.col-sm-offset-1
-              h3= month
-              - posts.each do |post|
-                .row
-                  .col-xs-10.col-sm-offset-1= link_to post.title, post_path(*post.url_params)
+= render 'application/nav_bar'
+
+section.posts.archive
+  - @posts.each do |year, posts|
+      - posts.each do |month, posts|
+        h3 #{month} / #{year}
+        - posts.each do |post|
+          article.post
+            h1= link_to post.title, post_path(*post.url_params)
 
 - content_for :page_title do
   = " :: Archive"

@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.3em;
+
+  color: $gray;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+section {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 2.4em;
+
+  text-align: center;
+  font-size: 2.25em;
+  font-weight: 100;
+  line-height: 1em;
+
+  @include mq-mobile() {
+    margin-bottom: 2.222em;
+
+    font-size: 1.688em;
+  }
+}
