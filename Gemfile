@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.0.0'
 gem 'rails', '4.1.5'
 
 gem 'actionpack-action_caching'
@@ -18,7 +18,7 @@ gem 'gravtastic'
 gem 'jquery-rails'
 gem 'memcachier'
 gem 'meta-tags', :require => 'meta_tags'
-gem 'nokogiri', '= 1.6.3'
+gem 'nokogiri', '= 1.6.3.1'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'puma'
