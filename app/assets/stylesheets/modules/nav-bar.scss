@@ -15,6 +15,11 @@
     &:first-child {
       margin-right: 1em;
     }
+
+    @include mq-tablet() {
+      &:first-child { margin-right: 5px; }
+      &:last-child { margin-right: 5px; }
+    }
   }
 
   .btn-default {
