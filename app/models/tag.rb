@@ -1,1 +1,1 @@
-class Tag < ActiveRecord::Base ; end 
+class Tag < ActiveRecord::Base ; end
