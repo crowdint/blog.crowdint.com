@@ -18,6 +18,10 @@ class Post < Crowdblog::Post
     "#{id}-#{permalink}.md"
   end
 
+  def formatted_published_date
+    published_at.strftime('%b %d, %Y')
+  end
+
   #
   # This is probably not very performant, but should be alleviated
   # with caching. If it doesn't, it should be a better idea to store it on
