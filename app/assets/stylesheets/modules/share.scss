@@ -42,7 +42,58 @@
     }
   }
 }
+.tags {
+  float: left;
+  height: auto;
+  margin-left: 10%;
+  width: 20%;
 
+  .title {
+    color: $gray-medium-lighter;
+    font-size: 16px;
+    font-family: 'Roboto Light';
+  }
+  .tag {
+    color: $gray-medium-light;
+    font-size: 20px;
+    font-family: 'Roboto Regular';
+  }
+  .tags-desktop {
+    display: block;
+
+    @include mq-mobile() {
+      display: none !important;
+    }
+  }
+  .tags-mobile {
+    background-color: $home-color;
+    display: none;
+    height: 3em;
+
+    @include mq-mobile() {
+      display: block !important;
+    }
+  }
+  .tags-select {
+    background-color: $home-color;
+    border: none;
+    color: $white;
+    font-size: 20px;
+    font-family: 'Roboto Light';
+    margin: 0.5em auto;
+    text-decoration:underline;
+  }
+
+  @include mq-mobile() {
+    background-color: $home-color;
+    display: block;
+    float: none;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+}
 .post {
   h1 {
     font-size: 2.5em;

@@ -1,6 +1,12 @@
 = render 'application/we_share'
 = render 'application/nav_bar'
 
+.tags
+  .tags-desktop
+    h1.title We talk about
+    =render @tags, index_view: true
+  .tags-mobile
+    = select_tag :tag, options_from_collection_for_select(@tags, 'id', 'name'), prompt: 'We talk about', class: 'tags-select'
 section.posts
   = render @posts, index_view: true
 

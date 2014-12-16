@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140901214255) do
+ActiveRecord::Schema.define(version: 20141216001044) do
 
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(version: 20140901214255) do
     t.integer  "user_id"
     t.integer  "post_id"
     t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts_tags", id: false, force: true do |t|
+    t.integer "tag_id",  null: false
+    t.integer "post_id", null: false
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
