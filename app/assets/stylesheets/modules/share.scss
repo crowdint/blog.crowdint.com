@@ -44,11 +44,17 @@
 }
 
 .post {
+  padding: 50px;
+  border-bottom: 5px solid #198176;
+
   h1 {
-    font-size: 2.5em;
-    font-weight: 100;
-    line-height: 1.4em;
-    margin-bottom: 0;
+    border-bottom: 1px solid #AAAAAA;
+    padding-bottom: 20px;
+    a {
+      color: #444444;
+      font-family: 'Roboto';
+      font-size: 1.3383em;
+    }
   }
 
   a {
@@ -80,21 +86,72 @@
     }
   }
 
-  .author {
-    margin-top: 0;
-    font-size: 0.8em;
+  .author-info {
+    color: $blog-color;
 
-    a {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
+    .separator { margin: 0px 15px; }
 
-    span {
-      margin-left: 0.5em;
-      font-size: 1.2em;
-      color: lighten($gray, 30%);
+    img {
+      margin: 0px 10px -15px 0;
+      border: 2px solid #AAAAAA;
+      padding: 3px;
+      width: 30px;
+      height:30px;
     }
   }
+
+  .social-likes {
+    text-align: center;
+
+    .social-likes__widget_twitter {
+      background: image_url('social/socialmedia-sprite.png') -8px -40px no-repeat;
+      cursor: pointer;
+      display: inline-block;
+      height: 25px;
+      margin: 0 10px;
+      width: 25px;
+      &:hover {
+        background: image_url('social/socialmedia-sprite.png') -8px -5px no-repeat;
+      }
+    }
+
+    .social-likes__widget_facebook {
+      background: image_url('social/socialmedia-sprite.png') -42px -40px no-repeat;
+      cursor: pointer;
+      display: inline-block;
+      height: 25px;
+      margin: 0 10px;
+      width: 25px;
+      &:hover {
+        background: image_url('social/socialmedia-sprite.png') -42px -5px no-repeat;
+      }
+    }
+
+    .social-likes__widget_plusone {
+      background: image_url('social/socialmedia-sprite.png') -75px -40px no-repeat;
+      cursor: pointer;
+      display: inline-block;
+      height: 25px;
+      margin: 0 10px;
+      width: 25px;
+      &:hover {
+        background: image_url('social/socialmedia-sprite.png') -75px -5px no-repeat;
+      }
+    }
+
+    .linkedin {
+      background: image_url('social/socialmedia-sprite.png') -108px -40px no-repeat;
+      cursor: pointer;
+      display: inline-block;
+      height: 25px;
+      margin: 0 10px;
+      width: 25px;
+      &:hover {
+        background: image_url('social/socialmedia-sprite.png') -108px -5px no-repeat;
+      }
+    }
+  }
+
 
   ul {
     list-style-type: circle;
@@ -109,8 +166,13 @@
   }
 
   .more {
-    text-align: right;
+    color: #AAAAAA;
     display: block;
+    font-family: 'Roboto';
+    font-size: 1.3333em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
   }
 
   p {
