@@ -40,6 +40,7 @@ group :development, :test do
   gem 'cucumber-debug'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'launchy'
   gem 'mac_generators'
   gem 'rspec-rails'
