@@ -23,7 +23,9 @@ public/asset
 
 *.sql
 log/sunspot-solr-development.log.lck
+log/sunspot-solr-test.log.lck
 /solr
+.ruby-gemset
 
 .env
 *.swp
