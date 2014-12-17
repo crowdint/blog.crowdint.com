@@ -1,3 +1,9 @@
+.categories
+  .categories-desktop
+    h1.title We talk about
+    = render partial: 'crowdblog/categories/category_details', :collection => @categories, :as => :category
+  .categories-mobile
+    = select_tag :category, options_from_collection_for_select(@categories, 'id', 'name'), prompt: 'We talk about', class: 'categories-select'
 .posts
   = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
   #disqus_thread

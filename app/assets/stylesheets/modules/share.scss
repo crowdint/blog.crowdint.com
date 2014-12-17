@@ -56,9 +56,10 @@
   float: left;
   height: auto;
   margin-left: 5%;
-  margin-top: 2%;
-  width: 18%;
+  margin-top: 3%;
+  width: 10%;
 
+  a { text-decoration: none; }
   .title {
     color: $gray-medium-lighter;
     font-size: 16px;
@@ -68,6 +69,11 @@
     color: $gray-medium-light;
     font-size: 20px;
     font-family: 'Roboto Regular';
+
+  }
+  .g-category {
+    @extend .category;
+    color: $home-color;
   }
   .categories-desktop {
     display: block;

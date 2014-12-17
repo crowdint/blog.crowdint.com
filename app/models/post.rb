@@ -1,6 +1,8 @@
 class Post < Crowdblog::Post
   belongs_to :author, :class_name => "User"
   belongs_to :publisher, :class_name => "User"
+  belongs_to :category
+
   SHORT_DESCRIPTION_SIZE = 300
 
   searchable do
