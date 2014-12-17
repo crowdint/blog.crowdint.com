@@ -105,51 +105,39 @@
     text-align: center;
 
     .social-likes__widget_twitter {
-      background: image_url('social/socialmedia-sprite.png') -8px -40px no-repeat;
+      background: image_url('social/socialmedia_ico_sprite.svg') 0px -40px no-repeat;
       cursor: pointer;
       display: inline-block;
-      height: 25px;
+      height: 30px;
       margin: 0 10px;
-      width: 25px;
-      &:hover {
-        background: image_url('social/socialmedia-sprite.png') -8px -5px no-repeat;
-      }
+      width: 30px;
     }
 
     .social-likes__widget_facebook {
-      background: image_url('social/socialmedia-sprite.png') -42px -40px no-repeat;
+      background: image_url('social/socialmedia_ico_sprite.svg') -40px -40px no-repeat;
       cursor: pointer;
       display: inline-block;
-      height: 25px;
+      height: 30px;
       margin: 0 10px;
-      width: 25px;
-      &:hover {
-        background: image_url('social/socialmedia-sprite.png') -42px -5px no-repeat;
-      }
+      width: 30px;
     }
 
     .social-likes__widget_plusone {
-      background: image_url('social/socialmedia-sprite.png') -75px -40px no-repeat;
+      background: image_url('social/socialmedia_ico_sprite.svg') -80px -40px no-repeat;
       cursor: pointer;
       display: inline-block;
-      height: 25px;
+      height: 30px;
       margin: 0 10px;
-      width: 25px;
-      &:hover {
-        background: image_url('social/socialmedia-sprite.png') -75px -5px no-repeat;
-      }
+      width: 30px;
     }
 
     .linkedin {
-      background: image_url('social/socialmedia-sprite.png') -108px -40px no-repeat;
+      background: image_url('social/socialmedia_ico_sprite.svg') -120px -40px no-repeat;
       cursor: pointer;
       display: inline-block;
-      height: 25px;
+      height: 30px;
       margin: 0 10px;
-      width: 25px;
-      &:hover {
-        background: image_url('social/socialmedia-sprite.png') -108px -5px no-repeat;
-      }
+      width: 30px;
     }
   }
 
