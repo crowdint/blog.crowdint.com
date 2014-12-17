@@ -1,3 +1,12 @@
+@mixin social-media($x) {
+  background: image_url('social/socialmedia_ico_sprite.svg') $x -40px no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  width: 30px;
+}
+
 #share {
   background-color: white;
   padding-top: 2.5em;
@@ -97,11 +106,17 @@
 
 }
 .post {
+  padding: 50px;
+  border-bottom: 5px solid $gainsboro;
+
   h1 {
-    font-size: 2.5em;
-    font-weight: 100;
-    line-height: 1.4em;
-    margin-bottom: 0;
+    border-bottom: 1px solid $darkgray;
+    padding-bottom: 20px;
+    a {
+      color: $darkslategray;
+      font-family: 'Roboto';
+      font-size: 1.3383em;
+    }
   }
 
   a {
@@ -133,21 +148,40 @@
     }
   }
 
-  .author {
-    margin-top: 0;
-    font-size: 0.8em;
+  .author-info {
+    color: $blog-color;
 
-    a {
-      font-weight: bold;
-      font-size: 1.2em;
-    }
+    .separator { margin: 0px 15px; }
 
-    span {
-      margin-left: 0.5em;
-      font-size: 1.2em;
-      color: lighten($gray, 30%);
+    img {
+      margin: 0px 10px -15px 0;
+      border: 2px solid #AAAAAA;
+      padding: 3px;
+      width: 30px;
+      height:30px;
     }
   }
+
+  .social-likes {
+    text-align: center;
+
+    .social-likes__widget_twitter {
+      @include social-media(0px);
+    }
+
+    .social-likes__widget_facebook {
+      @include social-media(-40px);
+    }
+
+    .social-likes__widget_plusone {
+      @include social-media(-80px);
+    }
+
+    .linkedin {
+      @include social-media(-120px);
+    }
+  }
+
 
   ul {
     list-style-type: circle;
@@ -162,8 +196,13 @@
   }
 
   .more {
-    text-align: right;
+    color: $darkgray;
     display: block;
+    font-family: 'Roboto';
+    font-size: 1.3333em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
   }
 
   p {
