@@ -1,3 +1,12 @@
+@mixin social-media($x) {
+  background: image_url('social/socialmedia_ico_sprite.svg') $x -40px no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  width: 30px;
+}
+
 #share {
   background-color: white;
   padding-top: 2.5em;
@@ -46,13 +55,13 @@
 
 .post {
   padding: 50px;
-  border-bottom: 5px solid #198176;
+  border-bottom: 5px solid $gainsboro;
 
   h1 {
-    border-bottom: 1px solid #AAAAAA;
+    border-bottom: 1px solid $darkgray;
     padding-bottom: 20px;
     a {
-      color: #444444;
+      color: $darkslategray;
       font-family: 'Roboto';
       font-size: 1.3383em;
     }
@@ -105,39 +114,19 @@
     text-align: center;
 
     .social-likes__widget_twitter {
-      background: image_url('social/socialmedia_ico_sprite.svg') 0px -40px no-repeat;
-      cursor: pointer;
-      display: inline-block;
-      height: 30px;
-      margin: 0 10px;
-      width: 30px;
+      @include social-media(0px);
     }
 
     .social-likes__widget_facebook {
-      background: image_url('social/socialmedia_ico_sprite.svg') -40px -40px no-repeat;
-      cursor: pointer;
-      display: inline-block;
-      height: 30px;
-      margin: 0 10px;
-      width: 30px;
+      @include social-media(-40px);
     }
 
     .social-likes__widget_plusone {
-      background: image_url('social/socialmedia_ico_sprite.svg') -80px -40px no-repeat;
-      cursor: pointer;
-      display: inline-block;
-      height: 30px;
-      margin: 0 10px;
-      width: 30px;
+      @include social-media(-80px);
     }
 
     .linkedin {
-      background: image_url('social/socialmedia_ico_sprite.svg') -120px -40px no-repeat;
-      cursor: pointer;
-      display: inline-block;
-      height: 30px;
-      margin: 0 10px;
-      width: 30px;
+      @include social-media(-120px);
     }
   }
 
@@ -155,7 +144,7 @@
   }
 
   .more {
-    color: #AAAAAA;
+    color: $darkgray;
     display: block;
     font-family: 'Roboto';
     font-size: 1.3333em;
