@@ -51,6 +51,10 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :test do
+  gem 'shoulda-matchers', require: false
+end
+
 group :production do
   gem 'asset_sync'
   gem 'newrelic_rpm'

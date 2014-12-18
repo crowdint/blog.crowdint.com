@@ -6,4 +6,7 @@ describe Post do
   describe '#formatted_published_date' do
     it { expect(post.formatted_published_date).to eq('Dec 15, 2014') }
   end
+  describe 'relationships' do
+    it { expect(post).to belongs_to(:category) }
+  end
 end

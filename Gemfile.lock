@@ -269,6 +269,8 @@ GEM
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
     sequel (3.20.0)
+    shoulda-matchers (2.7.0)
+      activesupport (>= 3.0.0)
     sinatra (1.0)
       rack (>= 1.0)
     slim (2.0.3)
@@ -366,6 +368,7 @@ DEPENDENCIES
   rails_12factor
   rspec-rails
   sass-rails
+  shoulda-matchers
   spork
   sqlite3
   sunspot_rails
