@@ -108,14 +108,15 @@
 .post {
   padding: 50px;
   border-bottom: 5px solid $gainsboro;
+  margin-bottom: 50px;
 
   h1 {
     border-bottom: 1px solid $darkgray;
     padding-bottom: 20px;
     a {
+      @include roboto(1.3383em, bold);
       color: $darkslategray;
-      font-family: 'Roboto';
-      font-size: 1.3383em;
+      line-height: 1.5em;
     }
   }
 
@@ -196,11 +197,9 @@
   }
 
   .more {
+    @include roboto(1.3333em, bold);
     color: $darkgray;
     display: block;
-    font-family: 'Roboto';
-    font-size: 1.3333em;
-    font-weight: bold;
     text-align: center;
     margin-bottom: 40px;
   }
