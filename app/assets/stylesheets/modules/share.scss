@@ -10,14 +10,46 @@
 #share {
   background: #007466 image_url('team-bg.png') center -100px no-repeat;
   color: white;
-  height: 550px;
-  padding-top: 2.5em;
+  padding: 2.5em 0;
   width: 100%;
 
   @include mq-mobile() {
-    height: 280px;
     background-position-y: -21px;
     position: relative;
+  }
+
+  .post {
+    border: none;
+    color: white;
+    margin: 0 auto;
+    max-width: 860px;
+    position: relative;
+    padding: 0 50px;
+    text-align: left;
+
+    @include mq-tablet() { max-width: 668px; }
+
+    a, span {
+      color: white;
+    }
+
+    .social-likes {
+      .social-likes__widget_twitter {
+        @include social-media(0px, -80px);
+      }
+
+      .social-likes__widget_facebook {
+        @include social-media(-40px, -80px);
+      }
+
+      .social-likes__widget_plusone {
+        @include social-media(-80px, -80px);
+      }
+
+      .linkedin {
+        @include social-media(-120px, -80px);
+      }
+    }
   }
 }
 
@@ -27,7 +59,6 @@
   font-size: 60px;
   line-height: 1.8em;
 
-  @include mq-tablet('portrait') { margin-bottom: 1.7em; }
   @include mq-mobile() { font-size: 1.625em; line-height: 1.2em; margin-bottom: 1.7em; }
 }
 
@@ -67,38 +98,6 @@
     }
   }
 }
-
-.home.posts .post:first-child {
-  border: none;
-  bottom: 478px;
-  color: white;
-  height: 378px;
-  margin-bottom: -478px;
-  position: relative;
-
-  a, span {
-    color: white;
-  }
-
-  .social-likes {
-    .social-likes__widget_twitter {
-      @include social-media(0px, -80px);
-    }
-
-    .social-likes__widget_facebook {
-      @include social-media(-40px, -80px);
-    }
-
-    .social-likes__widget_plusone {
-      @include social-media(-80px, -80px);
-    }
-
-    .linkedin {
-      @include social-media(-120px, -80px);
-    }
-  }
-}
-
 
 .categories {
   float: left;
