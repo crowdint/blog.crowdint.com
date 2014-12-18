@@ -17,9 +17,9 @@
 }
 
 .posts {
-  text-align: left;
-  max-width: 960px;
   margin: 0 auto;
+  max-width: 960px;
+  text-align: left;
 
   .pagination {
     margin-top: 2em;
@@ -89,8 +89,8 @@
     background-color: $home-color;
     border: none;
     color: $white;
-    font-size: 20px;
     font-family: 'Roboto Light';
+    font-size: 20px;
     margin: 0.5em auto;
     text-decoration:underline;
   }
@@ -106,9 +106,9 @@
 }
 
 .post {
-  padding: 50px;
   border-bottom: 5px solid $gainsboro;
   margin-bottom: 50px;
+  padding: 50px;
 
   h1 {
     border-bottom: 1px solid $darkgray;
@@ -126,9 +126,9 @@
   }
 
   h3 {
-    text-align: left;
     font-size: 1.7em;
     margin: 1em 0;
+    text-align: left;
   }
 
   h4 {
@@ -138,8 +138,8 @@
 
   hr {
     border-top: solid 1px $blog-color;
-    margin: 3em auto;
     height: 0;
+    margin: 3em auto;
     width: 80%;
   }
 
@@ -155,11 +155,11 @@
     .separator { margin: 0px 15px; }
 
     img {
-      margin: 0px 10px -15px 0;
       border: 2px solid #EEEEEE;
+      height:30px;
+      margin: 0px 10px -15px 0;
       padding: 3px;
       width: 30px;
-      height:30px;
     }
   }
 
@@ -200,13 +200,13 @@
     @include roboto(1.3333em, bold);
     color: $darkgray;
     display: block;
-    text-align: center;
     margin-bottom: 40px;
+    text-align: center;
   }
 
   p {
-    line-height: 1.5em;
     font-size: 1.1em;
+    line-height: 1.5em;
   }
 }
 
@@ -218,11 +218,11 @@
     text-align: left;
 
     .gravatar {
-      margin: 0px 10px -15px 0;
       border: 2px solid #EEEEEE;
+      height:30px;
+      margin: 0px 10px -15px 0;
       padding: 3px;
       width: 30px;
-      height:30px;
     }
   }
 
@@ -234,15 +234,15 @@
       @include roboto(1.3em, bold);
       text-indent: -5px;
       a {
-        text-decoration: none;
         color: $darkslategray;
+        text-decoration: none;
       }
     }
 
     li:before {
       content: '-';
-      position: relative;
       left: -5px;
+      position: relative;
     }
   }
 }
@@ -254,10 +254,10 @@
   }
 
   h3 {
-    text-align: left;
-    margin: 1em;
     font-size: 1.5em;
     font-weight: 400;
+    margin: 1em;
+    text-align: left;
   }
 }
 
