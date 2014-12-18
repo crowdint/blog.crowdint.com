@@ -7,7 +7,7 @@
     =render @categories, index_view: true
   .categories-mobile
     = select_tag :category, options_from_collection_for_select(@categories, 'id', 'name'), prompt: 'We talk about', class: 'categories-select'
-section.posts
+section.home.posts
   = render @posts, index_view: true
 
   = will_paginate @posts, page_links: false
