@@ -19,19 +19,12 @@
       .social-links.row
         = render 'crowdblog/posts/social', post: post
 
-    - unless index_view
-      section.post-footer
-        hr
-        .author-box
-          .image #{image_tag post.gravatar_url, class: 'gravatar' }
-          p.author=post.author_name
-        .author-box.details
-          p.more-posts More posts from #{post.author_name}
-          ul
-            - @post_by_author.each do |author_post|
-              li
-                = link_to author_post.title, main_app.post_path(*author_post.url_params)
-                span= post.formatted_published_date
-          p.all-posts
-            = link_to "All posts by #{post.author_name}", main_app.posts_by_author_path(post.author.to_param)
-        hr
+  - unless index_view
+    section.post-footer
+      p.author-box
+        = image_tag post.gravatar_url, class: 'gravatar'
+        | All posts from&nbsp;
+        strong= post.author_name
+      ul
+        - @post_by_author.each do |post|
+          li= link_to post.title, main_app.post_path(*post.url_params)
