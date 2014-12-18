@@ -2,7 +2,7 @@ class Crowdblog::PostsController < ApplicationController
   before_action :get_categories, only: [:index, :show]
   def index
     @recent_post = ::Post.first
-    @posts = ::Post.order('id desc').offset(1).for_index.paginate(:page => params[:page], :per_page => 5)
+    @posts = ::Post.for_index.paginate(:page => params[:page], :per_page => 5).where.not(id: @recent_post)
     @history = ::Post.for_history - @posts
   end
 
