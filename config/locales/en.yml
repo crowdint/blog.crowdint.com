@@ -15,3 +15,6 @@ en:
 
     post:
       title: 'Crowd Interactive Blog | %{title}'
+  will_paginate:
+    previous_label: '&lt; Previous'
+    next_label: 'Next &gt;'
