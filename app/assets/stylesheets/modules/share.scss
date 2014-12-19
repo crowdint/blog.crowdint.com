@@ -1,5 +1,5 @@
-@mixin social-media($x) {
-  background: image_url('social/socialmedia_ico_sprite.svg') $x -40px no-repeat;
+@mixin social-media($x, $y: -40px) {
+  background: image_url('social/socialmedia_ico_sprite.svg') $x $y no-repeat;
   cursor: pointer;
   display: inline-block;
   height: 30px;
@@ -8,12 +8,58 @@
 }
 
 #share {
-  background-color: white;
-  padding-top: 2.5em;
+  background: #007466 image_url('team-bg.png') center -100px no-repeat;
+  color: white;
+  padding: 2.5em 0;
   width: 100%;
 
-  @include mq-tablet('portrait') { height: auto; }
-  @include mq-mobile { height: auto; }
+  @include mq-mobile() {
+    background-position-y: -21px;
+    position: relative;
+  }
+
+  .post {
+    border: none;
+    color: white;
+    margin: 0 auto;
+    max-width: 860px;
+    position: relative;
+    padding: 0 50px;
+    text-align: left;
+
+    @include mq-tablet() { max-width: 668px; }
+
+    a, span {
+      color: white;
+    }
+
+    .social-likes {
+      .social-likes__widget_twitter {
+        @include social-media(0px, -80px);
+      }
+
+      .social-likes__widget_facebook {
+        @include social-media(-40px, -80px);
+      }
+
+      .social-likes__widget_plusone {
+        @include social-media(-80px, -80px);
+      }
+
+      .linkedin {
+        @include social-media(-120px, -80px);
+      }
+    }
+  }
+}
+
+.share-title {
+  font-weight: bold;
+  margin-bottom: 0;
+  font-size: 60px;
+  line-height: 1.8em;
+
+  @include mq-mobile() { font-size: 1.625em; line-height: 1.2em; margin-bottom: 1.7em; }
 }
 
 .posts {
@@ -75,6 +121,7 @@
     }
   }
 }
+
 .categories {
   float: left;
   height: auto;
