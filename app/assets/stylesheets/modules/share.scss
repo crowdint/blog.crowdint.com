@@ -148,21 +148,21 @@
   .categories-desktop {
     display: block;
 
-    @include mq-mobile() {
+    @include mq-tablet() {
       display: none !important;
     }
   }
   .categories-mobile {
-    background-color: $home-color;
     display: none;
     height: 3em;
 
-    @include mq-mobile() {
-      display: block !important;
+    @include mq-tablet() {
+      background-color: $home-color;
+      display: block;
     }
   }
   .categories-select {
-    background-color: $home-color;
+    background-color: transparent;
     border: none;
     color: $white;
     font-family: 'Roboto Light';
@@ -171,8 +171,7 @@
     text-decoration:underline;
   }
 
-  @include mq-mobile() {
-    background-color: $home-color;
+  @include mq-tablet() {
     display: block;
     float: none;
     margin: 0;
