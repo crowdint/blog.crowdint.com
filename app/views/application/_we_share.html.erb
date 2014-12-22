@@ -1,5 +1,7 @@
 <section id="share">
   <h3 class="share-title is-not-mobile">We share what we know</h3>
   <h3 class="share-title is-mobile">We share<span class="l-normal"> what we know</span></h3>
-  <%= render partial: 'post', locals: { post: @recent_post, index_view: true } %>
+  <div class="recent-post is-not-mobile">
+    <%= render partial: 'post', locals: { post: @recent_post, index_view: true } %>
+  </div>
 </section>

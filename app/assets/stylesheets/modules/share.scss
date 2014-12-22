@@ -28,7 +28,6 @@
     text-align: left;
 
     @include mq-tablet() { max-width: 668px; }
-
     a, span {
       color: white;
     }
@@ -227,8 +226,8 @@
 
   .author-info {
     color: $blog-color;
-
-    .separator { margin: 0px 15px; }
+    display: inline-block;
+    margin: 0;
 
     img {
       border: 2px solid #EEEEEE;
@@ -237,6 +236,11 @@
       padding: 3px;
       width: 30px;
     }
+  }
+
+  .separator {
+    display: inline-block;
+    margin: 0px 15px;
   }
 
   .social-likes {
@@ -284,6 +288,8 @@
     font-size: 1.1em;
     line-height: 1.5em;
   }
+
+  @include mq-mobile() { padding: 5px; }
 }
 
 .post-footer {
