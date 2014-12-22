@@ -15,15 +15,15 @@
 @import "highlight/sunburst";
 
 // Modules
+@import "modules/button";
+@import "modules/footer";
 @import "modules/header";
+@import "modules/menu-header";
 @import "modules/mobile-menu";
 @import "modules/nav";
 @import "modules/nav-bar";
-@import "modules/button";
-@import "modules/footer";
-@import "modules/social-icon";
-
 @import "modules/share";
+@import "modules/social-icon";
 
 // State file
 @import "state";

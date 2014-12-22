@@ -305,6 +305,7 @@
   ul {
     text-align: left;
     margin-top: 50px;
+    line-height: 35px;
 
     li {
       @include roboto(1.3em, bold);
