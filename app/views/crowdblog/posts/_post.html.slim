@@ -23,8 +23,9 @@
     section.post-footer
       p.author-box
         = image_tag post.gravatar_url, class: 'gravatar'
-        | All posts from&nbsp;
-        strong= post.author_name
+        span
+          | All posts from&nbsp;
+          strong= post.author_name
       ul
         - @post_by_author.each do |post|
           li= link_to post.title, main_app.post_path(*post.url_params)
