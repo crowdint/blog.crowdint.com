@@ -27,7 +27,9 @@
     padding: 0 50px;
     text-align: left;
 
-    @include mq-tablet() { max-width: 668px; }
+    @include mq-tablet() {
+      max-width: 668px;
+    }
 
     a, span {
       color: white;
@@ -66,6 +68,7 @@
   margin: 0 auto;
   max-width: 960px;
   text-align: left;
+  width: 70%;
 
   .pagination {
     color: $blog-color;
@@ -103,6 +106,7 @@
   @include mq-tablet() {
     max-width: 768px;
     padding: 0 20px;
+    width: 95%;
 
     pre {
       code {
@@ -113,70 +117,14 @@
 
   @include mq-mobile() {
     max-width: 640px;
+    padding: 0;
+    width: 100%;
 
     pre {
       code {
         font-size: 1em;
       }
     }
-  }
-}
-
-.categories {
-  float: left;
-  height: auto;
-  margin-left: 5%;
-  margin-top: 3%;
-  width: 10%;
-
-  a { text-decoration: none; }
-  .title {
-    color: $gray-medium-lighter;
-    font-size: 16px;
-    font-family: 'Roboto Light';
-  }
-  .category {
-    color: $gray-medium-light;
-    font-size: 20px;
-    font-family: 'Roboto Regular';
-
-  }
-  .g-category {
-    @extend .category;
-    color: $home-color;
-  }
-  .categories-desktop {
-    display: block;
-
-    @include mq-tablet() {
-      display: none !important;
-    }
-  }
-  .categories-mobile {
-    display: none;
-    height: 3em;
-
-    @include mq-tablet() {
-      background-color: $home-color;
-      display: block;
-    }
-  }
-  .categories-select {
-    background-color: transparent;
-    border: none;
-    color: $white;
-    font-family: 'Roboto Light';
-    font-size: 20px;
-    margin: 0.5em auto;
-    text-decoration:underline;
-  }
-
-  @include mq-tablet() {
-    display: block;
-    float: none;
-    margin: 0;
-    text-align: center;
-    width: 100%;
   }
 }
 
@@ -187,6 +135,7 @@
 
   h1 {
     border-bottom: 1px solid $darkgray;
+    margin: 0;
     padding-bottom: 20px;
     a {
       @include roboto(1.3383em, bold);
@@ -231,10 +180,22 @@
 
     img {
       border: 2px solid #EEEEEE;
+      float: none;
       height:30px;
       margin: 0px 10px -15px 0;
       padding: 3px;
       width: 30px;
+    }
+
+    @include mq-mobile() {
+      img { float: left; }
+
+      span, a {
+        display: block;
+        margin: 0 0 0 50px;
+      }
+
+      .separator { display: none; }
     }
   }
 
@@ -283,6 +244,11 @@
     font-size: 1.1em;
     line-height: 1.5em;
   }
+
+  @include mq-mobile() {
+    padding: 20px;
+    margin-bottom: 0;
+  }
 }
 
 .post-footer {
@@ -294,16 +260,27 @@
 
     .gravatar {
       border: 2px solid #EEEEEE;
+      float: none;
       height:30px;
       margin: 0px 10px -15px 0;
       padding: 3px;
       width: 30px;
+    }
+
+    @include mq-mobile() {
+      .gravatar { float: left; }
+
+      span {
+        display: block;
+        margin-left: 50px;
+      }
     }
   }
 
   ul {
     text-align: left;
     margin-top: 50px;
+    line-height: 35px;
 
     li {
       @include roboto(1.3em, bold);
@@ -318,6 +295,14 @@
       content: '-';
       left: -5px;
       position: relative;
+    }
+  }
+
+  @include mq-mobile() {
+    padding: 20px;
+
+    ul {
+      margin-top: 0;
     }
   }
 }
