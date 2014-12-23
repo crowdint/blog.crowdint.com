@@ -27,9 +27,7 @@
     padding: 0 50px;
     text-align: left;
 
-    @include mq-tablet() {
-      max-width: 668px;
-    }
+    @include mq-tablet() { max-width: 668px; }
 
     a, span {
       color: white;
@@ -175,8 +173,8 @@
 
   .author-info {
     color: $blog-color;
-
-    .separator { margin: 0px 15px; }
+    display: inline-block;
+    margin: 0;
 
     img {
       border: 2px solid #EEEEEE;
@@ -197,6 +195,11 @@
 
       .separator { display: none; }
     }
+  }
+
+  .separator {
+    display: inline-block;
+    margin: 0px 15px;
   }
 
   .social-likes {
@@ -245,10 +248,14 @@
     line-height: 1.5em;
   }
 
+<<<<<<< HEAD
+  @include mq-mobile() { padding: 5px; }
+=======
   @include mq-mobile() {
     padding: 20px;
     margin-bottom: 0;
   }
+>>>>>>> master
 }
 
 .post-footer {
