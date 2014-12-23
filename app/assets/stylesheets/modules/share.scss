@@ -133,6 +133,8 @@
   margin-bottom: 50px;
   padding: 50px;
 
+  @include mq-mobile() { padding: 5px; }
+
   h1 {
     border-bottom: 1px solid $darkgray;
     margin: 0;
@@ -174,9 +176,9 @@
   }
 
   .author-info {
+    display: inline-block;
     color: $blog-color;
-
-    .separator { margin: 0px 15px; }
+    margin: 0;
 
     img {
       border: 2px solid #EEEEEE;
@@ -198,7 +200,11 @@
       .separator { display: none; }
     }
   }
-
+  .separator {
+    display: inline-block;
+    margin: 0px 15px;
+  }
+  
   .social-likes {
     text-align: center;
 

@@ -1,5 +1,5 @@
 Given /^I click on "([^"]*)"$/ do |link_name|
-  click_link link_name
+  click_link link_name, match: :first
 end
 
 Given /^I press "([^"]*)"$/ do |button_name|

@@ -6,12 +6,15 @@
       = link_to main_app.posts_by_author_path(post.author.to_param) do
         | by&nbsp;
         strong= post.author_name
-      span.separator |
+      span.is-not-mobile.separator |
+    p.is-mobile-info
       span.published-date
         = post.formatted_published_date
-      span.separator |
+    p.is-mobile-info
+      span.is-not-mobile.separator |
       = category_link(post)
-      span.separator |
+      span.is-not-mobile.separator |
+    p.is-mobile-info
       span Comments
     .body class=(index_view ? 'short' :  '')
       = (index_view ? post.short_description : post.html_body)
