@@ -49,57 +49,53 @@ module ApplicationHelper
 
   def next_link(post)
     if post.next
-      link_to '< Next', main_app.post_path(*post.next.url_params),
-        class: 'next'
+      custom_link('< Next', main_app.post_path(*post.next.url_params), class: 'next')
     else
-      link_to '< Next', 'javascript:void(0)',
-        class: 'next'
+      custom_link('< Next', 'javascript:void(0)', class: 'next')
     end
   end
 
   def previous_link(post)
     if post.previous
-      link_to 'Previous >', main_app.post_path(*post.previous.url_params),
-        class: 'previous'
+      custom_link('Previous >', main_app.post_path(*post.previous.url_params), class: 'previous')
     else
-      link_to 'Previous >', 'javascript:void(0)',
-        class: 'previous'
+      custom_link('Previous >', 'javascript:void(0)', class: 'previous')
     end
   end
 
   def next_link_mobile(post)
     if post.next
-      link_to '<', main_app.post_path(*post.next.url_params),
-        class: 'next'
+      custom_link('<', main_app.post_path(*post.next.url_params), class: 'next')
     else
-      link_to '<', 'javascript:void(0)',
-        class: 'next'
+      custom_link('<', 'javascript:void(0)', class: 'next')
     end
   end
 
   def previous_link_mobile(post)
     if post.previous
-      link_to '>', main_app.post_path(*post.previous.url_params),
-        class: 'previous'
+      custom_link('>', main_app.post_path(*post.previous.url_params), class: 'previous')
     else
-      link_to '>', 'javascript:void(0)',
-        class: 'previous'
+      custom_link('>', 'javascript:void(0)', class: 'previous')
     end
   end
 
   def get_home_category(post)
     if post.category
-      link_to "Home / #{ post.category.name }", 'javascript:void(0)'
+      custom_link("Home / #{ post.category.name }", 'javascript:void(0)')
     else
-      link_to "Home / None", 'javascript:void(0)'
+      custom_link('Home / None', 'javascript:void(0)')
     end
   end
 
   def category_link(post)
     if post.category
-      link_to post.category.name, 'javascript:void(0)'
+      custom_link(post.category.name, 'javascript:void(0)')
     else
-      link_to 'None', 'javascript:void(0)'
+      custom_link('None', 'javascript:void(0)')
     end
+  end
+
+  def custom_link(text, url, attr = {})
+    link_to text, url, attr
   end
 end
