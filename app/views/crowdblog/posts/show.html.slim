@@ -6,13 +6,13 @@
     = select_tag :category, options_from_collection_for_select(@categories, 'id', 'name'), prompt: 'We talk about', class: 'categories-select'
 .post-menu
   .post-menu-desktop
-    = get_next_link(@post)
-    = link_to 'Home / None', '#'
-    = get_previous_link(@post)
+    = next_link(@post)
+    = get_home_category(@post)
+    = previous_link(@post)
   .post-menu-mobile
-    = link_to '<', '#', class: 'previous'
-    = link_to 'Home / None', '#'
-    = link_to '>', '#', class: 'next'
+    = next_link_mobile(@post)
+    = get_home_category(@post)
+    = previous_link_mobile(@post)
 .posts
   = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
   #disqus_thread

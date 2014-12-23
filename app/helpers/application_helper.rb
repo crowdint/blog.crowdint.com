@@ -47,7 +47,7 @@ module ApplicationHelper
     Time.zone.now.year
   end
 
-  def get_next_link(post)
+  def next_link(post)
     if post.next
       link_to '< Next', main_app.post_path(*post.next.url_params),
         class: 'next'
@@ -57,13 +57,49 @@ module ApplicationHelper
     end
   end
 
-  def get_previous_link(post)
+  def previous_link(post)
     if post.previous
       link_to 'Previous >', main_app.post_path(*post.previous.url_params),
         class: 'previous'
     else
       link_to 'Previous >', 'javascript:void(0)',
         class: 'previous'
+    end
+  end
+
+  def next_link_mobile(post)
+    if post.next
+      link_to '<', main_app.post_path(*post.next.url_params),
+        class: 'next'
+    else
+      link_to '<', 'javascript:void(0)',
+        class: 'next'
+    end
+  end
+
+  def previous_link_mobile(post)
+    if post.previous
+      link_to '>', main_app.post_path(*post.previous.url_params),
+        class: 'previous'
+    else
+      link_to '>', 'javascript:void(0)',
+        class: 'previous'
+    end
+  end
+
+  def get_home_category(post)
+    if post.category
+      link_to "Home / #{ post.category.name }", 'javascript:void(0)'
+    else
+      link_to "Home / None", 'javascript:void(0)'
+    end
+  end
+
+  def category_link(post)
+    if post.category
+      link_to post.category.name, 'javascript:void(0)'
+    else
+      link_to 'None', 'javascript:void(0)'
     end
   end
 end

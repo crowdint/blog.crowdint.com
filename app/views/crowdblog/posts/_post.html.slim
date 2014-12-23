@@ -10,7 +10,7 @@
       span.published-date
         = post.formatted_published_date
       span.separator |
-      = link_to 'Category', '#'
+      = category_link(post)
       span.separator |
       span Comments
     .body class=(index_view ? 'short' :  '')
