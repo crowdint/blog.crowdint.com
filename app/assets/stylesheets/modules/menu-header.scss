@@ -1,0 +1,22 @@
+.post-menu {
+  margin: 0 auto;
+  padding: 25px 5% 0;
+  text-align: center;
+
+  .post-menu-mobile { display: none; }
+  .post-menu-desktop { display: block; }
+
+  @include mq-mobile() {
+    .post-menu-mobile { display: block; }
+    .post-menu-desktop { display: none; }
+  }
+
+  a {
+    color: $gray-medium-lighter;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .previous { float: left; }
+  .next { float: right; }
+}
