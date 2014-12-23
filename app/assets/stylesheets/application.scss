@@ -30,7 +30,8 @@
 @import "state";
 
 pre code {
-  font-size: 1.2em;
   background-color: #555 !important;
+  font-size: 1.2em;
+  overflow-x: auto;
 }
 
