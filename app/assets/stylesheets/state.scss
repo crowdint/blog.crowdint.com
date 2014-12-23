@@ -14,7 +14,18 @@
 .is-not-mobile {
   display: block;
 
-  @include mq-mobile() { display: none; }
+  @include mq-mobile() { display: none !important; }
+}
+
+.is-mobile-info {
+  display: inline-block;
+  margin: 0;
+
+  @include mq-mobile() {
+    display: block;
+    font-size: 1em !important;
+    margin-left: 3em;
+  }
 }
 
 // Animation states for showing/hiding the mobile menu

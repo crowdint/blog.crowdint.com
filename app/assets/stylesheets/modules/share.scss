@@ -226,9 +226,9 @@
   }
 
   .author-info {
+    display: inline-block;
     color: $blog-color;
-
-    .separator { margin: 0px 15px; }
+    margin: 0;
 
     img {
       border: 2px solid #EEEEEE;
@@ -238,7 +238,11 @@
       width: 30px;
     }
   }
-
+  .separator {
+    display: inline-block;
+    margin: 0px 15px;
+  }
+  
   .social-likes {
     text-align: center;
 

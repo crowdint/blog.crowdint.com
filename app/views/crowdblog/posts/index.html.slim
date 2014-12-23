@@ -8,6 +8,8 @@
   .categories-mobile
     = select_tag :category, options_from_collection_for_select(@categories, 'id', 'name'), prompt: 'We talk about', class: 'categories-select'
 section.posts
+  .recent-post.is-mobile
+    = render partial: 'post', locals: { post: @recent_post, index_view: true }
   = render @posts, index_view: true
 
   = will_paginate @posts, inner_window: 1, outer_window: 0
