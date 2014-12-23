@@ -186,6 +186,8 @@
   margin-bottom: 50px;
   padding: 50px;
 
+  @include mq-mobile() { padding: 5px; }
+
   h1 {
     border-bottom: 1px solid $darkgray;
     padding-bottom: 20px;
