@@ -16,6 +16,16 @@ class Post < Crowdblog::Post
             group_by {|p| p.published_at.strftime("%B")}; mem }
   end
 
+  def previous
+    Post.published_and_ordered.
+      where('published_at < ?', self.published_at).first
+  end
+
+  def next
+    Post.published_and_ordered.
+      where('published_at > ?', self.published_at).last
+  end
+
   def dropbox_name
     "#{id}-#{permalink}.md"
   end

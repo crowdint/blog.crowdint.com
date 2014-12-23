@@ -46,4 +46,24 @@ module ApplicationHelper
   def year
     Time.zone.now.year
   end
+
+  def get_next_link(post)
+    if post.next
+      link_to '< Next', main_app.post_path(*post.next.url_params),
+        class: 'next'
+    else
+      link_to '< Next', 'javascript:void(0)',
+        class: 'next'
+    end
+  end
+
+  def get_previous_link(post)
+    if post.previous
+      link_to 'Previous >', main_app.post_path(*post.previous.url_params),
+        class: 'previous'
+    else
+      link_to 'Previous >', 'javascript:void(0)',
+        class: 'previous'
+    end
+  end
 end

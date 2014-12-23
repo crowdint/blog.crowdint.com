@@ -6,9 +6,9 @@
     = select_tag :category, options_from_collection_for_select(@categories, 'id', 'name'), prompt: 'We talk about', class: 'categories-select'
 .post-menu
   .post-menu-desktop
-    = link_to '< Previous', '#', class: 'previous'
+    = get_next_link(@post)
     = link_to 'Home / None', '#'
-    = link_to 'Next >', '#', class: 'next'
+    = get_previous_link(@post)
   .post-menu-mobile
     = link_to '<', '#', class: 'previous'
     = link_to 'Home / None', '#'
