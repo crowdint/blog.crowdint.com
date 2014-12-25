@@ -1,6 +1,10 @@
 blog.crowdint.com
 =================
 
+[![Build Status](https://travis-ci.org/crowdint/blog.crowdint.com.svg?branch=master)](https://travis-ci.org/crowdint/blog.crowdint.com)
+[![Code Climate](https://codeclimate.com/github/crowdint/blog.crowdint.com/badges/gpa.svg)](https://codeclimate.com/github/crowdint/blog.crowdint.com)
+[![Test Coverage](https://codeclimate.com/github/crowdint/blog.crowdint.com/badges/coverage.svg)](https://codeclimate.com/github/crowdint/blog.crowdint.com)
+
 ## Welcome to our, kind of new, blog.
 
 It was time. A rewrite for this site was due since last year. So, I decided to

@@ -53,6 +53,7 @@ end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'codeclimate-test-reporter',  require: nil
 end
 
 group :production do
