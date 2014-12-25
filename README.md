@@ -1,11 +1,30 @@
-blog.crowdint.com
-=================
+# blog.crowdint.com
 
 [![Build Status](https://travis-ci.org/crowdint/blog.crowdint.com.svg?branch=master)](https://travis-ci.org/crowdint/blog.crowdint.com)
 [![Code Climate](https://codeclimate.com/github/crowdint/blog.crowdint.com/badges/gpa.svg)](https://codeclimate.com/github/crowdint/blog.crowdint.com)
 [![Test Coverage](https://codeclimate.com/github/crowdint/blog.crowdint.com/badges/coverage.svg)](https://codeclimate.com/github/crowdint/blog.crowdint.com)
 
-## Welcome to our, kind of new, blog.
+## Testing
+
+1. Copy example db:
+
+        cp config/database.yml.example config/database.yml
+
+2. Start solr in the port required by the test environment:
+
+        bundle exec sunspot-solr start -p 8981
+
+3. Running specs:
+
+        bundle exec rake spec
+
+4. Running cucumbers:
+
+        bundle exec rake cucumber
+
+## History 
+
+### Welcome to our, kind of new, blog.
 
 It was time. A rewrite for this site was due since last year. So, I decided to
 do something about it this weekend.
@@ -24,8 +43,6 @@ You will find it on [its github page](https://github.com/crowdint/crowdblog).
 I know, even that there is probably a thousand blog services / gems / templates
 out there to set up a blog immediately, but, there was a couple of things I
 wanted to learn so, I decided to code it myself.
-
-![image1](http://github.com/crowdint/crowdblog-app/raw/master/doc/images/image1.png)
 
 ### Really? Another Rails blog example
 
@@ -52,8 +69,6 @@ on "real life" applications.
 I lie to myself and think that it was because I really didn't know
 what I was doing, but, its still a lie. Promise to make up for that soon.
 
-![image2](http://github.com/crowdint/crowdblog-app/raw/master/doc/images/image2.png)
-
 You won't see any Javascript tests because I don't have that much experience with
 those, but, I am sure that soon, one of my [awesome teammates](https://github.com/crowdint)
 will write and commit those. That way, I'll be able to learn about it.
@@ -70,5 +85,10 @@ Hope browsing through this code encourages to teach me something.
 
 Issues and Pull requests are more than welcome.
 
----
+# About the Author
 
+[Crowd Interactive](http://www.crowdint.com) is a leading Ruby and Rails consultancy
+firm based in Mexico currently doing business with startups in the United States.
+We specialize in building and growing your existing development team, by adding
+engineers onsite or offsite. We pick our clients carefully, as we only work with
+companies we believe in. Find out more about us on our [website](http://www.crowdint.com).
