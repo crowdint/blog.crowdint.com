@@ -25,9 +25,7 @@ Then /^I should not see "([^"]*)"$/ do |expectation|
 end
 
 Then /^I should see:$/ do |table|
-  binding.pry
   table.raw.flatten.each do |expected|
-    binding.pry
     page.should have_content expected
   end
 end
