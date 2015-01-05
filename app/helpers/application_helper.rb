@@ -49,33 +49,33 @@ module ApplicationHelper
 
   def next_link(post)
     if post.next
-      custom_link('< Next', main_app.post_path(*post.next.url_params), class: 'next')
+      custom_link('Next >', main_app.post_path(*post.next.url_params), class: 'next')
     else
-      custom_link('< Next', 'javascript:void(0)', class: 'next')
+      custom_link('Next >', 'javascript:void(0)', class: 'next')
     end
   end
 
   def previous_link(post)
     if post.previous
-      custom_link('Previous >', main_app.post_path(*post.previous.url_params), class: 'previous')
+      custom_link('< Previous', main_app.post_path(*post.previous.url_params), class: 'previous')
     else
-      custom_link('Previous >', 'javascript:void(0)', class: 'previous')
+      custom_link('< Previous', 'javascript:void(0)', class: 'previous')
     end
   end
 
   def next_link_mobile(post)
     if post.next
-      custom_link('<', main_app.post_path(*post.next.url_params), class: 'next')
+      custom_link('>', main_app.post_path(*post.next.url_params), class: 'next')
     else
-      custom_link('<', 'javascript:void(0)', class: 'next')
+      custom_link('>', 'javascript:void(0)', class: 'next')
     end
   end
 
   def previous_link_mobile(post)
     if post.previous
-      custom_link('>', main_app.post_path(*post.previous.url_params), class: 'previous')
+      custom_link('<', main_app.post_path(*post.previous.url_params), class: 'previous')
     else
-      custom_link('>', 'javascript:void(0)', class: 'previous')
+      custom_link('<', 'javascript:void(0)', class: 'previous')
     end
   end
 
