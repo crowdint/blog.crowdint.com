@@ -26,6 +26,7 @@ log/sunspot-solr-development.log.lck
 log/sunspot-solr-test.log.lck
 /solr
 .ruby-gemset
+sunspot-solr.pid
 
 .env
 *.swp
