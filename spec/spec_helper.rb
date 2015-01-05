@@ -41,6 +41,9 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
     config.order = "random"
+
+    # RSpec infers what kind of spec are running
+    config.infer_spec_type_from_file_location!
   end
 
 end
