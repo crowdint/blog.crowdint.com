@@ -2,9 +2,24 @@
   margin: 0 auto;
   padding: 25px 5% 0;
   text-align: center;
+  @include mq-tablet() {
+    max-width: 768px;
+    padding: 25px 20px 0;
+    width: 95%;
+  }
+  @include mq-mobile() {
+    padding: 25px 5% 0;
+    margin: 0 auto;
+    width: auto;
+  }
 
   .post-menu-mobile { display: none; }
-  .post-menu-desktop { display: block; }
+  .post-menu-desktop {
+    display: block;
+    @include mq-tablet() {
+      padding: 0 50px;
+    }
+  }
 
   @include mq-mobile() {
     .post-menu-mobile { display: block; }
@@ -13,7 +28,6 @@
 
   a {
     color: $gray-medium-lighter;
-    font-weight: bold;
     text-decoration: none;
   }
 

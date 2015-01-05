@@ -1,9 +1,14 @@
 .categories {
-  float: left;
   height: auto;
   margin-left: 5%;
-  margin-top: 90px;
   width: 10%;
+  position: absolute;
+  top: 90px;
+
+  @include mq-tablet() {
+    position: static;
+    margin-top: -90px;
+  }
 
   a { text-decoration: none; }
   .title {
