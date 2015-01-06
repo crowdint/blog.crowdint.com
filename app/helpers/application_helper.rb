@@ -81,9 +81,9 @@ module ApplicationHelper
 
   def get_home_category(post)
     if post.category
-      custom_link("Home / #{ post.category.name }", 'javascript:void(0)')
+      custom_link("Home / #{ post.category.name }", 'javascript:void(0)', class: 'category-link')
     else
-      custom_link('Home / None', 'javascript:void(0)')
+      custom_link('Home / None', 'javascript:void(0)', class: 'category-link')
     end
   end
 
@@ -97,5 +97,11 @@ module ApplicationHelper
 
   def custom_link(text, url, attr = {})
     link_to text, url, attr
+  end
+
+  def index_page?
+    if params[:controller] == 'crowdblog/posts' && params[:action] == 'index'
+      'index'
+    end
   end
 end

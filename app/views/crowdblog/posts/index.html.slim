@@ -1,7 +1,7 @@
 = render 'application/we_share'
 = render 'application/nav_bar'
 
-.categories
+.categories *{ class: index_page? }
   .categories-desktop
     h1.title We write about
     =render @categories, index_view: true

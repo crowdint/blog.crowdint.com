@@ -3,7 +3,8 @@
   margin-left: 5%;
   width: 10%;
   position: absolute;
-  top: 90px;
+  top: 75px;
+  //&.index { top: 22%; }
 
   @include mq-tablet() {
     position: static;
