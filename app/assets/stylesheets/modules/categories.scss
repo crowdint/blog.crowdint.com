@@ -62,3 +62,17 @@
     width: 100%;
   }
 }
+
+.categories.index {
+  @include mq-tablet() { background-color: transparent; }
+  margin-bottom: 20px;
+
+  .categories-mobile, .categories-select {
+    background-color: transparent;
+  }
+
+  @include mq-mobile() {
+    position: absolute;
+    top: 91px;
+  }
+}

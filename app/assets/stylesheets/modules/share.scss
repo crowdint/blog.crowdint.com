@@ -14,7 +14,9 @@
   width: 100%;
 
   @include mq-mobile() {
-    background-position-y: -21px;
+    background-position-y: -25px;
+    background-size: 300px;
+    height: 70px;
     position: relative;
   }
 
@@ -178,7 +180,7 @@
   .author-info {
     display: inline-block;
     color: $blog-color;
-    margin: 0;
+    margin: 10px 0 0;
 
     img {
       border: 2px solid #EEEEEE;
