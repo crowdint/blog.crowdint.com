@@ -7,8 +7,8 @@
   &.index { top: 22%; }
 
   @include mq-tablet() {
-    position: static;
     margin-top: -90px;
+    position: static;
   }
 
   a { text-decoration: none; }
