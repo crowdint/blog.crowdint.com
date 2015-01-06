@@ -8,8 +8,8 @@
     width: 95%;
   }
   @include mq-mobile() {
-    padding: 25px 5% 0;
     margin: 0 auto;
+    padding: 25px 5% 0;
     width: auto;
   }
 
@@ -32,25 +32,25 @@
   }
 
   .category-link {
-    position: absolute;
-    left: 50%;
     display: block;
-    width: 70%;
+    left: 50%;
+    margin-left: -480px;
     max-width: 960px;
     padding: 0 50px;
+    position: absolute;
     text-align: left;
-    margin-left: -480px;
+    width: 70%;
 
     @include mq(1390px) {
       margin-left: -35%;
     }
 
     @include mq-tablet() {
-      position: static;
-      padding: 0;
-      margin: 0;
-      width: auto;
       display: inline-block;
+      margin: 0;
+      padding: 0;
+      position: static;
+      width: auto;
     }
   }
 

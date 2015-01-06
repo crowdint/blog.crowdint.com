@@ -1,9 +1,9 @@
 .categories {
   height: auto;
   margin-left: 5%;
-  width: 10%;
   position: absolute;
   top: 75px;
+  width: 10%;
   &.index { top: 22%; }
 
   @include mq-tablet() {
