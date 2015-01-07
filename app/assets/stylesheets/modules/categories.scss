@@ -34,7 +34,8 @@
       display: none !important;
     }
   }
-  .categories-mobile {
+
+  &.categories-mobile {
     background-color: $home-color;
     display: none;
     height: 3em;
