@@ -1,7 +1,9 @@
 <section id="share">
   <h3 class="share-title is-not-mobile">We share what we know</h3>
   <div class="categories index categories-mobile">
-    <%= select_tag :category, options_from_collection_for_select(@categories, 'id', 'name'), class: 'categories-select' %>
+    <%= select_tag :category,
+                   options_from_collection_for_select(@categories, 'id', 'name'),
+                   class: 'categories-select' %>
   </div>
   <h3 class="share-title is-mobile">We share<span class="l-normal"> what we know</span></h3>
   <div class="recent-post is-not-mobile">
