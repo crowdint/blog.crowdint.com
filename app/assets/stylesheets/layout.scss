@@ -8,13 +8,13 @@
   z-index: 2;
   background-color: #ffffff;
 
-  @include mq-mobile() { height: 70px; }
+  @include mq(770px) { height: 70px; }
 }
 
 #empty {
   height: 100px;
 
-  @include mq-mobile() { height: 70px; }
+  @include mq(770px) { height: 70px; }
 }
 
 #mobile-menu {
