@@ -34,7 +34,8 @@
       display: none !important;
     }
   }
-  .categories-mobile {
+
+  &.categories-mobile {
     background-color: $home-color;
     display: none;
     height: 3em;
@@ -60,5 +61,19 @@
     margin: 0;
     text-align: center;
     width: 100%;
+  }
+}
+
+.categories.index {
+  @include mq-tablet() { background-color: transparent; }
+  margin-bottom: 20px;
+
+  .categories-mobile, .categories-select {
+    background-color: transparent;
+  }
+
+  @include mq-mobile() {
+    position: absolute;
+    top: 91px;
   }
 }
