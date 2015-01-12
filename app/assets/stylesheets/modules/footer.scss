@@ -24,11 +24,15 @@
 
 .footer-nav {
   margin: 0 auto;
-  display: table;
-
   text-align: center;
-
+  width: 100%;
   @include mq-mobile() { display: none; }
+
+  .nav-item {
+    display: inline-block;
+    float: none;
+    width: 100px;
+  }
 }
 
 .footer-nav-item {
