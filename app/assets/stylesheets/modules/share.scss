@@ -78,11 +78,11 @@
     text-align: center;
 
     .previous_page {
-      margin-right: 20%;
+      margin-right: 17%;
     }
 
     .next_page {
-      margin-left: 20%;
+      margin-left: 17%;
     }
 
     .previous_page, .next_page {
@@ -102,6 +102,26 @@
     .current {
       font-weight: bold;
       margin: 0 1%;
+    }
+
+    @include mq-mobile(){
+      margin-top: 35px;
+      overflow: auto;
+
+      .previous_page {
+        float: left;
+        margin: 0 0 0 3%;
+      }
+
+      .next_page {
+        float: right;
+        margin: 0 3% 0 0;
+      }
+
+      a, em {
+        display: inline-block;
+        margin: 90px 0 0 0;
+      }
     }
   }
 
@@ -206,7 +226,7 @@
     display: inline-block;
     margin: 0px 15px;
   }
-  
+
   .social-likes {
     text-align: center;
 
