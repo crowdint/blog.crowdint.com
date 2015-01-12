@@ -44,6 +44,12 @@
       display: block !important;
     }
   }
+
+  .categories-mobile {
+    display: none;
+    @include mq-tablet() { display: block; }
+  }
+
   .categories-select {
     background-color: $home-color;
     border: none;
