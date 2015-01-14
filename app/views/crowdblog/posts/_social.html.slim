@@ -1,8 +1,11 @@
-.social-likes{data-title=social_share_title(post) data-url=social_share_url(post)}
-  .twitter data-via="crowdint" title="Share link on Twitter"
-  .facebook title="Share link on Facebook"
-  .plusone title="Share link on Google+"
+.social-likes{
+    data-title=social_share_title(post)
+    data-url=social_share_url(post)
+  }
+  .twitter data-via="crowdint" title="Share link on Twitter" data-utm_source="blogpost" data-utm_campaign="#{ Date.today }" data-utm_medium="twitter"
+  .facebook title="Share link on Facebook" data-utm_source="blogpost" data-utm_campaign="#{ Date.today }" data-utm_medium="facebook"
+  .plusone title="Share link on Google+" data-utm_source="blogpost" data-utm_campaign="#{ Date.today }" data-utm_medium="google+"
   = link_to '',
-    "http://www.linkedin.com/shareArticle?mini=true&url=#{ social_share_url(post) }&title=#{ social_share_title(post) }&summary=#{ social_share_title(post) }&source=#{ root_url }",
+    "http://www.linkedin.com/shareArticle?mini=true&url=#{ social_share_url(post) }&title=#{ social_share_title(post) }&summary=#{ social_share_title(post) }&source=#{ root_url }&utm_source=blogpost&utm_campaign=#{ Date.today }&utm_medium=linkedin",
     class: 'linkedin',
     title: 'Share link on LinkedIn'
