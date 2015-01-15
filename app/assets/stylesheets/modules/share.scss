@@ -76,13 +76,16 @@
     color: $blog-color;
     margin: -2em 0 4em;
     text-align: center;
+    overflow: auto;
 
     .previous_page {
-      margin-right: 17%;
+      float: left;
+      margin: 0 0 0 50px;
     }
 
     .next_page {
-      margin-left: 17%;
+      float: right;
+      margin: 0 50px 0 0;
     }
 
     .previous_page, .next_page {
@@ -93,34 +96,38 @@
       width: 100px;
     }
 
-    a {
+    a, span, em {
       color: $blog-color;
-      margin: 0 1%;
+      display: inline-block;
+      margin: 10px 13px 0;
       text-decoration: none;
     }
 
     .current {
       font-weight: bold;
-      margin: 0 1%;
     }
 
     @include mq-mobile(){
       margin-top: 35px;
-      overflow: auto;
+      position: relative;
+      height: 150px;
 
       .previous_page {
         float: left;
         margin: 0 0 0 3%;
+        position: static;
       }
 
       .next_page {
         float: right;
         margin: 0 3% 0 0;
+        position: static;
       }
 
-      a, em {
-        display: inline-block;
-        margin: 90px 0 0 0;
+      a, em, span {
+        margin: 0;
+        position: absolute;
+        top: 120px;
       }
     }
   }
