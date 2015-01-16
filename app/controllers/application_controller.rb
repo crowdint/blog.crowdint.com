@@ -34,7 +34,12 @@ class ApplicationController < ActionController::Base
 
   def set_meta
     title = @post ? t('seo.post.title', title: @post.title) : t("seo.#{controller_name}.title", default: :'seo.title')
-    description = @post ? strip_tags(truncate(@post.html_body.html_safe, escape: false, length: 130)) : t("seo.#{controller_name}.description", default: :'seo.description')
+    description = @post ? truncate(strip_tags(@post.html_body.html_safe), escape: false, length: 250) : t("seo.#{controller_name}.description", default: :'seo.description')
+
+    if @author
+      title = t('seo.post.title', title: @author.name)
+      description = @author.name + ' ' + Post.by_author(@author.id).map(&:title).join(' ')
+    end
 
     set_meta_tags title: title,
       description: description,
