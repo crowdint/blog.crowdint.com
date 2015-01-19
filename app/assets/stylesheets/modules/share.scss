@@ -63,7 +63,11 @@
   font-size: 60px;
   line-height: 1.8em;
 
-  @include mq-mobile() { font-size: 1.625em; line-height: 1.2em; margin-bottom: 1.7em; }
+  @include mq-mobile() {
+    font-size: 1.625em;
+    line-height: 1.2em;
+    margin-bottom: 1.7em;
+  }
 }
 
 .posts {
@@ -109,25 +113,20 @@
 
     @include mq-mobile(){
       margin-top: 35px;
-      position: relative;
-      height: 150px;
 
       .previous_page {
         float: left;
         margin: 0 0 0 3%;
-        position: static;
       }
 
       .next_page {
         float: right;
         margin: 0 3% 0 0;
-        position: static;
       }
 
       a, em, span {
-        margin: 0;
-        position: absolute;
-        top: 120px;
+        display: inline-block;
+        margin: 90px 0 0 0;
       }
     }
   }
