@@ -1,0 +1,39 @@
+.row
+  .span6
+    .control-group.title
+      = f.label :title, class: 'control-label'
+      .controls
+        = f.text_field :title, class: 'input-xlarge span5'
+.row
+  .control-group.body
+    .span12
+      = f.label 'post_body', 'Body', class: 'control-label'
+    .controls.span5
+      = f.text_area :body, class: 'span5', rows: 20
+      span.help-inline= link_to 'Markdown syntax', 'http://daringfireball.net/projects/markdown/syntax', target: '_BLANK'
+
+    #post-preview.span7
+      .inner
+
+.row.form-box
+  .span5
+    #uploader
+      .inner Drop images...
+
+  .span6
+    h4 Categories
+    .control-group.title
+      = f.fields_for :categories do |c|
+        .controls
+          - @categories.each do |category|
+            = c.label class: 'checkbox'
+              = check_box_tag 'post[categories_ids][]', category.id, @post.categories.include?(category)
+              = category.name
+
+  .span7#assets
+    - f.object.assets.each do |asset|
+      .asset= "![image alt](#{asset.attachment_url})"
+
+coffee:
+  $ ->
+    new Crowdblog.Views.PostFormView

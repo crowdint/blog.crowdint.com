@@ -1,7 +1,7 @@
 class Post < Crowdblog::Post
   belongs_to :author, :class_name => "User"
   belongs_to :publisher, :class_name => "User"
-  belongs_to :category
+  has_and_belongs_to_many :categories
 
   SHORT_DESCRIPTION_SIZE = 300
 
@@ -32,6 +32,10 @@ class Post < Crowdblog::Post
 
   def formatted_published_date
     published_at.strftime('%b %d, %Y')
+  end
+
+  def first_category
+    categories.limit(1).first
   end
 
   #

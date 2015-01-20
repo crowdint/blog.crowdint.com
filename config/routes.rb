@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :dropbox_sync
 
     resources :authors, :only => :index
+    resources :categories
   end
 
   get '/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
