@@ -7,6 +7,5 @@ FactoryGirl.define do
     author_id 1
     state 'published'
     publisher_id 1
-    category_id 1
   end
 end
