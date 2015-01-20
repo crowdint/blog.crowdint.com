@@ -4,15 +4,6 @@
       = f.label :title, class: 'control-label'
       .controls
         = f.text_field :title, class: 'input-xlarge span5'
-  .span6
-    h4 Categories
-    .control-group.title
-      = f.fields_for :categories do |c|
-        .controls
-          - @categories.each do |category|
-            = check_box_tag 'post[categories_ids][]', category.id, @post.categories.include?(category)
-            = c.label category.name
-
 .row
   .control-group.body
     .span12
@@ -28,6 +19,16 @@
   .span5
     #uploader
       .inner Drop images...
+
+  .span6
+    h4 Categories
+    .control-group.title
+      = f.fields_for :categories do |c|
+        .controls
+          - @categories.each do |category|
+            = c.label class: 'checkbox'
+              = check_box_tag 'post[categories_ids][]', category.id, @post.categories.include?(category)
+              = category.name
 
   .span7#assets
     - f.object.assets.each do |asset|
