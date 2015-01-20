@@ -3,7 +3,7 @@ Crowdblog::Admin::PostsController.class_eval do
 
   def update
     @post.update_attributes(post_params)
-    @post.categories = Category.find params[:post][:categories_ids]
+    @post.categories = Category.where(id: params[:post][:categories_ids])
     if @post.allowed_to_update_permalink?
       @post.regenerate_permalink
       @post.save!
