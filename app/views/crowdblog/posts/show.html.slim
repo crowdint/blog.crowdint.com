@@ -7,11 +7,11 @@
 .post-menu
   .post-menu-desktop
     = next_link(@post)
-    = get_home_category(@post)
+    = get_home_category(@post.first_category)
     = previous_link(@post)
   .post-menu-mobile
     = next_link_mobile(@post)
-    = get_home_category(@post)
+    = get_home_category(@post.first_category)
     = previous_link_mobile(@post)
 .posts
   = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }

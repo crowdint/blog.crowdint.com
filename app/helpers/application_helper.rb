@@ -79,17 +79,17 @@ module ApplicationHelper
     end
   end
 
-  def get_home_category(post)
-    if post.categories.any?
-      custom_link("Home / #{ post.categories.first.name }", 'javascript:void(0)', class: 'category-link')
+  def get_home_category(category)
+    if category
+      custom_link("Home / #{ category.name }", 'javascript:void(0)', class: 'category-link')
     else
       custom_link('Home / None', 'javascript:void(0)', class: 'category-link')
     end
   end
 
-  def category_link(post)
-    if post.categories.any?
-      custom_link(post.categories.first.name, 'javascript:void(0)')
+  def category_link(category)
+    if category
+      custom_link(category.name, 'javascript:void(0)')
     else
       custom_link('None', 'javascript:void(0)')
     end

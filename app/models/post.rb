@@ -34,6 +34,10 @@ class Post < Crowdblog::Post
     published_at.strftime('%b %d, %Y')
   end
 
+  def first_category
+    categories.limit(1).first
+  end
+
   #
   # This is probably not very performant, but should be alleviated
   # with caching. If it doesn't, it should be a better idea to store it on
