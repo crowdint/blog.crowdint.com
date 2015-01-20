@@ -63,7 +63,11 @@
   font-size: 60px;
   line-height: 1.8em;
 
-  @include mq-mobile() { font-size: 1.625em; line-height: 1.2em; margin-bottom: 1.7em; }
+  @include mq-mobile() {
+    font-size: 1.625em;
+    line-height: 1.2em;
+    margin-bottom: 1.7em;
+  }
 }
 
 .posts {
@@ -76,13 +80,16 @@
     color: $blog-color;
     margin: -2em 0 4em;
     text-align: center;
+    overflow: auto;
 
     .previous_page {
-      margin-right: 17%;
+      float: left;
+      margin: 0 0 0 50px;
     }
 
     .next_page {
-      margin-left: 17%;
+      float: right;
+      margin: 0 50px 0 0;
     }
 
     .previous_page, .next_page {
@@ -93,20 +100,19 @@
       width: 100px;
     }
 
-    a {
+    a, span, em {
       color: $blog-color;
-      margin: 0 1%;
+      display: inline-block;
+      margin: 10px 13px 0;
       text-decoration: none;
     }
 
     .current {
       font-weight: bold;
-      margin: 0 1%;
     }
 
     @include mq-mobile(){
       margin-top: 35px;
-      overflow: auto;
 
       .previous_page {
         float: left;
@@ -118,7 +124,7 @@
         margin: 0 3% 0 0;
       }
 
-      a, em {
+      a, em, span {
         display: inline-block;
         margin: 90px 0 0 0;
       }
