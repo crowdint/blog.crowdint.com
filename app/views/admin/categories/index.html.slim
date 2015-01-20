@@ -1,6 +1,7 @@
 h1 Categories
 
-= link_to 'New Category', main_app.new_admin_category_path, class: 'btn btn-primary btn-small'
+= link_to 'New Category', main_app.new_admin_category_path,
+          class: 'btn btn-primary btn-small'
 table.table.table-striped
   thead
     tr
@@ -9,4 +10,6 @@ table.table.table-striped
     - @categories.each do |category|
       tr
         td= category.name
-        td= link_to 'delete', main_app.admin_category_path(category), method: :DELETE, data: { confirm: 'Are you sure?' }
+        td= link_to 'delete', main_app.admin_category_path(category),
+                    method: :DELETE,
+                    data: { confirm: t('categories.confirm_delete') }

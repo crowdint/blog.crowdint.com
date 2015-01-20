@@ -18,3 +18,5 @@ en:
   will_paginate:
     previous_label: '&lt; Previous'
     next_label: 'Next &gt;'
+  categories:
+    confirm_delete: 'Are you sure?, this may leave some posts uncategorised.'
