@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217194200) do
+ActiveRecord::Schema.define(version: 20150119183849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20141217194200) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "categories_crowdblog_posts", force: true do |t|
+    t.integer "category_id"
+    t.integer "post_id"
+  end
+
+  create_table "categories_posts", id: false, force: true do |t|
+    t.integer "category_id", null: false
+    t.integer "post_id",     null: false
   end
 
   create_table "crowdblog_assets", force: true do |t|
@@ -42,7 +52,6 @@ ActiveRecord::Schema.define(version: 20141217194200) do
     t.boolean  "ready_for_review"
     t.datetime "marked_for_review_at"
     t.datetime "finished_at"
-    t.integer  "category_id"
   end
 
   create_table "crowdblog_status_change_records", force: true do |t|
