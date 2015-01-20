@@ -1,7 +1,5 @@
 Crowdblog::Admin::PostsController.class_eval do
-  def edit
-    @categories = Category.all
-  end
+  before_action :load_categories, only: [:edit]
 
   def update
     @post.update_attributes(post_params)
@@ -19,6 +17,10 @@ Crowdblog::Admin::PostsController.class_eval do
   private
   def load_post
     @post = ::Post.scoped_for(current_user).find(params[:id])
+  end
+
+  def load_categories
+    @categories = Category.all
   end
 end
 
