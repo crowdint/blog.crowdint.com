@@ -3,14 +3,14 @@
 
   = form_for @category, url: main_app.admin_categories_path do |f|
     .control-group.title
-      = f.label :name, :class => 'control-label'
+      = f.label :name, class: 'control-label'
       .controls
-        = f.text_field :name, :class => "input-xlarge span5"
+        = f.text_field :name, class: 'input-xlarge span5'
         span.help-inline.title
 
     .form-actions.clear
       .row
         .span1
-          = f.submit "Create", :class => "btn btn-primary"
+          = f.submit 'Create', class: 'btn btn-primary'
         .span1
-          = link_to 'Cancel', main_app.admin_categories_path, :class => "btn"
+          = link_to 'Cancel', main_app.admin_categories_path, class: 'btn'
