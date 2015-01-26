@@ -69,4 +69,8 @@ class Post < Crowdblog::Post
       Sunspot.commit
     end
   end
+
+  def self.scoped_for(user)
+    user.is_publisher? ? all : user.authored_posts
+  end
 end

@@ -15,9 +15,6 @@ Crowdblog::Admin::PostsController.class_eval do
   end
 
   private
-  def load_post
-    @post = ::Post.scoped_for(current_user).find(params[:id])
-  end
 
   def load_categories
     @categories = Category.all
