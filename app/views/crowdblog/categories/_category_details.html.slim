@@ -1,5 +1,5 @@
 = cache [category] do
    - if @post
      = link_to('#') do
-       h2 class=(category == @post.category ? 'g-category' : 'category')
+       h2 class=(@post.categories.include?(category) ? 'g-category' : 'category')
          = category.name

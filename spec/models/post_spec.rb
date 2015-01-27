@@ -8,6 +8,7 @@ describe Post do
   end
 
   describe 'relationships' do
-    it { expect(post).to belong_to(:category) }
+    it { expect(post).to have_and_belong_to_many(:categories) }
   end
 end
+
