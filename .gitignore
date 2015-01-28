@@ -31,3 +31,6 @@ sunspot-solr.pid
 .env
 *.swp
 *.~un
+
+# Ignore application configuration
+/config/application.yml
