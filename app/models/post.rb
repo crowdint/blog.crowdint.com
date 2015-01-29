@@ -1,7 +1,6 @@
 class Post < Crowdblog::Post
   belongs_to :author, :class_name => "User"
   belongs_to :publisher, :class_name => "User"
-  has_and_belongs_to_many :categories
 
   SHORT_DESCRIPTION_SIZE = 300
 

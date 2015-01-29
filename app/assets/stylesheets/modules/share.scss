@@ -203,6 +203,13 @@
     }
   }
 
+  iframe {
+    height: 400px;
+    width: 100%;
+    @include mq-tablet() { height: 300px; }
+    @include mq-mobile() { height: 200px; }
+  }
+
   .author-info {
     display: inline-block;
     color: $blog-color;

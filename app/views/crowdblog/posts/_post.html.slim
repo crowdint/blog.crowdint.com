@@ -13,9 +13,6 @@
     p.is-mobile-info
       span.is-not-mobile.separator |
       = category_link(post.first_category)
-      span.is-not-mobile.separator |
-    p.is-mobile-info
-      span Comments
     .body class=(index_view ? 'short' :  '')
       = (index_view ? post.short_description : post.html_body)
       = link_to 'Read more...', main_app.post_path(*post.url_params), class: 'more' if index_view
