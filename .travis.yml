@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.0.0
+  - 2.1.5
 before_script:
   - "export DISPLAY=:99.0"
   - "export SESSION_SECRET='BC56FB924908AF3DC14A32B3FFE8E0D8B6A46D19'"
