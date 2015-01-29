@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   include Gravtastic
 
   has_one :user_dropbox_session
+  has_many :authored_posts, inverse_of: :author,
+           foreign_key: 'author_id', class_name: 'Post'
 
   gravtastic :gravatar_email, size: 150
 

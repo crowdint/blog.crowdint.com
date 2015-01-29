@@ -61,6 +61,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    codeclimate-test-reporter (0.4.3)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -98,6 +100,7 @@ GEM
     dalli (2.7.2)
     database_cleaner (1.3.0)
     diff-lcs (1.2.5)
+    docile (1.1.5)
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
@@ -106,8 +109,15 @@ GEM
     erubis (2.7.0)
     excon (0.39.5)
     execjs (2.2.1)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    figaro (1.1.0)
+      thor (~> 0.14)
     fog (1.23.0)
       fog-brightbox
       fog-core (~> 1.23)
@@ -264,6 +274,13 @@ GEM
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
     sequel (3.20.0)
+    shoulda-matchers (2.7.0)
+      activesupport (>= 3.0.0)
+    simplecov (0.9.1)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
     sinatra (1.0)
       rack (>= 1.0)
     slim (2.0.3)
@@ -328,6 +345,7 @@ DEPENDENCIES
   asset_sync
   better_errors
   capybara-webkit
+  codeclimate-test-reporter
   coffee-rails
   crowdblog (= 0.5.0)
   cucumber
@@ -337,6 +355,8 @@ DEPENDENCIES
   dalli
   database_cleaner
   dropbox-sdk
+  factory_girl_rails
+  figaro
   fog
   foreman
   google-analytics-rails
@@ -360,6 +380,7 @@ DEPENDENCIES
   rails_12factor
   rspec-rails
   sass-rails
+  shoulda-matchers
   spork
   sqlite3
   sunspot_rails

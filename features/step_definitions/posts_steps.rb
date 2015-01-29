@@ -43,3 +43,7 @@ Then /^the post titled "([^"]*)" is marked as drafted$/ do |post_title|
   @current_post = Post.find_by_title(post_title)
   @current_post.should be_drafted
 end
+
+Given(/^I go to the admin posts page$/) do
+  visit crowdblog.admin_posts_path
+end

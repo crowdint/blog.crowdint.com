@@ -5,9 +5,6 @@
 .footer-team { background-color: $team-color; }
 .footer-we-do { background-color: $we-do-color; }
 
-.footer-blog {
-  margin-top: 3em;
-}
 
 .footer-body {
   height: 374px;
@@ -27,11 +24,15 @@
 
 .footer-nav {
   margin: 0 auto;
-  display: table;
-
   text-align: center;
-
+  width: 100%;
   @include mq-mobile() { display: none; }
+
+  .nav-item {
+    display: inline-block;
+    float: none;
+    width: 100px;
+  }
 }
 
 .footer-nav-item {

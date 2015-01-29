@@ -1,5 +1,5 @@
 Given /^I click on "([^"]*)"$/ do |link_name|
-  click_link link_name
+  click_link link_name, match: :first
 end
 
 Given /^I press "([^"]*)"$/ do |button_name|
@@ -7,7 +7,7 @@ Given /^I press "([^"]*)"$/ do |button_name|
 end
 
 Then /^I should see "([^"]*)"$/ do |expectation|
-  page.should have_content expectation
+  expect(page).to have_content(expectation)
 end
 
 When /^I click "([^"]*)" for "([^"]*)"$/ do |link_text, row_text|
@@ -26,6 +26,6 @@ end
 
 Then /^I should see:$/ do |table|
   table.raw.flatten.each do |expected|
-    page.should have_content expected
+    expect(page).to have_content(expected)
   end
 end

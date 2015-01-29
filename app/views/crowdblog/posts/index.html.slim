@@ -1,10 +1,16 @@
 = render 'application/we_share'
 = render 'application/nav_bar'
 
+.categories *{ class: index_page? }
+  .categories-desktop
+    h1.title We write about
+    =render @categories, index_view: true
 section.posts
+  .recent-post.is-mobile
+    = render partial: 'post', locals: { post: @recent_post, index_view: true }
   = render @posts, index_view: true
 
-  = will_paginate @posts, page_links: false
+  = will_paginate @posts, inner_window: 1, outer_window: 0
 
 - if Rails.env.production?
   coffee:

@@ -6,11 +6,9 @@ gem 'rails', '4.1.5'
 gem 'actionpack-action_caching'
 gem 'coffee-rails'
 gem 'crowdblog', '0.5.0'
-#gem 'crowdblog', :path => '../crowdblog'
-#gem 'crowdint_auth', '~> 0.1.0'
 gem 'dalli'
-#gem 'devise', '~> 3.3.0'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
+gem 'figaro'
 gem 'fog'
 gem 'foreman'
 gem 'google-analytics-rails'
@@ -24,6 +22,7 @@ gem 'omniauth-google-oauth2'
 gem 'puma'
 gem 'quiet_assets'
 gem 'rack-timeout'
+gem 'rails', '4.1.5'
 gem 'rails-observers', git: 'https://github.com/rails/rails-observers.git'
 gem 'sass-rails'
 gem 'sunspot_rails'
@@ -40,6 +39,7 @@ group :development, :test do
   gem 'cucumber-debug'
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
   gem 'launchy'
   gem 'mac_generators'
   gem 'rspec-rails'
@@ -48,6 +48,11 @@ group :development, :test do
   gem 'sqlite3'
   gem 'taps'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'codeclimate-test-reporter',  require: nil
 end
 
 group :production do

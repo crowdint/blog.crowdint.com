@@ -58,3 +58,24 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 # Wait for AJAX calls
 require 'cucumber/ajaxer'
 Capybara.javascript_driver = :webkit
+
+Before('@omniauth_test') do
+  OmniAuth.config.test_mode = true
+  OmniAuth.configure do |config|
+    config.test_mode = true
+    config.add_mock(:default, {
+      :info => {
+                  :email => 'foobar@crowdint.com',
+                  :name => 'foo',
+                  :password => 'qwerty123',
+                  :is_admin => true,
+                  :is_publisher => true
+               }
+    })
+  end
+end
+
+After('@omniauth_test') do
+  OmniAuth.config.test_mode = false
+end
+

@@ -15,23 +15,23 @@
 @import "highlight/sunburst";
 
 // Modules
+@import "modules/button";
+@import "modules/categories";
+@import "modules/footer";
 @import "modules/header";
+@import "modules/menu-header";
 @import "modules/mobile-menu";
 @import "modules/nav";
 @import "modules/nav-bar";
-@import "modules/button";
-@import "modules/footer";
-@import "modules/social-icon";
-
 @import "modules/share";
+@import "modules/social-icon";
 
 // State file
 @import "state";
 
-@import "social-likes_birman";
-
 pre code {
-  font-size: 1.2em;
   background-color: #555 !important;
+  font-size: 1.2em;
+  overflow-x: auto;
 }
 

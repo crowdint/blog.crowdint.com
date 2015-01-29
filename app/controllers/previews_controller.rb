@@ -1,5 +1,6 @@
 class PreviewsController < ApplicationController
   def show
+    @categories = Category.all
     @post = Post.includes(:author).find(params[:id])
     @post.published_at = Date.today
 
