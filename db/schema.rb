@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 20150119183849) do
     t.integer "post_id"
   end
 
-  create_table "categories_posts", id: false, force: true do |t|
-    t.integer "category_id", null: false
-    t.integer "post_id",     null: false
-  end
-
   create_table "crowdblog_assets", force: true do |t|
     t.integer  "post_id"
     t.string   "attachment"
