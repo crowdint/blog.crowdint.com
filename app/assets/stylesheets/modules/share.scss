@@ -260,6 +260,8 @@
     .linkedin {
       @include social-media(-120px);
     }
+
+    .social-likes__counter { display: none; }
   }
 
 
