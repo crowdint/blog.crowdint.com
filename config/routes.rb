@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'search/(:q)', to: 'searches#index', as: 'search'
   get 'about', to: 'about#show'
 
+  resources :categories, only: :show
+
   namespace :admin do
     resource :dropbox_authorization
     resource :dropbox_sync
