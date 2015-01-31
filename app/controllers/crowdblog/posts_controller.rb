@@ -25,6 +25,6 @@ class Crowdblog::PostsController < ApplicationController
   private
 
   def get_categories
-    @categories = Category.all
+    @categories = Category.with_posts
   end
 end

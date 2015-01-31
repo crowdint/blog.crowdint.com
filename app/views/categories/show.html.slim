@@ -1,0 +1,10 @@
+section.posts.author-posts
+  .author-header
+    h1 All post for #{ @category.name }
+  - @posts.each do |post|
+    article.post
+      h1= link_to post.title, main_app.post_path(*post.url_params)
+      p
+        | Published on #{ post.published_at } by
+        = link_to " #{ post.author.name }",
+          main_app.posts_by_author_path(post.author.to_param)
