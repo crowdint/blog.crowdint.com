@@ -7,4 +7,8 @@ class Category < ActiveRecord::Base
   end
 
   scope :with_posts, -> { joins(:posts).uniq }
+
+  def to_param
+    "#{id}-#{name.parameterize}"
+  end
 end
