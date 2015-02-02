@@ -24,14 +24,3 @@ Then(/^I should see "(.*?)" within "(.*?)"$/) do |text, scope|
   end
 end
 
-Given(/^Categories and posts$/) do
-  user = FactoryGirl.create :user
-
-  FactoryGirl.create :category, name: 'Mario'
-  FactoryGirl.create :category, name: 'Zelda'
-
-  2.times { FactoryGirl.create :post, author: user }
-
-  Post.first.categories << Category.last
-  Post.last.categories << Category.first
-end

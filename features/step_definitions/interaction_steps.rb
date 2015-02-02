@@ -1,10 +1,5 @@
 Given /^I click on "([^"]*)"$/ do |link_name|
-  #binding.pry
   click_link link_name, match: :first
-end
-
-When /^I select "([^"]*)"$/ do |option|
-  select(option, from: 'category')
 end
 
 Given /^I press "([^"]*)"$/ do |button_name|
@@ -33,8 +28,4 @@ Then /^I should see:$/ do |table|
   table.raw.flatten.each do |expected|
     expect(page).to have_content(expected)
   end
-end
-
-Given /^I am in the main page$/ do
-  visit root_path
 end
