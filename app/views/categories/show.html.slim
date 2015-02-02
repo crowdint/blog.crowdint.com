@@ -1,12 +1,15 @@
-section#share
-  h3.is-not-mobile
-    | We like
-    br
-    span.l-normal to blog
-  h3.is-mobile
-    | We like
-    br
-    span.l-normal to blog
+.categories
+  .categories-desktop
+    h1.title We write about
+    - @categories.each do |category|
+      = link_to category_path(category) do
+        h2 class=(category == @category ? 'g-category' : 'category')
+          = category.name
+  .categories-mobile
+    = select_tag :category,
+      options_from_collection_for_select(@categories, 'id', 'name'),
+      prompt: 'select one',
+      class: 'categories-select'
 section.posts
   .author-header
     h1 All posts for #{ @category.name }
