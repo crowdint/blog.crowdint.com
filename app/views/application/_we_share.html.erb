@@ -3,6 +3,7 @@
   <div class="categories index categories-mobile">
     <%= select_tag :category,
                    options_from_collection_for_select(@categories, 'id', 'name'),
+                   prompt: 'select one',
                    class: 'categories-select' %>
   </div>
   <h3 class="share-title is-mobile">We share<span class="l-normal"> what we know</span></h3>

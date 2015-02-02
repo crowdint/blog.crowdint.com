@@ -39,6 +39,7 @@
     background-color: $home-color;
     display: none;
     height: 3em;
+    option { background-color: $home-color; }
 
     @include mq-tablet() {
       display: block !important;
