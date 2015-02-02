@@ -30,3 +30,5 @@ section.posts
         = link_to 'Read more...', main_app.post_path(*post.url_params), class: 'more'
         .social-links.row
           = render 'crowdblog/posts/social', post: post
+
+  = will_paginate @posts, inner_window: 1, outer_window: 0
