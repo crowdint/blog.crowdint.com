@@ -12,18 +12,6 @@ section.posts
 
   = will_paginate @posts, inner_window: 1, outer_window: 0
 
-  javascript:
-    $(function(){
-      $('.categories-select').bind('change', function () {
-         var url = "/categories/" + $(this).val()
-          if (url) {
-              window.location.replace(url);
-          }
-          return false;
-      });
-    });
-
-
 - if Rails.env.production?
   coffee:
     s = document.createElement('script')
