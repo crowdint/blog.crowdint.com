@@ -6,7 +6,9 @@ class Category < ActiveRecord::Base
       order(published_at: :desc)
   end
 
-  scope :with_posts, -> { joins(:posts).uniq }
+  scope :with_posts, -> {
+    joins(:posts).where('crowdblog_posts.published_at is not null').uniq
+  }
 
   def to_param
     "#{id}-#{name.parameterize}"
