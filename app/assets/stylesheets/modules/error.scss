@@ -1,0 +1,89 @@
+.error {
+  color: $error-color;
+  height: 400px;
+  text-align: left;
+  padding-top: 210px !important;
+  a { color: $error-color; }
+
+  @include mq-tablet() {
+    padding-top: 155px !important;
+  }
+
+  @include mq(880px) {
+    padding-top: 120px !important;
+    background: none;
+  }
+
+  @include mq(320px) {
+    padding-top: 16px !important;
+    height: 550px;
+  }
+}
+
+.error-img {
+  position: absolute;
+
+  @include mq(880px) {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+  }
+}
+
+.error-code {
+  font-weight: bold;
+  font-size: 90px;
+  margin: 110px 48px;
+  position: absolute;
+
+  @include mq(880px) {
+    position: absolute;
+    float: none;
+    left: 50%;
+    margin-left: -77px;
+  }
+
+}
+
+.error-title {
+  font-weight: 300;
+  font-size: 30px;
+  float: left;
+  margin: 94px 0 0 270px;
+  line-height: 35px;
+  font-family: 'Roboto Light';
+
+  @include mq(880px) {
+    float: none;
+    margin: 400px 0 0;
+    text-align: center;
+  }
+
+  @include mq(320px) {
+  line-height: 40px;
+    margin: 285px 0 0;
+    font-size: 20px;
+    font-weight: bold
+  }
+}
+
+.error-help {
+  float: left;
+  font-family: 'Roboto Light';
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 35px;
+  margin: 0 0 0 270px;
+
+  @include mq(880px) {
+    margin: 0;
+    float: none;
+    text-align: center;
+  }
+
+  @include mq(320px) {
+    line-height: 50px;
+    margin: 10px 0 0;
+  }
+}
