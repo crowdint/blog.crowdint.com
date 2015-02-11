@@ -1,4 +1,5 @@
 window.pages = {
   menu: {},
-  categories: {}
+  categories: {},
+  error: {}
 };

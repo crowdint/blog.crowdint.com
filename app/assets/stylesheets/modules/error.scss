@@ -3,6 +3,7 @@
   height: 400px;
   text-align: left;
   padding-top: 210px !important;
+  position: relative;
   a { color: $error-color; }
 
   @include mq-tablet() {

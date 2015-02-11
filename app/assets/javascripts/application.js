@@ -14,15 +14,18 @@
 //= require jquery_ujs
 //= require social-likes.min
 //= require jquery.stellar
+//= require jquery.parallax
 //= require highlight.pack
 //= require mixpanel
 //= require pages
 //= require mobile-menu
 //= require categories
+//= require error
 
 $(document).ready(function() {
   pages.menu.toggleMobileMenu();
   pages.categories.mobileCategories();
+  pages.error.glassMovement();
 
   offset = $('#header').height();
 
