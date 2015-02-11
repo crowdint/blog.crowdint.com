@@ -6,6 +6,6 @@ class ErrorsController < ApplicationController
 
   def internal_server_error
     @error_code = 500
-    render template: 'errors/error', status: 404
+    render template: 'errors/error', status: 500
   end
 end
