@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require social-likes.min
 //= require jquery.stellar
-//= require jquery.parallax
 //= require highlight.pack
 //= require mixpanel
 //= require pages
