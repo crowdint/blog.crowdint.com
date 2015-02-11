@@ -1,9 +1,9 @@
 .error {
   color: $error-color;
   height: 400px;
-  text-align: left;
   padding-top: 210px !important;
   position: relative;
+  text-align: left;
   a { color: $error-color; }
 
   @include mq-tablet() {
@@ -48,12 +48,9 @@
 }
 
 .error-title {
-  font-weight: 300;
-  font-size: 30px;
   float: left;
+  font: lighter 30px/35px 'Roboto Light';
   margin: 94px 0 0 270px;
-  line-height: 35px;
-  font-family: 'Roboto Light';
 
   @include mq(880px) {
     float: none;
@@ -71,10 +68,7 @@
 
 .error-help {
   float: left;
-  font-family: 'Roboto Light';
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 35px;
+  font: lighter 20px/35px 'Roboto Light';
   margin: 0 0 0 270px;
 
   @include mq(880px) {
