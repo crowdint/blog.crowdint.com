@@ -28,7 +28,6 @@
     display: block;
     left: 50%;
     margin-left: -125px;
-    position: absolute;
   }
 }
 
@@ -42,7 +41,6 @@
     float: none;
     left: 50%;
     margin-left: -77px;
-    position: absolute;
   }
 
 }
@@ -59,7 +57,7 @@
   }
 
   @include mq(320px) {
-  line-height: 40px;
+    line-height: 40px;
     font-size: 20px;
     font-weight: bold;
     margin: 285px 0 0;
