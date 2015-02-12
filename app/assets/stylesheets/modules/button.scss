@@ -14,7 +14,7 @@
   &:hover { opacity: 0.5; }
 }
 
-.button-home, .button-portfolio, .button-blog {
+.button-home, .button-portfolio, .button-blog, .button-error {
   @include button-page($home-color);
 }
 
@@ -42,30 +42,6 @@
     display: block;
     width: 100%;
   }
-}
-
-.button-ui_designer {
-  @include button-page($ui-designer-color);
-}
-
-.button-senior_dev {
-  @include button-page($senior-dev-color);
-}
-
-.button-scrum_master {
-  @include button-page($scrum-master-color);
-}
-
-.button-senior_go_engineer {
-  @include button-page($senior-go-engineer-color);
-}
-
-.button-ui_practicas_profesionales {
-  @include button-page($practicas-profesionales-color);
-}
-
-.button-ui_programador_apasionado {
-  @include button-page($programador-apasionado-color);
 }
 
 .button-close {

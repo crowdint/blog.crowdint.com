@@ -1,0 +1,82 @@
+.error {
+  color: $error-color;
+  height: 400px;
+  padding-top: 210px !important;
+  position: relative;
+  text-align: left;
+  a { color: $error-color; }
+
+  @include mq-tablet() {
+    padding-top: 155px !important;
+  }
+
+  @include mq(880px) {
+    background: none;
+    padding-top: 120px !important;
+  }
+
+  @include mq(320px) {
+    height: 550px;
+    padding-top: 16px !important;
+  }
+}
+
+.error-img {
+  position: absolute;
+
+  @include mq(880px) {
+    display: block;
+    left: 50%;
+    margin-left: -125px;
+  }
+}
+
+.error-code {
+  font-size: 90px;
+  font-weight: bold;
+  margin: 110px 48px;
+  position: absolute;
+
+  @include mq(880px) {
+    float: none;
+    left: 50%;
+    margin-left: -77px;
+  }
+
+}
+
+.error-title {
+  float: left;
+  font: lighter 30px/35px 'Roboto Light';
+  margin: 94px 0 0 270px;
+
+  @include mq(880px) {
+    float: none;
+    margin: 400px 0 0;
+    text-align: center;
+  }
+
+  @include mq(320px) {
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 285px 0 0;
+  }
+}
+
+.error-help {
+  float: left;
+  font: lighter 20px/35px 'Roboto Light';
+  margin: 0 0 0 270px;
+
+  @include mq(880px) {
+    float: none;
+    margin: 0;
+    text-align: center;
+  }
+
+  @include mq(320px) {
+    line-height: 50px;
+    margin: 10px 0 0;
+  }
+}
