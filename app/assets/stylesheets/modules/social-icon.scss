@@ -1,5 +1,3 @@
-.social-icons {}
-
 .social-icon {
   display: inline-block;
   padding: 3px;
@@ -17,13 +15,13 @@
 
 .social-icon-link {
   display: block;
-  height: 30px;
+  height: 31px;
   opacity: 0.5;
-  width: 30px;
+  width: 31px;
 }
 
-.social-icon-twitter { background: image_url('footer.png') 0px 0px no-repeat; }
-.social-icon-facebook { background: image_url('footer.png') -30px 0px no-repeat; }
-.social-icon-gplus { width: 31px; background: image_url('footer.png') -61px 0px no-repeat; }
-.social-icon-github { width: 30px; background: image_url('footer.png') -92px 0px no-repeat; }
-.social-icon-linkedin { width: 32px; background: image_url('footer.png') -123px 0px no-repeat; }
+.social-icon-twitter { background: image_url('twitter_ico.svg') top left no-repeat; }
+.social-icon-facebook { background: image_url('facebook_ico.svg') top left no-repeat; }
+.social-icon-gplus { background: image_url('gplus_ico.svg') top left no-repeat; }
+.social-icon-github { background: image_url('github_ico.svg') top left no-repeat; }
+.social-icon-linkedin { background: image_url('linkedin_ico.svg') top left no-repeat; }
