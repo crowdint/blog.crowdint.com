@@ -1,4 +1,2 @@
-= form_tag main_app.search_path, method: :get, id: :search_form, class: 'form-search' do
-  .input-group
-    = search_field_tag :q, nil, class: 'form-control', value: @query
-    button.btn.btn-default Search
+= form_tag main_app.search_path, method: :get, id: :search_form, class: 'search' do
+  = search_field_tag :q, nil, class: 'form-control', value: @query, placeholder: 'Search'
