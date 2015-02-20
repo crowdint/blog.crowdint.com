@@ -26,9 +26,10 @@
       = f.fields_for :categories do |c|
         .controls
           - @categories.each do |category|
-            = c.label class: 'checkbox'
-              = check_box_tag 'post[categories_ids][]', category.id, @post.categories.include?(category)
-              = category.name
+            .checkbox
+              = label_tag do
+                = check_box_tag 'post[categories_ids][]', category.id, @post.categories.include?(category)
+                = category.name
 
   .span7#assets
     - f.object.assets.each do |asset|
