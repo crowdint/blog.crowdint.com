@@ -1,11 +1,14 @@
 class Post < Crowdblog::Post
   belongs_to :author, :class_name => "User"
   belongs_to :publisher, :class_name => "User"
+  has_and_belongs_to_many :categories
 
   SHORT_DESCRIPTION_SIZE = 300
 
+  delegate :name, to: :author, prefix: true
+
   searchable do
-    text :title, :body
+    text :title, :body, :author_name, :category_names
     string :state
   end
 
@@ -13,6 +16,10 @@ class Post < Crowdblog::Post
     published_and_ordered.group_by {|p| p.published_at.year }.
         inject({}) { |mem, value| mem[value[0]] = value[1].
             group_by {|p| p.published_at.strftime("%B")}; mem }
+  end
+
+  def category_names
+    categories.pluck(:name).join(' ')
   end
 
   def previous
