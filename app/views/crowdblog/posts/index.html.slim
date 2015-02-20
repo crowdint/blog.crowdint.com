@@ -8,7 +8,7 @@
   .categories-mobile
     = select_tag :category,
       options_from_collection_for_select(@categories, 'id', 'name'),
-      prompt: 'select one',
+      prompt: 'We write about',
       class: 'categories-select'
 .archive
   .archive-desktop

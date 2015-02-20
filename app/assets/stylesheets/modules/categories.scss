@@ -23,11 +23,6 @@
 
   .categories-mobile { display: none; }
 
-  @include mq-mobile(){
-    .categories-desktop { display: none; }
-    .categories-mobile { display: block; }
-  }
-
   .categories-select {
     border: none;
     background: transparent;
@@ -35,5 +30,15 @@
     font-size: 18px;
     text-decoration: underline;
     color: #555;
+    width: 100%;
+  }
+
+  @include mq-mobile(){
+    width: 50%;
+    margin: 18px auto 0;
+    float: none;
+
+    .categories-desktop { display: none; }
+    .categories-mobile { display: block; }
   }
 }

@@ -14,6 +14,9 @@
   .archive-mobile { display: none; }
 
   @include mq-mobile(){
+    float: left;
+    margin: -25px 0 0 5%;
+
     .archive-desktop { display: none; }
     .archive-mobile { display: block; }
   }
