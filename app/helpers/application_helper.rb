@@ -98,10 +98,4 @@ module ApplicationHelper
   def custom_link(text, url, attr = {})
     link_to text, url, attr
   end
-
-  def index_page?
-    if params[:controller] == 'crowdblog/posts' && params[:action] == 'index'
-      'index'
-    end
-  end
 end

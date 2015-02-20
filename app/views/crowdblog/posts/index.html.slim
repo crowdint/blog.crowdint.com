@@ -1,11 +1,16 @@
 = render 'application/we_share'
-= render partial: 'application/search_form'
-= render 'application/nav_bar'
-
-.categories *{ class: index_page? }
+.categories
   .categories-desktop
-    h1.title We write about
-    =render @categories, index_view: true
+    = link_to root_path do
+      h2.category-home Blog Home
+    h1.categories-title We write about
+    = render @categories, index_view: true
+.archive
+  .archive-desktop
+    = link_to main_app.archive_path do
+      h2 Blog Archive
+= render partial: 'application/search_form'
+
 section.posts
   .recent-post.is-mobile
     = render partial: 'post', locals: { post: @recent_post, index_view: true }
