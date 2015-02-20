@@ -10,4 +10,11 @@
     font-family: 'Roboto Regular';
     font-size: 18px;
   }
+
+  .archive-mobile { display: none; }
+
+  @include mq-mobile(){
+    .archive-desktop { display: none; }
+    .archive-mobile { display: block; }
+  }
 }

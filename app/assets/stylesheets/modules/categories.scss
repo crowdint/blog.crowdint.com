@@ -20,4 +20,20 @@
   .category {
     line-height: 30px;
   }
+
+  .categories-mobile { display: none; }
+
+  @include mq-mobile(){
+    .categories-desktop { display: none; }
+    .categories-mobile { display: block; }
+  }
+
+  .categories-select {
+    border: none;
+    background: transparent;
+    font-family: 'Roboto Light';
+    font-size: 18px;
+    text-decoration: underline;
+    color: #555;
+  }
 }
