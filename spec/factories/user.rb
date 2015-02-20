@@ -2,6 +2,6 @@ FactoryGirl.define do
   factory :user do
     name 'Petronilo'
     is_publisher true
-    email 'petronilo@crowdint.com'
+    sequence(:email) { |n| "petronilo_#{ n }@crowdint.com" }
   end
 end
