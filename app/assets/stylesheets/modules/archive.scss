@@ -1,0 +1,13 @@
+.archive {
+  float: right;
+  width: 10%;
+  margin: 50px 5% 0 0;
+
+  a, h2 {
+    text-decoration: none;
+    margin: 0;
+    color: $darkgray;
+    font-family: 'Roboto Regular';
+    font-size: 18px;
+  }
+}
