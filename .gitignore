@@ -23,8 +23,14 @@ public/asset
 
 *.sql
 log/sunspot-solr-development.log.lck
+log/sunspot-solr-test.log.lck
 /solr
+.ruby-gemset
+sunspot-solr.pid
 
 .env
 *.swp
 *.~un
+
+# Ignore application configuration
+/config/application.yml

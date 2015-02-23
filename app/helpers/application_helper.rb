@@ -46,4 +46,62 @@ module ApplicationHelper
   def year
     Time.zone.now.year
   end
+
+  def next_link(post)
+    if post.next
+      custom_link('Next >', main_app.post_path(*post.next.url_params), class: 'next')
+    else
+      custom_link('Next >', 'javascript:void(0)', class: 'next')
+    end
+  end
+
+  def previous_link(post)
+    if post.previous
+      custom_link('< Previous', main_app.post_path(*post.previous.url_params), class: 'previous')
+    else
+      custom_link('< Previous', 'javascript:void(0)', class: 'previous')
+    end
+  end
+
+  def next_link_mobile(post)
+    if post.next
+      custom_link('>', main_app.post_path(*post.next.url_params), class: 'next')
+    else
+      custom_link('>', 'javascript:void(0)', class: 'next')
+    end
+  end
+
+  def previous_link_mobile(post)
+    if post.previous
+      custom_link('<', main_app.post_path(*post.previous.url_params), class: 'previous')
+    else
+      custom_link('<', 'javascript:void(0)', class: 'previous')
+    end
+  end
+
+  def get_home_category(category)
+    if category
+      custom_link("Home / #{ category.name }", 'javascript:void(0)', class: 'category-link')
+    else
+      custom_link('Home / None', 'javascript:void(0)', class: 'category-link')
+    end
+  end
+
+  def category_link(category)
+    if category
+      custom_link(category.name, 'javascript:void(0)')
+    else
+      custom_link('None', 'javascript:void(0)')
+    end
+  end
+
+  def custom_link(text, url, attr = {})
+    link_to text, url, attr
+  end
+
+  def index_page?
+    if params[:controller] == 'crowdblog/posts' && params[:action] == 'index'
+      'index'
+    end
+  end
 end

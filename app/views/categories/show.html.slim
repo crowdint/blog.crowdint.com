@@ -1,0 +1,37 @@
+.categories
+  .categories-desktop
+    h1.title We write about
+    - @categories.each do |category|
+      = link_to category_path(category) do
+        h2 class=(category == @category ? 'g-category' : 'category')
+          = category.name
+  .categories-mobile
+    = select_tag :category,
+      options_from_collection_for_select(@categories, 'id', 'name'),
+      prompt: 'select one',
+      class: 'categories-select'
+section.posts
+  .author-header
+    h1 All posts for #{ @category.name }
+  - @posts.each do |post|
+    article.post
+      h1= link_to post.title, main_app.post_path(*post.url_params)
+      p.author-info
+        = image_tag post.gravatar_url, class: 'gravatar'
+        = link_to main_app.posts_by_author_path(post.author.to_param) do
+          | by&nbsp;
+          strong= post.author_name
+        span.is-not-mobile.separator |
+      p.is-mobile-info
+        span.published-date
+          = post.formatted_published_date
+      p.is-mobile-info
+        span.is-not-mobile.separator |
+        = category_link(post.first_category)
+      .body.short
+        = post.short_description
+        = link_to 'Read more...', main_app.post_path(*post.url_params), class: 'more'
+        .social-links.row
+          = render 'crowdblog/posts/social', post: post
+
+  = will_paginate @posts, inner_window: 1, outer_window: 0

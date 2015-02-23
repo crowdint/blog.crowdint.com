@@ -1,14 +1,15 @@
 class Crowdblog::PostsController < ApplicationController
-
+  before_action :get_categories, only: [:index, :show]
   def index
-    @posts = ::Post.for_index.paginate(:page => params[:page], :per_page => 5)
+    @recent_post = ::Post.last_published(1).first
+    @posts = ::Post.for_index.paginate(:page => params[:page], :per_page => 4).where.not(id: @recent_post)
     @history = ::Post.for_history - @posts
   end
 
   def show
-    @post = Crowdblog::Post.find_by_permalink(params[:id])
+    @post = ::Post.find_by_permalink(params[:id])
     unless @post
-      @post = Crowdblog::Post.find(params[:id])
+      @post = ::Post.find(params[:id])
       @post.published_at = Date.today
     end
 
@@ -16,8 +17,14 @@ class Crowdblog::PostsController < ApplicationController
     set_meta
     #######
 
-    @post_by_author = Crowdblog::Post.where(state: 'published').where('id <> ?', @post).where(author_id: @post.author).order('published_at DESC, id DESC').limit(3)
+    @post_by_author = ::Post.where(state: 'published').where('id <> ?', @post).where(author_id: @post.author).order('published_at DESC, id DESC').limit(3)
 
-    @history = Crowdblog::Post.for_history - [@post]
+    @history = ::Post.for_history - [@post]
+  end
+
+  private
+
+  def get_categories
+    @categories = Category.with_posts
   end
 end

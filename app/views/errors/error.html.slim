@@ -1,0 +1,8 @@
+section.headline.headline-error
+  .l-wrapper.headline-body.error
+    h1.error-code= @error_code
+    = image_tag 'lens.png', class: 'error-img'
+    h2.error-title It seems what you're looking for it's not here!
+    p.error-help
+      | Do you need #{ link_to 'HELP', 'mailto:info@crowdint.com' }?,
+      |  or go back to our #{ link_to 'HOMEPAGE', root_path }

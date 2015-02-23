@@ -19,9 +19,9 @@
   vertical-align: top;
   margin: 0;
 
-  background: image_url('crowdint-logo.png') 0 0 no-repeat;
+  background: image_url('crowdint-logo.svg') no-repeat;
 
-  @include mq-mobile() {
+  @include mq(770px) {
     width: 120px;
     height: 50px;
     position: absolute;
@@ -30,7 +30,7 @@
     margin-left: -60px;
     margin-top: -25px;
 
-    background: image_url('header.png') -120px 0px no-repeat;
+    background: image_url('crowdint-logo-02.svg') no-repeat;
   }
 }
 
@@ -45,7 +45,7 @@
     right: 0;
   }
 
-  @include mq-mobile() { display: none; }
+  @include mq(770px) { display: none; }
 }
 
 .header-nav-link {
@@ -65,9 +65,9 @@
   top: 50%;
   margin-top: -14px;
 
-  background: $home-color image_url('header.png') -240px -11px no-repeat;
+  background: $home-color image_url('menu-btn.svg') -40px -21px no-repeat;
 
-  @include mq-mobile() {
+  @include mq(770px) {
     display: block;
     top: 100%;
   }

@@ -1,6 +1,7 @@
 class Post < Crowdblog::Post
   belongs_to :author, :class_name => "User"
   belongs_to :publisher, :class_name => "User"
+
   SHORT_DESCRIPTION_SIZE = 300
 
   searchable do
@@ -14,8 +15,26 @@ class Post < Crowdblog::Post
             group_by {|p| p.published_at.strftime("%B")}; mem }
   end
 
+  def previous
+    Post.published_and_ordered.
+      where('published_at < ?', self.published_at).first
+  end
+
+  def next
+    Post.published_and_ordered.
+      where('published_at > ?', self.published_at).last
+  end
+
   def dropbox_name
     "#{id}-#{permalink}.md"
+  end
+
+  def formatted_published_date
+    published_at.strftime('%b %d, %Y')
+  end
+
+  def first_category
+    categories.limit(1).first
   end
 
   #
@@ -40,5 +59,17 @@ class Post < Crowdblog::Post
       fulltext query
       with :state, 'published'
     end
+  end
+
+  def self.verbose_reindex
+    all.each do |post|
+      puts post.id
+      Sunspot.index post
+      Sunspot.commit
+    end
+  end
+
+  def self.scoped_for(user)
+    user.is_publisher? ? all : user.authored_posts
   end
 end

@@ -1,0 +1,5 @@
+= cache [category] do
+  - if @post
+    = link_to main_app.category_path(category) do
+      h2 class=(@post.categories.include?(category) ? 'g-category' : 'category')
+        = category.name

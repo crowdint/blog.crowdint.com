@@ -1,4 +1,7 @@
 require 'rubygems'
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'spork'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
@@ -7,8 +10,8 @@ ENV["RAILS_ENV"] ||= 'test'
 Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
-  require 'rspec/autorun'
   require 'crowdblog/rspec'
+  require 'shoulda/matchers'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -23,6 +26,8 @@ Spork.prefork do
     # config.mock_with :flexmock
     # config.mock_with :rr
 
+    config.include FactoryGirl::Syntax::Methods
+
     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
     config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -36,6 +41,9 @@ Spork.prefork do
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
     config.order = "random"
+
+    # RSpec infers what kind of spec are running
+    config.infer_spec_type_from_file_location!
   end
 
 end

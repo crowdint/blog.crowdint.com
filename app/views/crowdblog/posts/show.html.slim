@@ -1,3 +1,21 @@
+.categories
+  .categories-desktop
+    h1.title We write about
+    = render partial: 'crowdblog/categories/category_details', collection: @categories, as: :category
+  .categories-mobile
+    = select_tag :category,
+      options_from_collection_for_select(@categories, 'id', 'name'),
+      prompt: 'select one',
+      class: 'categories-select'
+.post-menu
+  .post-menu-desktop
+    = next_link(@post)
+    = get_home_category(@post.first_category)
+    = previous_link(@post)
+  .post-menu-mobile
+    = next_link_mobile(@post)
+    = get_home_category(@post.first_category)
+    = previous_link_mobile(@post)
 .posts
   = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
   #disqus_thread

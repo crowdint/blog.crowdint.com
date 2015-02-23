@@ -6,4 +6,5 @@
         li.brand= current_user.email
         li= link_to 'Posts', crowdblog.admin_posts_path
         li= link_to 'Authors', main_app.admin_authors_path
+        li= link_to 'Categories', main_app.admin_categories_path
         li= link_to 'Sign out', main_app.destroy_user_session_path

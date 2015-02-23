@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   get 'search/(:q)', to: 'searches#index', as: 'search'
   get 'about', to: 'about#show'
 
+  resources :categories, only: :show
+
   namespace :admin do
     resource :dropbox_authorization
     resource :dropbox_sync
 
     resources :authors, :only => :index
+    resources :categories
   end
 
   get '/:year/:month/:day/:id(.:format)', to: 'crowdblog/posts#show', as: 'post',
@@ -33,4 +36,6 @@ Rails.application.routes.draw do
 
   mount Crowdblog::Engine => '/'
 
+  match '/404', to: 'errors#file_not_found', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
 end

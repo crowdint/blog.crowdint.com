@@ -1,1 +1,1 @@
-p The blog post #{@post.title} from #{@post.author_name} has been marked as reviewed, you can publish it #{ link_to 'here', crowdblog.admin_posts_url }
+p The blog post #{@post.title} from #{@post.author_name} has been marked as reviewed, you can publish it #{ link_to 'here', crowdblog.admin_posts_url, only_path: true }

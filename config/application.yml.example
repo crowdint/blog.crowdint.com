@@ -1,0 +1,11 @@
+# Please ask Juan Carlos for this keys
+
+defaults: &defaults
+  GOOGLE_APP_ID: 'your_google_app_id'
+  GOOGLE_SECRET_KEY: 'your_google_secret_key'
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults

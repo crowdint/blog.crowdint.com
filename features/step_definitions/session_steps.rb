@@ -1,5 +1,3 @@
-include Devise::TestHelpers
-
 Given /^I am signed in as "([^"]*)"$/ do |email|
   @current_user = User.find_or_create_by_email(email)
   @current_user.reset_authentication_token!
@@ -10,8 +8,6 @@ Given /^An author with name "([^"]*)" and email "([^"]*)"$/ do |name, email|
   user = User.new
   user.name = name
   user.email = email
-  user.password = '123456'
-  user.password_confirmation = user.password
   user.save!
 end
 

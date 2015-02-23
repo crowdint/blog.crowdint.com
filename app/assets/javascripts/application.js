@@ -18,9 +18,13 @@
 //= require mixpanel
 //= require pages
 //= require mobile-menu
+//= require categories
+//= require error
 
 $(document).ready(function() {
   pages.menu.toggleMobileMenu();
+  pages.categories.mobileCategories();
+  pages.error.glassMovement();
 
   offset = $('#header').height();
 

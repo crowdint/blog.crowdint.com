@@ -1,4 +1,5 @@
 .navbar {
+  display: none;
   max-width: 960px;
   margin: 0 auto;
   width: 100%;
@@ -14,6 +15,11 @@
 
     &:first-child {
       margin-right: 1em;
+    }
+
+    @include mq-tablet() {
+      &:first-child { margin-right: 5px; }
+      &:last-child { margin-right: 5px; }
     }
   }
 
