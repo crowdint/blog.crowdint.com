@@ -1,0 +1,12 @@
+.options {
+  display: none;
+
+  @include mq-tablet(){
+    display: block;
+    max-width: 768px;
+    width: 95%;
+    padding: 0 50px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}

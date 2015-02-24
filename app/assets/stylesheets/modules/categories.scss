@@ -17,28 +17,7 @@
     margin: 60px 0 20px;
   }
 
-  .category {
-    line-height: 30px;
-  }
+  .category { line-height: 30px; }
 
-  .categories-mobile { display: none; }
-
-  .categories-select {
-    border: none;
-    background: transparent;
-    font-family: 'Roboto Light';
-    font-size: 18px;
-    text-decoration: underline;
-    color: #555;
-    width: 100%;
-  }
-
-  @include mq-mobile(){
-    width: 50%;
-    margin: 18px auto 0;
-    float: none;
-
-    .categories-desktop { display: none; }
-    .categories-mobile { display: block; }
-  }
+  @include mq-tablet(){ display: none; }
 }

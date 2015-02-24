@@ -15,27 +15,5 @@
     padding: 15px;
   }
 
-  @include mq-tablet() {
-    max-width: 768px;
-    width: 95%;
-  }
-
-  @include mq-mobile() {
-    max-width: 640px;
-    padding: 20px;
-    width: 100%;
-    display: none;
-  }
-}
-
-.search-mobile {
-  display: none;
-
-  @include mq-mobile() {
-    width: 10%;
-    display: block;
-    float: right;
-    margin: -25px 5% 0 0;
-    text-align: center;
-  }
+  @include mq-tablet(){ display: none; }
 }
