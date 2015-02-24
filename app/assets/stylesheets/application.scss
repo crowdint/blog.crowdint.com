@@ -15,21 +15,7 @@
 @import "highlight/sunburst";
 
 // Modules
-@import "modules/archive";
-@import "modules/button";
-@import "modules/categories";
-@import "modules/error";
-@import "modules/footer";
-@import "modules/header";
-@import "modules/headline";
-@import "modules/menu-header";
-@import "modules/mobile-menu";
-@import "modules/nav";
-@import "modules/nav-bar";
-@import "modules/options";
-@import "modules/search";
-@import "modules/share";
-@import "modules/social-icon";
+@import "modules/*";
 
 // State file
 @import "state";
