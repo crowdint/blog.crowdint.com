@@ -1,22 +1,22 @@
 = render 'application/we_share'
 .categories
-  .categories-desktop
-    = link_to root_path do
-      h2.category-home Blog Home
-    h1.categories-title We write about
-    = render @categories, index_view: true
-  .categories-mobile
+  = link_to root_path do
+    h2.category-home Blog Home
+  h1.categories-title We write about
+  = render @categories, index_view: true
+.archive
+  = link_to main_app.archive_path do
+    h2 Blog Archive
+= render partial: 'application/search_form'
+
+.options
+  = link_to '', root_path, class: 'options-home'
+  = link_to '', main_app.archive_path, class: 'options-archive'
+  .options-categories
     = select_tag :category,
       options_from_collection_for_select(@categories, 'id', 'name'),
-      prompt: 'We write about',
-      class: 'categories-select'
-.archive
-  .archive-desktop
-    = link_to main_app.archive_path do
-      h2 Blog Archive
-  .archive-mobile
-    = link_to image_tag('archive_ico.svg'), main_app.archive_path
-= render partial: 'application/search_form'
+      prompt: 'select one', class: 'js-categories-select'
+  span.options-search
 
 section.posts
   .recent-post.is-mobile
