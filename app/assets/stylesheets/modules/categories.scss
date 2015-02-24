@@ -1,13 +1,13 @@
 .categories {
-  width: 10%;
-  margin: 50px 0 0 5%;
   float: left;
+  margin: 50px 0 0 5%;
+  width: 10%;
 
   h1, h2, a {
-    margin: 0;
     color: $darkgray;
     font-family: 'Roboto Regular';
     font-size: 18px;
+    margin: 0;
     text-decoration: none;
   }
 

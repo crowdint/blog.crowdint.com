@@ -28,7 +28,7 @@
     select {
       background: $white;
       border: none;
-      color: #AAA;
+      color: $darkgray;
       display: block;
       font-family: 'Roboto Light';
       font-size: 18px;
@@ -50,5 +50,9 @@
     max-width: 768px;
     padding: 0 50px;
     width: 95%;
+  }
+
+  @include mq-mobile(){
+
   }
 }

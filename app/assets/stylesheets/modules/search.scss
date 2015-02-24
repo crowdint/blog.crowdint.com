@@ -6,13 +6,13 @@
   width: 70%;
 
   input {
-    background: #F6F6F6 image_url('search_icon.svg') 97% 15px no-repeat;
+    background: $whitesmoke-light image_url('search_icon.svg') 97% 15px no-repeat;
     border: none;
+    color: $darkgray;
     font-family: 'Roboto Light';
     font-size: 18px;
-    color: #AAAAAA;
-    width: 100%;
     padding: 15px;
+    width: 100%;
   }
 
   @include mq-tablet(){ display: none; }
