@@ -15,5 +15,15 @@
     width: 100%;
   }
 
-  @include mq-tablet(){ display: none; }
+  @include mq-tablet(){
+    display: none;
+    max-width: 768px;
+    padding: 32px 50px 0;
+    width: 95%;
+  }
+
+  @include mq-mobile(){
+    padding: 32px 20px 0;
+    width: 100%;
+  }
 }

@@ -53,6 +53,15 @@
   }
 
   @include mq-mobile(){
+    margin: 18px 0 0;
+    padding: 0 20px;
+    width: 100%;
 
+    .options-home { display: none; }
+
+    .options-archive {
+      background: image_url('archive_ico.svg') 10% 10px no-repeat;
+      width: 20%;
+    }
   }
 }
