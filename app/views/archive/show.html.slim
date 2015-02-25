@@ -12,13 +12,14 @@ section#share
     h2.category-home Blog Home
 = form_tag search_path, method: :get, class: 'search not-hidden' do
   = search_field_tag :q, nil, class: 'search-input', value: @query, placeholder: 'Search'
+  span.search-toggle-elements
   .search-options
     = select_tag :author,
       options_from_collection_for_select(User.all, :id, :name),
       prompt: 'by Author', class: 'search-options-author'
     = select_tag :category,
       options_from_collection_for_select(Category.all, :id, :name),
-      prompt: 'by Category', class: 'search-options-author'
+      prompt: 'by Category', class: 'search-options-category'
     = label_tag 'from'
     = date_field_tag :from, nil, class: 'search-options-date'
     = label_tag 'to'

@@ -5,7 +5,55 @@
   padding: 32px 50px 0;
   width: 70%;
 
-  &.not-hidden { display: block; }
+  &.not-hidden {
+    display: block;
+
+    .search-toggle-elements { display: none; }
+
+    @include mq-tablet(){
+      .search-toggle-elements {
+        display: inline-block;
+        width: 10%;
+        height: 55px;
+        vertical-align: -20px;
+        background: image_url('options_btn_up.svg') center no-repeat;
+      }
+
+      .search-input { width: 90%; }
+
+      .search-options {
+        .search-options-author {
+          width: 44%;
+          margin: 0 2% 20px 0;
+        }
+
+        .search-options-category {
+          width: 44%;
+          margin: 0 10% 20px 0;
+        }
+
+        label { width: 7%; }
+      }
+    }
+
+    @include mq-mobile(){
+      .search-options {
+        .search-options-author {
+          width: 90%;
+          margin: 0 10% 20px 0;
+        }
+
+        .search-options-category {
+          width: 90%;
+          margin: 0 10% 20px 0;
+        }
+
+        label { width: 10%; }
+
+        .search-options-date { width: 35%; }
+      }
+    }
+  }
 
   .search-input {
     background: $whitesmoke-light image_url('search_icon.svg') 97% 15px no-repeat;
