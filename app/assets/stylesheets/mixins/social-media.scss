@@ -1,0 +1,8 @@
+@mixin social-media($x, $y: -40px) {
+  background: image_url('social/socialmedia_ico_sprite.svg') $x $y no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  width: 30px;
+}

@@ -5,6 +5,8 @@
   padding: 32px 50px 0;
   width: 70%;
 
+  &.not-hidden { display: block; }
+
   .search-input {
     background: $whitesmoke-light image_url('search_icon.svg') 97% 15px no-repeat;
     border: none;
@@ -12,6 +14,39 @@
     font: 18px 'Roboto Light';
     padding: 15px;
     width: 100%;
+  }
+
+  .search-options {
+    padding-top: 20px;
+
+    select {
+      width: 28%;
+      margin-right: 2%;
+      font: 14px 'Roboto Light';
+      border: none;
+      background: $whitesmoke-light;
+      color: $darkgray;
+      height: 30px;
+    }
+
+    label {
+      width: 5%;
+      height: 30px;
+      color: $darkgray;
+      font: 14px 'Roboto Light';
+      display: inline-block;
+      text-align: center;
+    }
+
+    .search-options-date {
+      border: none;
+      background: $whitesmoke-light;
+      box-sizing: border-box;
+      width: 15%;
+      height: 30px;
+      color: $darkgray;
+      font: 14px 'Roboto Light';
+    }
   }
 
   @include mq-tablet(){
