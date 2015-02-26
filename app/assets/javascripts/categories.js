@@ -1,5 +1,5 @@
 pages.categories.mobileCategories = function(){
-  $('.categories-select').on('change', function(){
+  $('.js-categories-select').on('change', function(){
     var category = $(this).find('option:selected').text().toLowerCase();
     var url = '/categories/' +
       $(this).val() + '-' +

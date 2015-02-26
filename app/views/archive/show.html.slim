@@ -7,9 +7,7 @@ section#share
     = 'Our '
     span.l-normal archive
 
-= render 'application/nav_bar'
-
-section.posts.archive
+section.posts
   - @posts.each do |year, posts|
       - posts.each do |month, posts|
         h3 #{month} / #{year}

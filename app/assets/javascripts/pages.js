@@ -1,5 +1,6 @@
 window.pages = {
   menu: {},
   categories: {},
-  error: {}
+  error: {},
+  search: {}
 };

@@ -2,8 +2,7 @@ Given /^the following posts by "([^"]*)":$/ do |name, table|
   author = User.find_by_name name
   table.hashes.each_with_index do |hash, index|
     time_index = (index * 5)
-    p = Post.create!(title: hash[:title], body: hash[:body])
-    p.author = author
+    p = Post.create!(title: hash[:title], body: hash[:body], author: author)
     p.regenerate_permalink
     p.save!
     p.publish_as_publisher if hash[:published] == 'true'

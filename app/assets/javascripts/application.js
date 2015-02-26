@@ -20,11 +20,14 @@
 //= require mobile-menu
 //= require categories
 //= require error
+//= require search
 
 $(document).ready(function() {
   pages.menu.toggleMobileMenu();
   pages.categories.mobileCategories();
   pages.error.glassMovement();
+  pages.search.showForm();
+  pages.search.hideForm();
 
   offset = $('#header').height();
 

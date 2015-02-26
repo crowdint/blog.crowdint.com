@@ -1,0 +1,66 @@
+@mixin options($width) {
+  display: inline-block;
+  height: 40px;
+  width: $width;
+  @content;
+}
+
+.options {
+  display: none;
+
+  .options-home {
+    @include options(10%) {
+      background: image_url('home_ico.svg') center no-repeat;
+    }
+  }
+
+  .options-archive {
+    @include options(10%) {
+      background: image_url('archive_ico.svg') center no-repeat;
+    }
+  }
+
+  .options-categories {
+    @include options(60%) {
+      vertical-align: 15px;
+    }
+
+    select {
+      background: $white;
+      border: none;
+      color: $darkgray;
+      display: block;
+      font: 18px 'Roboto Light';
+      height: 40px;
+      margin: 0 auto;
+    }
+  }
+
+  .options-search {
+    @include options(20%) {
+      background: image_url('search_icon.svg') 90% 10px no-repeat;
+    }
+  }
+
+  @include mq-tablet(){
+    box-sizing: border-box;
+    display: block;
+    margin: 32px auto 0;
+    max-width: 768px;
+    padding: 0 50px;
+    width: 95%;
+  }
+
+  @include mq-mobile(){
+    margin: 18px 0 0;
+    padding: 0 20px;
+    width: 100%;
+
+    .options-home { display: none; }
+
+    .options-archive {
+      background: image_url('archive_ico.svg') 10% 10px no-repeat;
+      width: 20%;
+    }
+  }
+}
