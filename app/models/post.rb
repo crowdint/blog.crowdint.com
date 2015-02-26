@@ -10,14 +10,31 @@ class Post < Crowdblog::Post
   searchable do
     text :title, :body, :author_name, :category_names
     string :state
-  end
-
-  def self.grouped_for_archive
-    published_and_ordered.group_by { |p| p.published_at.year }
+    time :published_at
   end
 
   def category_names
     categories.pluck(:name).join(' ')
+  end
+
+  def self.query(query)
+    Post.search do
+      fulltext query[:text]
+      with :state, 'published'
+      order_by :published_at, :desc
+    end
+  end
+
+  def self.verbose_reindex
+    all.each do |post|
+      puts post.id
+      Sunspot.index post
+      Sunspot.commit
+    end
+  end
+
+  def self.grouped_for_archive
+    published_and_ordered.group_by { |p| p.published_at.year }
   end
 
   def previous
@@ -57,21 +74,6 @@ class Post < Crowdblog::Post
     @@renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
                                            :autolink => true, :space_after_headers => true)
     @@renderer.render(description).html_safe
-  end
-
-  def self.query(query)
-    Post.search do
-      fulltext query
-      with :state, 'published'
-    end
-  end
-
-  def self.verbose_reindex
-    all.each do |post|
-      puts post.id
-      Sunspot.index post
-      Sunspot.commit
-    end
   end
 
   def self.scoped_for(user)
