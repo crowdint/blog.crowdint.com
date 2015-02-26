@@ -12,8 +12,8 @@ section#share
     h2.category-home Blog Home
 = form_tag search_path, method: :get, class: 'search not-hidden' do
   = search_field_tag 'q[text]', nil, class: 'search-input', value: @query, placeholder: 'Search'
-  span.search-toggle-elements
-  .search-options
+  span.search-toggle-elements.js-toggle-archive-options
+  .search-options.js-archive-options
     = select_tag 'q[author]', options_from_collection_for_select(User.all, :id, :name),
       prompt: 'by Author', class: 'search-options-author'
     = select_tag 'q[category]', options_from_collection_for_select(Category.all, :id, :name),

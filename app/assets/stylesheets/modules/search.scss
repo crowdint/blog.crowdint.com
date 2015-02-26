@@ -12,16 +12,21 @@
 
     @include mq-tablet(){
       .search-toggle-elements {
+        cursor: pointer;
         display: inline-block;
         width: 10%;
         height: 55px;
         vertical-align: -20px;
-        background: image_url('options_btn_up.svg') center no-repeat;
+        background: image_url('options_btn_down.svg') center no-repeat;
+
+        &.active { background-image: image_url('options_btn_up.svg') }
       }
 
       .search-input { width: 90%; }
 
       .search-options {
+        display: none;
+
         .search-options-author {
           width: 44%;
           margin: 0 2% 20px 0;

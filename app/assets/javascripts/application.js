@@ -21,6 +21,7 @@
 //= require categories
 //= require error
 //= require search
+//= require archive
 
 $(document).ready(function() {
   pages.menu.toggleMobileMenu();
@@ -28,6 +29,7 @@ $(document).ready(function() {
   pages.error.glassMovement();
   pages.search.showForm();
   pages.search.hideForm();
+  pages.archive.toggleOptions();
 
   offset = $('#header').height();
 
