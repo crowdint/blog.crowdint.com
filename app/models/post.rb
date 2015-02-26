@@ -10,6 +10,8 @@ class Post < Crowdblog::Post
   searchable do
     text :title, :body, :author_name, :category_names
     string :state
+    integer :author_id
+    integer :category_ids, multiple: true
     time :published_at
   end
 
@@ -18,11 +20,21 @@ class Post < Crowdblog::Post
   end
 
   def self.query(query)
+    dates = self.date_range(query)
     Post.search do
       fulltext query[:text]
-      with :state, 'published'
-      order_by :published_at, :desc
+      with(:author_id, query[:author].to_i) if query[:author].present?
+      with(:category_ids, [query[:category].to_i]) if query[:category].present?
+      with(:state, 'published')
+      with(:published_at, dates)
+      order_by(:published_at, :desc)
     end
+  end
+
+  def self.date_range(params)
+    from = params[:from].blank? ? '2010-01-01' : params[:from]
+    to = params[:to].blank? ? Date.today.end_of_month.to_s : params[:to]
+    from..to
   end
 
   def self.verbose_reindex
