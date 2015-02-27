@@ -15,6 +15,8 @@
 //= require social-likes.min
 //= require jquery.stellar
 //= require highlight.pack
+//= require pickadate/picker
+//= require pickadate/picker.date
 //= require mixpanel
 //= require pages
 //= require mobile-menu
@@ -30,6 +32,8 @@ $(document).ready(function() {
   pages.search.showForm();
   pages.search.hideForm();
   pages.archive.toggleOptions();
+  pages.archive.loadPickadate();
+  pages.archive.sendForm();
 
   offset = $('#header').height();
 
