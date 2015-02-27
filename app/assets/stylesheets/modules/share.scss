@@ -63,3 +63,12 @@
   }
 }
 
+.share-archive {
+  margin: 1.2em 0;
+  font: 50px 'Roboto Bold';
+
+  @include mq-mobile() {
+    font: 30px 'Roboto Bold';
+    margin: 0;
+  }
+}
