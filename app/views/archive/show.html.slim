@@ -14,13 +14,15 @@ section#share
   = search_field_tag 'q[text]', nil, class: 'search-input', value: @query, placeholder: 'Search'
   span.search-toggle-elements.js-toggle-archive-options
   .search-options.js-archive-options
-    = select_tag 'q[author]', options_from_collection_for_select(User.all, :id, :name),
-      prompt: 'by Author', class: 'search-options-author'
-    = select_tag 'q[category]', options_from_collection_for_select(Category.all, :id, :name),
-      prompt: 'by Category', class: 'search-options-category'
-    = label_tag 'from'
+    span.search-options-custom-author
+      = select_tag 'q[author]', options_from_collection_for_select(User.all, :id, :name),
+        prompt: 'by Author', class: 'search-options-author'
+    span.search-options-custom-category
+      = select_tag 'q[category]', options_from_collection_for_select(Category.all, :id, :name),
+        prompt: 'by Category', class: 'search-options-category'
+    = label_tag 'q[from]', 'from'
     = date_field_tag 'q[from]', nil, class: 'search-options-date'
-    = label_tag 'to'
+    = label_tag 'q[to]', 'to'
     = date_field_tag 'q[to]', nil, class: 'search-options-date'
 
 section.posts.for-archive
