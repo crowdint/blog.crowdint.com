@@ -5,8 +5,8 @@
   width: 70%;
 
   &.for-archive {
-    padding: 0 50px;
     box-sizing: border-box;
+    padding: 0 50px;
 
     @include mq-mobile(){ padding: 0 20px; }
   }
@@ -14,8 +14,8 @@
   .pagination {
     color: $blog-color;
     margin: -2em 0 4em;
-    text-align: center;
     overflow: auto;
+    text-align: center;
 
     .previous_page {
       float: left;
@@ -95,12 +95,12 @@
   padding-top: 50px;
 
   .post-year-separator {
+    border-bottom: none;
+    border-top: 1px solid $darkgray;
     box-sizing: border-box;
     display: inline-block;
-    width: 45%;
     margin: 10px 0;
-    border-top: 1px solid $darkgray;
-    border-bottom: none;
+    width: 45%;
   }
 
   .post-year-title {
@@ -108,8 +108,8 @@
     display: inline-block;
     font: 22px 'Roboto Regular';
     margin: 0;
-    width: 10%;
     text-align: center;
+    width: 10%;
   }
 
   @include mq-tablet(){
@@ -129,9 +129,9 @@
   padding: 50px;
 
   &.for-archive {
-    padding: 50px 0;
-    margin-bottom: 0;
     border-bottom: 1px solid $darkgray;
+    margin-bottom: 0;
+    padding: 50px 0;
 
     &.last { border-bottom: none; }
 
@@ -191,8 +191,8 @@
   }
 
   .author-info {
-    display: inline-block;
     color: $blog-color;
+    display: inline-block;
     margin: 10px 0 0;
 
     img {
@@ -346,9 +346,9 @@
 }
 
 .gravatar {
-  webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
   border-radius: 50%;
 }
