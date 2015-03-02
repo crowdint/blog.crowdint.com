@@ -1,12 +1,5 @@
 section#share
   h3.share-archive Blog Archive
-  /*h3.is-not-mobile*/
-    = 'Our '
-    br/
-    span.l-normal archive
-  /*h3.is-mobile*/
-    = 'Our '
-    span.l-normal archive
 
 .categories
   = link_to root_path do
@@ -25,6 +18,7 @@ section#share
     = text_field_tag 'q[from]', nil, class: 'search-options-date js-date-field'
     = label_tag 'q[to]', 'to'
     = text_field_tag 'q[to]', nil, class: 'search-options-date js-date-field'
+    = submit_tag 'Search', class: 'search-options-send'
 
 section.posts.for-archive
   - @posts.each do |year, posts|

@@ -74,6 +74,7 @@
 
   .search-options {
     padding-top: 20px;
+    .search-options-send { display: none; }
 
     .search-options-custom-author, .search-options-custom-category {
       display: inline-block;
