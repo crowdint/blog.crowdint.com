@@ -22,12 +22,13 @@ class Post < Crowdblog::Post
   def self.query(query)
     dates = self.date_range(query)
     Post.search do
-      fulltext query[:text]
+      fulltext query[:q]
       with(:author_id, query[:author].to_i) if query[:author].present?
       with(:category_ids, [query[:category].to_i]) if query[:category].present?
       with(:state, 'published')
       with(:published_at, dates)
       order_by(:published_at, :desc)
+      paginate page: query[:page] || 1, per_page: query[:per_page] || 30
     end
   end
 
@@ -46,7 +47,7 @@ class Post < Crowdblog::Post
   end
 
   def self.grouped_for_archive
-    published_and_ordered.group_by { |p| p.published_at.year }
+    published_and_ordered.includes(:categories, :author).group_by { |p| p.published_at.year }
   end
 
   def previous

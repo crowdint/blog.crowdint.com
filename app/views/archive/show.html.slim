@@ -5,19 +5,19 @@ section#share
   = link_to root_path do
     h2.category-home Blog Home
 = form_tag search_path, method: :get, class: 'search not-hidden js-archive-form' do
-  = search_field_tag 'q[text]', nil, class: 'search-input', value: @query, placeholder: 'Search'
+  = search_field_tag 'q', nil, class: 'search-input', value: params[:q], placeholder: 'Search'
   span.search-toggle-elements.js-toggle-archive-options
   .search-options.js-archive-options
     span.search-options-custom-author
-      = select_tag 'q[author]', options_from_collection_for_select(User.all, :id, :name),
+      = select_tag 'author', options_from_collection_for_select(User.all, :id, :name),
         prompt: 'by Author', class: 'search-options-author'
     span.search-options-custom-category
-      = select_tag 'q[category]', options_from_collection_for_select(Category.all, :id, :name),
+      = select_tag 'category', options_from_collection_for_select(Category.all, :id, :name),
         prompt: 'by Category', class: 'search-options-category'
-    = label_tag 'q[from]', 'from'
-    = text_field_tag 'q[from]', nil, class: 'search-options-date js-date-field'
-    = label_tag 'q[to]', 'to'
-    = text_field_tag 'q[to]', nil, class: 'search-options-date js-date-field'
+    = label_tag 'from', 'from'
+    = text_field_tag 'from', nil, class: 'search-options-date js-date-field'
+    = label_tag 'to', 'to'
+    = text_field_tag 'to', nil, class: 'search-options-date js-date-field'
     = submit_tag 'Search', class: 'search-options-send'
 
 section.posts.for-archive

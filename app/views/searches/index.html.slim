@@ -8,12 +8,17 @@ section#share
     span.l-normal results
 
 section.posts
-  - if @query
+  - if @posts.empty?
+    h4
+      | Your search did not match any results
+  - else
     h4
       | Your search results
 
     #search
       - unless @posts.empty?
         = render partial: 'crowdblog/posts/post', collection: @posts, locals: { index_view: true }
+        = will_paginate(@posts, params: params, inner_window: 1, outer_window: 0)
       - else
         | No result matches your criteria
+
