@@ -8,7 +8,7 @@
     box-sizing: border-box;
     padding: 0 50px;
 
-    @include mq-mobile(){ padding: 0 20px; }
+    @include mq-mobile() { padding: 0 20px; }
   }
 
   .pagination {
@@ -46,7 +46,7 @@
       font-weight: bold;
     }
 
-    @include mq-mobile(){
+    @include mq-mobile() {
       margin-top: 35px;
 
       .previous_page {
@@ -112,12 +112,12 @@
     width: 10%;
   }
 
-  @include mq-tablet(){
+  @include mq-tablet() {
     .post-year-separator { width: 40%; }
     .post-year-title { width: 20%; }
   }
 
-  @include mq-mobile(){
+  @include mq-mobile() {
     .post-year-separator { width: 35%; }
     .post-year-title { width: 30%; }
   }
@@ -223,22 +223,10 @@
   .social-likes {
     text-align: center;
 
-    .social-likes__widget_twitter {
-      @include social-media(0px);
-    }
-
-    .social-likes__widget_facebook {
-      @include social-media(-40px);
-    }
-
-    .social-likes__widget_plusone {
-      @include social-media(-80px);
-    }
-
-    .linkedin {
-      @include social-media(-120px);
-    }
-
+    .social-likes__widget_twitter { @include social-media(0px); }
+    .social-likes__widget_facebook { @include social-media(-40px); }
+    .social-likes__widget_plusone { @include social-media(-80px); }
+    .linkedin { @include social-media(-120px); }
     .social-likes__counter { display: none; }
   }
 

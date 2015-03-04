@@ -29,22 +29,10 @@
     }
 
     .social-likes {
-      .social-likes__widget_twitter {
-        @include social-media(0px, -80px);
-      }
-
-      .social-likes__widget_facebook {
-        @include social-media(-40px, -80px);
-      }
-
-      .social-likes__widget_plusone {
-        @include social-media(-80px, -80px);
-      }
-
-      .linkedin {
-        @include social-media(-120px, -80px);
-      }
-
+      .social-likes__widget_twitter { @include social-media(0px, -80px); }
+      .social-likes__widget_facebook { @include social-media(-40px, -80px); }
+      .social-likes__widget_plusone { @include social-media(-80px, -80px); }
+      .linkedin { @include social-media(-120px, -80px); }
       .social-likes__counter { display: none; }
     }
   }

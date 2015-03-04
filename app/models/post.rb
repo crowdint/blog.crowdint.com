@@ -1,9 +1,10 @@
 class Post < Crowdblog::Post
-  belongs_to :author, :class_name => "User"
-  belongs_to :publisher, :class_name => "User"
+  belongs_to :author, class_name: 'User'
+  belongs_to :publisher, class_name: 'User'
   has_and_belongs_to_many :categories
 
   SHORT_DESCRIPTION_SIZE = 300
+  DEFAULT_FROM_DATE = '2010-01-01'
 
   delegate :name, to: :author, prefix: true
 
@@ -33,7 +34,7 @@ class Post < Crowdblog::Post
   end
 
   def self.date_range(params)
-    from = params[:from].blank? ? '2010-01-01' : params[:from]
+    from = params[:from].blank? ? DEFAULT_FROM_DATE : params[:from]
     to = params[:to].blank? ? Date.today.end_of_month.to_s : params[:to]
     from..to
   end

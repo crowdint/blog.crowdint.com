@@ -10,7 +10,7 @@
 
     .search-toggle-elements { display: none; }
 
-    @include mq-tablet(){
+    @include mq-tablet() {
       .search-toggle-elements {
         background: image_url('options_btn_down.svg') center no-repeat;
         cursor: pointer;
@@ -41,7 +41,7 @@
       }
     }
 
-    @include mq-mobile(){
+    @include mq-mobile() {
       .search-options {
         .search-options-custom-author {
           margin: 0 10% 20px 0;
@@ -147,14 +147,14 @@
     }
   }
 
-  @include mq-tablet(){
+  @include mq-tablet() {
     display: none;
     max-width: 768px;
     padding: 32px 50px 0;
     width: 95%;
   }
 
-  @include mq-mobile(){
+  @include mq-mobile() {
     padding: 32px 20px 0;
     width: 100%;
   }

@@ -21,7 +21,7 @@ describe Post do
     it 'returns custom dates if they are not present' do
       dates = { from: '', to: '' }
       expect(Post.date_range(dates)).
-        to eq '2010-01-01'..Date.today.end_of_month.to_s
+        to eq Post::DEFAULT_FROM_DATE..Date.today.end_of_month.to_s
     end
   end
 
