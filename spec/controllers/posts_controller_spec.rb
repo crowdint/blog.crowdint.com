@@ -8,7 +8,7 @@ describe Crowdblog::PostsController do
   describe '#index' do
     before { get :index }
 
-    it { expect(assigns :page).to eq '1' }
+    it { expect(assigns :page).to eq 1 }
     it { expect(assigns :recent_post).to eq new_post }
   end
 end
