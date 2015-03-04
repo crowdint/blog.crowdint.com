@@ -40,7 +40,6 @@ class Post < Crowdblog::Post
 
   def self.verbose_reindex
     all.each do |post|
-      puts post.id
       Sunspot.index post
       Sunspot.commit
     end
