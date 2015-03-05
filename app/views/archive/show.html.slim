@@ -21,7 +21,7 @@ section#share
     = submit_tag 'Search', class: 'search-options-send'
 
 section.posts.for-archive
-  - @posts.each do |year, posts|
+  - @posts.grouped_for_archive.each do |year, posts|
     .posts-year
       hr.post-year-separator
       h3.post-year-title= year
@@ -41,6 +41,7 @@ section.posts.for-archive
         p.is-mobile-info
           span.is-not-mobile.separator |
           = category_link(post.first_category)
+  = will_paginate @posts, inner_window: 1, outer_window: 0
 
 - content_for :page_title do
   = " :: Archive"

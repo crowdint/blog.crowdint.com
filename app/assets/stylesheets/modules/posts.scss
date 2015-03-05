@@ -6,9 +6,15 @@
 
   &.for-archive {
     box-sizing: border-box;
-    padding: 0 50px;
+    padding: 0;
 
     @include mq-mobile() { padding: 0 20px; }
+
+    .pagination {
+      margin: 0;
+      padding: 4em 0;
+      border-top: 5px solid $gainsboro;
+    }
   }
 
   .pagination {
@@ -131,7 +137,7 @@
   &.for-archive {
     border-bottom: 1px solid $darkgray;
     margin-bottom: 0;
-    padding: 50px 0;
+    padding: 50px;
 
     &.last { border-bottom: none; }
 
