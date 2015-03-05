@@ -23,7 +23,7 @@ pages.search.hideForm = function(){
 pages.search.toggleOptions = function(){
   $('.js-toggle-archive-options').click(function(){
     $('.js-archive-options').toggle();
-    $('.js-toggle-archive-options').toggleClass('active')
+    $('.js-toggle-archive-options').toggleClass('change-bg-img')
   });
 };
 
