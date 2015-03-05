@@ -26,6 +26,8 @@
     }
 
     select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
       background: $white;
       border: none;
       color: $darkgray;

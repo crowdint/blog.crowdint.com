@@ -1,6 +1,7 @@
 window.pages = {
-  menu: {},
+  archive: {},
   categories: {},
   error: {},
+  menu: {},
   search: {}
 };

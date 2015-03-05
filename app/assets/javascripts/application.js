@@ -15,12 +15,15 @@
 //= require social-likes.min
 //= require jquery.stellar
 //= require highlight.pack
+//= require pickadate/picker
+//= require pickadate/picker.date
 //= require mixpanel
 //= require pages
 //= require mobile-menu
 //= require categories
 //= require error
 //= require search
+//= require archive
 
 $(document).ready(function() {
   pages.menu.toggleMobileMenu();
@@ -28,6 +31,9 @@ $(document).ready(function() {
   pages.error.glassMovement();
   pages.search.showForm();
   pages.search.hideForm();
+  pages.archive.toggleOptions();
+  pages.archive.loadPickadate();
+  pages.archive.sendForm();
 
   offset = $('#header').height();
 

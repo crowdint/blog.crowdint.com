@@ -1,4 +1,4 @@
 = form_tag main_app.search_path, method: :get, id: :search_form,
   class: 'search js-search' do
-  = search_field_tag :q, nil, class: 'search-input js-search-input',
-    value: @query, placeholder: 'Search'
+  = search_field_tag 'q', nil, class: 'search-input js-search-input',
+    value: params[:q], placeholder: 'Search'

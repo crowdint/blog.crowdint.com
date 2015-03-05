@@ -1,0 +1,342 @@
+.posts {
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: left;
+  width: 70%;
+
+  &.for-archive {
+    box-sizing: border-box;
+    padding: 0 50px;
+
+    @include mq-mobile() { padding: 0 20px; }
+  }
+
+  .pagination {
+    color: $blog-color;
+    margin: -2em 0 4em;
+    overflow: auto;
+    text-align: center;
+
+    .previous_page {
+      float: left;
+      margin: 0 0 0 50px;
+    }
+
+    .next_page {
+      float: right;
+      margin: 0 50px 0 0;
+    }
+
+    .previous_page, .next_page {
+      border-radius: 5px;
+      border: 2px solid $gainsboro;
+      display: inline-block;
+      padding: 9px 0;
+      width: 100px;
+    }
+
+    a, span, em {
+      color: $blog-color;
+      display: inline-block;
+      margin: 10px 13px 0;
+      text-decoration: none;
+    }
+
+    .current {
+      font-weight: bold;
+    }
+
+    @include mq-mobile() {
+      margin-top: 35px;
+
+      .previous_page {
+        float: left;
+        margin: 0 0 0 3%;
+      }
+
+      .next_page {
+        float: right;
+        margin: 0 3% 0 0;
+      }
+
+      a, em, span {
+        display: inline-block;
+        margin: 90px 0 0 0;
+      }
+    }
+  }
+
+  @include mq-tablet() {
+    max-width: 768px;
+    padding: 0 20px;
+    width: 95%;
+
+    pre {
+      code {
+        font-size: 1em;
+      }
+    }
+  }
+
+  @include mq-mobile() {
+    max-width: 640px;
+    padding: 0;
+    width: 100%;
+
+    pre {
+      code {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.posts-year {
+  padding-top: 50px;
+
+  .post-year-separator {
+    border-bottom: none;
+    border-top: 1px solid $darkgray;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 10px 0;
+    width: 45%;
+  }
+
+  .post-year-title {
+    color: $blog-color;
+    display: inline-block;
+    font: 22px 'Roboto Regular';
+    margin: 0;
+    text-align: center;
+    width: 10%;
+  }
+
+  @include mq-tablet() {
+    .post-year-separator { width: 40%; }
+    .post-year-title { width: 20%; }
+  }
+
+  @include mq-mobile() {
+    .post-year-separator { width: 35%; }
+    .post-year-title { width: 30%; }
+  }
+}
+
+.post {
+  border-bottom: 5px solid $gainsboro;
+  margin-bottom: 50px;
+  padding: 50px;
+
+  &.for-archive {
+    border-bottom: 1px solid $darkgray;
+    margin-bottom: 0;
+    padding: 50px 0;
+
+    &.last { border-bottom: none; }
+
+    h1 {
+      border-bottom: none;
+      padding: 0;
+    }
+  }
+
+  @include mq-mobile() { padding: 5px; }
+
+  h1 {
+    border-bottom: 1px solid $darkgray;
+    margin: 0;
+    padding-bottom: 20px;
+    a {
+      @include roboto(1.3383em, bold);
+      color: $darkslategray;
+      line-height: 1.5em;
+    }
+  }
+
+  a {
+    color: $blog-color;
+    text-decoration: none;
+  }
+
+  h3 {
+    font-size: 1.7em;
+    margin: 1em 0;
+    text-align: left;
+  }
+
+  h4 {
+    font-size: 1.4em;
+    font-weight: 100;
+  }
+
+  hr {
+    border-top: solid 1px $blog-color;
+    height: 0;
+    margin: 3em auto;
+    width: 80%;
+  }
+
+  p {
+    img {
+      width: 100%;
+    }
+  }
+
+  iframe {
+    height: 400px;
+    width: 100%;
+    @include mq-tablet() { height: 300px; }
+    @include mq-mobile() { height: 200px; }
+  }
+
+  .author-info {
+    color: $blog-color;
+    display: inline-block;
+    margin: 10px 0 0;
+
+    img {
+      border: 2px solid #EEEEEE;
+      float: none;
+      height:30px;
+      margin: 0px 10px -15px 0;
+      padding: 3px;
+      width: 30px;
+    }
+
+    @include mq-mobile() {
+      img { float: left; }
+
+      span, a {
+        display: block;
+        margin: 0 0 0 50px;
+      }
+
+      .separator { display: none; }
+    }
+  }
+  .separator {
+    display: inline-block;
+    margin: 0px 15px;
+  }
+
+  .social-likes {
+    text-align: center;
+
+    .social-likes__widget_twitter { @include social-media(0px); }
+    .social-likes__widget_facebook { @include social-media(-40px); }
+    .social-likes__widget_plusone { @include social-media(-80px); }
+    .linkedin { @include social-media(-120px); }
+    .social-likes__counter { display: none; }
+  }
+
+
+  ul {
+    list-style-type: circle;
+    padding-left: 2em;
+  }
+
+  .short {
+    h1, h2, h3 {
+      font-size: 1em;
+      font-weight: normal;
+    }
+  }
+
+  .more {
+    @include roboto(1.3333em, bold);
+    color: $darkgray;
+    display: block;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+  }
+
+  @include mq-mobile() {
+    padding: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.post-footer {
+  padding: 0 50px 50px;
+
+  .author-box {
+    color: $blog-color;
+    text-align: left;
+
+    .gravatar {
+      border: 2px solid #EEEEEE;
+      float: none;
+      height:30px;
+      margin: 0px 10px -15px 0;
+      padding: 3px;
+      width: 30px;
+    }
+
+    @include mq-mobile() {
+      .gravatar { float: left; }
+
+      span {
+        display: block;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  ul {
+    text-align: left;
+    margin-top: 50px;
+    line-height: 35px;
+
+    li {
+      @include roboto(1.3em, bold);
+      text-indent: -5px;
+      a {
+        color: $darkslategray;
+        text-decoration: none;
+      }
+    }
+
+    li:before {
+      content: '-';
+      left: -5px;
+      position: relative;
+    }
+  }
+
+  @include mq-mobile() {
+    padding: 20px;
+
+    ul {
+      margin-top: 0;
+    }
+  }
+}
+
+.author-posts {
+  p {
+    margin: 0 1em 0 0;
+  }
+}
+
+.author-header {
+  margin-top: 2em;
+  text-align: center;
+
+  h1 {
+    font-weight: 100;
+  }
+}
+
+.gravatar {
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
