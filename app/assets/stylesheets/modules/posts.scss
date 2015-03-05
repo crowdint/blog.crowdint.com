@@ -4,6 +4,12 @@
   text-align: left;
   width: 70%;
 
+  .posts-search-title {
+    margin: 25px 50px 0;
+
+    @include mq-mobile() { margin: 25px 20px 0; }
+  }
+
   &.for-archive {
     box-sizing: border-box;
     padding: 0;

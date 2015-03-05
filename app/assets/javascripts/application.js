@@ -23,18 +23,12 @@
 //= require categories
 //= require error
 //= require search
-//= require archive
 
 $(document).ready(function() {
   pages.menu.toggleMobileMenu();
   pages.categories.mobileCategories();
   pages.error.glassMovement();
-  pages.search.showForm();
-  pages.search.hideForm();
-  pages.archive.toggleOptions();
-  pages.archive.loadPickadate();
-  pages.archive.sendForm();
-  pages.archive.selectOption();
+  pages.search.init();
 
   offset = $('#header').height();
 
