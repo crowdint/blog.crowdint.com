@@ -34,6 +34,7 @@ $(document).ready(function() {
   pages.archive.toggleOptions();
   pages.archive.loadPickadate();
   pages.archive.sendForm();
+  pages.archive.selectOption();
 
   offset = $('#header').height();
 

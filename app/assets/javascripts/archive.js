@@ -22,3 +22,9 @@ pages.archive.sendForm = function(){
     }
   });
 };
+
+pages.archive.selectOption = function(){
+  $('.js-select-search').change(function(){
+    $('.js-archive-form').submit();
+  });
+};
