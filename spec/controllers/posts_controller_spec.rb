@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Crowdblog::PostsController do
   let!(:author) { create :user }
-  let!(:new_post) { create :post, author: author, published_at: '2015-01-01' }
-  let!(:old_post) { create :post, author: author, published_at: '2014-01-01' }
+  let!(:new_post) { create :post, author: author, published_at: Date.today.strftime }
+  let!(:old_post) { create :post, author: author }
 
   describe '#index' do
     before { get :index }
