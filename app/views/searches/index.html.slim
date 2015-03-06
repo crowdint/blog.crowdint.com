@@ -10,7 +10,9 @@ section.posts
   - if @posts.empty?
     .posts-search
       h4.posts-search-title Your search did not match any results.
-      p.posts-search-description Please try again or #{ link_to 'go back', :back }
+      p.posts-search-description
+        | Please try again or &nbsp;
+        = link_to 'go back', :back, class: 'posts-search-link'
   - else
     #search
       - unless @posts.empty?
