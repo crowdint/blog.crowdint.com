@@ -4,10 +4,23 @@
   text-align: left;
   width: 70%;
 
-  .posts-search-title {
-    margin: 25px 50px 0;
+  .posts-search {
+    border-top: 1px solid $gray-medium-light;
+    margin-top: 35px;
+    padding: 50px;
+    text-align: center;
+    color: $gray-medium-light;
 
-    @include mq-mobile() { margin: 25px 20px 0; }
+    a { color: $gray-medium-light; }
+
+    .posts-search-title {
+      font: 25px 'Roboto Regular';
+      margin: 0 0
+    }
+
+    .posts-search-description {
+      font: 15px 'Roboto Regular';
+    }
   }
 
   &.for-archive {
@@ -151,6 +164,8 @@
       border-bottom: none;
       padding: 0;
     }
+
+    @include mq-mobile() { padding: 50px 0; }
   }
 
   @include mq-mobile() { padding: 5px; }
