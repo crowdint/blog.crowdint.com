@@ -18,8 +18,6 @@
         height: 55px;
         vertical-align: -20px;
         width: 10%;
-
-        &.active { background-image: image_url('options_btn_up.svg') }
       }
 
       .search-input { width: 90%; }
@@ -150,7 +148,7 @@
   @include mq-tablet() {
     display: none;
     max-width: 768px;
-    padding: 32px 50px 0;
+    padding-top: 32px;
     width: 95%;
   }
 
