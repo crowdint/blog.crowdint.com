@@ -17,6 +17,7 @@
 //= require highlight.pack
 //= require pickadate/picker
 //= require pickadate/picker.date
+//= require inline-disqussions
 //= require mixpanel
 //= require pages
 //= require mobile-menu
