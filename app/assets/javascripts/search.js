@@ -31,7 +31,11 @@ pages.search.loadPickadate = function(){
   $('.js-date-field').pickadate({
     format: 'yyyy-mm-dd',
     formatSubmit: 'yyyy-mm-dd',
-    hiddenName: true
+    hiddenName: true,
+
+    onClose: function(){
+      $('.js-archive-form').submit();
+    }
   });
 };
 
