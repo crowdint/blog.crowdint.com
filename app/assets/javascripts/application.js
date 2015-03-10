@@ -17,6 +17,7 @@
 //= require highlight.pack
 //= require pickadate/picker
 //= require pickadate/picker.date
+//= require jquery.touchSwipe.min
 //= require mixpanel
 //= require pages
 //= require mobile-menu
@@ -25,7 +26,7 @@
 //= require search
 
 $(document).ready(function() {
-  pages.menu.toggleMobileMenu();
+  pages.menu.init();
   pages.categories.mobileCategories();
   pages.error.glassMovement();
   pages.search.init();

@@ -47,9 +47,13 @@
   background-repeat: no-repeat;
   color: #ffffff;
   height: 440px;
+  position: relative;
 
   @include mq-tablet('portrait') { height: 400px; }
-  @include mq-mobile() { height: 280px; background-position-y: -21px; position: relative; }
+  @include mq-mobile() {
+    height: 280px;
+    background-position-y: -21px;
+  }
 }
 
 .l-wrapper {
