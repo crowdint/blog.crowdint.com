@@ -68,6 +68,8 @@
     font: 18px 'Roboto Light';
     padding: 15px;
     width: 100%;
+
+    &::-webkit-search-cancel-button { display: none; }
   }
 
   .search-options {
