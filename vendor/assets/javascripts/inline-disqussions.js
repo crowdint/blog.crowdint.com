@@ -248,16 +248,16 @@ var disqus_url;
     var animate = {};
     if (el.attr('data-disqus-position') == 'right') {
       animate = {
-        'top': el.offset().top,
-        'left': el.offset().left + el.outerWidth(),
-        'width': Math.min(parseInt($(window).width() - (el.offset().left + el.outerWidth()), 10), settings.maxWidth)
+        'top': el.offset().top - 100,
+        "left": el.offset().left + el.outerWidth(),
+        "width": Math.min(parseInt($(window).width() - (el.offset().left + el.outerWidth()), 10), settings.maxWidth)
       };
     }
     else if (el.attr('data-disqus-position') == 'left') {
       animate = {
-        'top': el.offset().top,
-        'left': el.offset().left - Math.min(parseInt(el.offset().left, 10), settings.maxWidth),
-        'width': Math.min(parseInt(el.offset().left, 10), settings.maxWidth)
+        'top': el.offset().top - 100,
+        "left": el.offset().left - Math.min(parseInt(el.offset().left, 10), settings.maxWidth),
+        "width": Math.min(parseInt(el.offset().left, 10), settings.maxWidth)
       };
     }
 

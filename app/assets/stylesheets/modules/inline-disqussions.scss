@@ -1,98 +1,108 @@
 .disqussion {
-  padding: 5px 10px 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  line-height: 16px;
+  font-family: sans-serif;
   font-size: 13px;
   font-weight: bold;
-  font-family: sans-serif;
+  left: 0;
+  line-height: 16px;
+  padding: 5px 10px 10px;
+  position: absolute;
   text-align: center;
+  top: 0;
   z-index: 7;
+
+  &:hover a, &.hovered a {
+    background: #999999;
+    opacity: 1;
+  }
+
+  &:hover a:after, &.hovered a:after {
+    border-top-color: #999999;
+  }
+
+  a {
+    -moz-border-radius: 2px;
+    -moz-transition: all 0.5s;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    -o-transition: all 0.5s;
+    -webkit-border-radius: 2px;
+    -webkit-transition: all 0.5s;
+    background: #bbbbbb;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    height: 17px;
+    opacity: 0;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.5s;
+    width: 20px;
+
+    &.has-comments { opacity: .8; }
+
+    &:after {
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      border-left: 7px solid transparent;
+      border-top: 7px solid #bbbbbb;
+      content: " ";
+      display: block;
+      height: 0;
+      left: 19px;
+      position: absolute;
+      top: 22px;
+      transition: all 0.5s;
+      width: 0;
+    }
+  }
 }
 
-.disqussion a {
-  opacity: 0;
-  display: block;
-  overflow: hidden;
-  width: 20px;
-  height: 17px;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  background: #bbbbbb;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.disqussion a.has-comments {
-  opacity: .8;
-}
 .disqussion-contain:hover .disqussion a {
   opacity: 1;
 }
-.disqussion a:after {
-  border-left: 7px solid transparent;
-  border-top: 7px solid #bbbbbb;
-  left: 19px;
-  top: 22px;
-  height: 0;
-  width: 0;
-  display: block;
-  content: " ";
-  position: absolute;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.disqussion:hover a, .disqussion.hovered a {
-  opacity: 1;
-  background: #999999;
-}
-.disqussion:hover a:after, .disqussion.hovered a:after {
-  border-top-color: #999999;
-}
 
 #disqussions_wrapper {
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 #disqus_thread.positioned {
-  position: absolute;
-  top: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   left: 0;
   padding: 5px 15px 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  position: absolute;
+  top: 0;
 }
+
 .disqussion-highlight #disqus_thread.positioned {
   background: #fff;
   z-index: 9;
 }
 
 #disqussions_overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 8;
+  bottom: 0;
   display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 8;
 }
 
 .disqussion-highlighted {
-  position: relative;
   background: #fff;
+  position: relative;
   z-index: 9;
+}
+
+.main-disqussion-link-wrp {
+  font-family: "Helvetica Neue", arial, sans-serif;
+  text-align: center;
+  a { color: $darkgray; }
 }
