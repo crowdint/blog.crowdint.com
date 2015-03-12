@@ -18,24 +18,4 @@
     = previous_link_mobile(@post)
 .posts
   = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
-
-  #disqus_thread
-
-  javascript:
-    var tabletSize = 1024;
-    var disqus_shortname = "#{ ENV['DISQUS_SHORTNAME'] }";
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-
-    if ($(document).width() > tabletSize) {
-      $(document).ready(function() {
-        $('.body p').inlineDisqussions({ highlighted: true });
-      });
-    }
-
-  a href="http://disqus.com" class="dsq-brlink"
-    | blog comments powered by
-    span class="logo-disqus" Disqus
+  = render 'disqus'
