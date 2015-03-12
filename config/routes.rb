@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
   get 'admin/posts/:state',
     to: 'crowdblog/admin/posts#index',
-    constraints: { :state => /(finished)/ },
+    filter: /finished|reviewed/,
     as: :admin_finished_posts
 
   mount Crowdblog::Engine => '/'

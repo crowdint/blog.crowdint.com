@@ -8,12 +8,14 @@
       ul.nav.nav-pills
         li class="#{@state ? '' : 'active'}"
           = link_to 'All', crowdblog.admin_posts_path
-        li class="#{@state == 'finished' ? 'active' : ''}"
-          = link_to 'Finished', main_app.admin_finished_posts_path('finished')
-        li class="#{@state == 'published' ? 'active' : ''}"
-          = link_to 'Published', crowdblog.admin_posts_by_state_path('published')
         li class="#{@state == 'drafted' ? 'active' : ''}"
           = link_to 'Drafted', crowdblog.admin_posts_by_state_path('drafted')
+        li class="#{@state == 'finished' ? 'active' : ''}"
+          = link_to 'Finished', main_app.admin_finished_posts_path('finished')
+        li class="#{@state == 'reviewed' ? 'active' : ''}"
+          = link_to 'Reviewed', main_app.admin_finished_posts_path('reviewed')
+        li class="#{@state == 'published' ? 'active' : ''}"
+          = link_to 'Published', crowdblog.admin_posts_by_state_path('published')
 
   #posts.container
     table.table.table-striped
