@@ -6,15 +6,15 @@
       = link_to 'New Post', crowdblog.new_admin_post_path, :class => "btn btn-primary btn-small"
     .span4.offset5
       ul.nav.nav-pills
-        li class="#{@state ? '' : 'active'}"
+        li class=active_admin_link(@state, nil)
           = link_to 'All', crowdblog.admin_posts_path
-        li class="#{@state == 'drafted' ? 'active' : ''}"
+        li class=active_admin_link(@state, 'drafted')
           = link_to 'Drafted', crowdblog.admin_posts_by_state_path('drafted')
-        li class="#{@state == 'finished' ? 'active' : ''}"
-          = link_to 'Finished', main_app.admin_finished_posts_path('finished')
-        li class="#{@state == 'reviewed' ? 'active' : ''}"
-          = link_to 'Reviewed', main_app.admin_finished_posts_path('reviewed')
-        li class="#{@state == 'published' ? 'active' : ''}"
+        li class=active_admin_link(@state, 'finished')
+          = link_to 'Finished', main_app.admin_posts_by_state_path('finished')
+        li class=active_admin_link(@state, 'reviewed')
+          = link_to 'Reviewed', main_app.admin_posts_by_state_path('reviewed')
+        li class=active_admin_link(@state, 'published')
           = link_to 'Published', crowdblog.admin_posts_by_state_path('published')
 
   #posts.container

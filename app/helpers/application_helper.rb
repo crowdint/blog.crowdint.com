@@ -98,4 +98,8 @@ module ApplicationHelper
   def custom_link(text, url, attr = {})
     link_to text, url, attr
   end
+
+  def active_admin_link(current_state, expected_state)
+    return 'active' if current_state == expected_state
+  end
 end
