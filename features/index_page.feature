@@ -31,14 +31,14 @@ Feature: Index Page
       | The zalatown        | Some time ago in the zalaton    | true      |
       | Rancho grande       | Alla en el rancho grande...     | true      |
      When I go to the index page
-     Then I should see "The great gatsby" within "#share"
+     Then I should see "Rancho grande" within "#share"
       And I should see:
-      | The great gatsby    |
-      | Johnny was a sailor |
-      | Pipilium            |
-      | The Kats            |
+      | Rancho grande       |
+      | The zalatown        |
       | The Allman Brothers |
+      | The Kats            |
+      | Pipilium            |
      When I click on "Next >"
      Then I should see:
-      | The zalatown  |
-      | Rancho grande |
+       | Johnny was a sailor |
+       | The great gatsby    |
