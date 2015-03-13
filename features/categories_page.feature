@@ -27,6 +27,7 @@ Feature: Categories Page
       | The great gatsby    | Lorem Ipsum Cohiben Allen       | true      |
      And I am logged in as an admin user
     When I go to the admin posts page
+     And I click on "Published"
      And I click on "Edit"
      And I check "Spree" on the categories list
      And I press "Update"
