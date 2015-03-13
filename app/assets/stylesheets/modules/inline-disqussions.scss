@@ -1,0 +1,108 @@
+.disqussion {
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  left: 0;
+  line-height: 16px;
+  padding: 5px 10px 10px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  z-index: 7;
+
+  &:hover a, &.hovered a {
+    background: #999999;
+    opacity: 1;
+  }
+
+  &:hover a:after, &.hovered a:after {
+    border-top-color: #999999;
+  }
+
+  a {
+    -moz-border-radius: 2px;
+    -moz-transition: all 0.5s;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    -o-transition: all 0.5s;
+    -webkit-border-radius: 2px;
+    -webkit-transition: all 0.5s;
+    background: #bbbbbb;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    height: 17px;
+    opacity: 0;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.5s;
+    width: 20px;
+
+    &.has-comments { opacity: .8; }
+
+    &:after {
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      border-left: 7px solid transparent;
+      border-top: 7px solid #bbbbbb;
+      content: " ";
+      display: block;
+      height: 0;
+      left: 19px;
+      position: absolute;
+      top: 22px;
+      transition: all 0.5s;
+      width: 0;
+    }
+  }
+}
+
+.disqussion-contain:hover .disqussion a {
+  opacity: 1;
+}
+
+#disqussions_wrapper {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+#disqus_thread.positioned {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  left: 0;
+  padding: 5px 15px 0 15px;
+  position: absolute;
+  top: 0;
+}
+
+.disqussion-highlight #disqus_thread.positioned {
+  background: #fff;
+  z-index: 9;
+}
+
+#disqussions_overlay {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 8;
+}
+
+.disqussion-highlighted {
+  background: #fff;
+  position: relative;
+  z-index: 9;
+}
+
+.main-disqussion-link-wrp {
+  font-family: "Helvetica Neue", arial, sans-serif;
+  text-align: center;
+  a { color: $darkgray; }
+}
