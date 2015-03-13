@@ -18,6 +18,7 @@
 //= require pickadate/picker
 //= require pickadate/picker.date
 //= require jquery.touchSwipe.min
+//= require inline-disqussions
 //= require mixpanel
 //= require pages
 //= require mobile-menu
