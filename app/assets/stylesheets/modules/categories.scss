@@ -2,6 +2,27 @@
   float: left;
   margin: 50px 0 0 5%;
   width: 10%;
+  &.for-post {
+    position: absolute;
+    @include mq-tablet(){
+      background-color: $blog-color;
+      display: block;
+      float: none;
+      margin: 0;
+      position: static;
+      text-align: center;
+      width: 100%;
+      select {
+        background-color: #007466;
+        border: none;
+        color: white;
+        font-family: 'Roboto Light';
+        font-size: 20px;
+        margin: 0.5em auto;
+        text-decoration: underline;
+      }
+    }
+  }
 
   h1, h2, a {
     color: $darkgray;
@@ -17,7 +38,18 @@
     margin: 60px 0 20px;
   }
 
-  .category { line-height: 30px; }
+  .categories-mobile {
+    display: none;
+    @include mq-tablet(){
+      display: block;
+    }
+  }
+
+  .categories-desktop {
+    @include mq-tablet(){
+      display: none;
+    }
+  }
 
   @include mq-tablet(){ display: none; }
 }

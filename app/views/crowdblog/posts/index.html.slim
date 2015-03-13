@@ -1,9 +1,10 @@
 = render 'application/we_share' if @page == 1
 .categories
-  = link_to root_path do
-    h2.category-home Blog Home
-  h1.categories-title We write about
-  = render @categories, index_view: true
+  .categories-desktop
+    = link_to root_path do
+      h2.category-home Blog Home
+    h1.categories-title We write about
+    = render @categories, index_view: true
 .archive
   = link_to main_app.archive_path do
     h2 Blog Archive
