@@ -6,6 +6,10 @@ Given /^I press "([^"]*)"$/ do |button_name|
   click_button button_name
 end
 
+Given /^I am in "(.*?)"$/ do |path_name|
+  visit eval("#{ path_name }")
+end
+
 Then /^I should see "([^"]*)"$/ do |expectation|
   expect(page).to have_content(expectation)
 end

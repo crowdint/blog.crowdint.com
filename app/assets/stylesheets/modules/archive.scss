@@ -1,0 +1,14 @@
+.archive {
+  float: right;
+  margin: 50px 5% 0 0;
+  width: 10%;
+
+  a, h2 {
+    color: $darkgray;
+    font: 18px 'Roboto Regular';
+    margin: 0;
+    text-decoration: none;
+  }
+
+  @include mq-tablet(){ display: none; }
+}

@@ -3,9 +3,11 @@
 defaults: &defaults
   GOOGLE_APP_ID: 'your_google_app_id'
   GOOGLE_SECRET_KEY: 'your_google_secret_key'
+  DISQUS_SHORTNAME: 'your_disqus_shortname'
 
 development:
   <<: *defaults
 
 production:
   <<: *defaults
+  DISQUS_SHORTNAME: 'your_disqus_shortname'

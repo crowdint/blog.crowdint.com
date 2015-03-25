@@ -1,6 +1,6 @@
-.categories
+.categories.for-post
   .categories-desktop
-    h1.title We write about
+    h1.categories-title We write about
     = render partial: 'crowdblog/categories/category_details', collection: @categories, as: :category
   .categories-mobile
     = select_tag :category,
@@ -18,19 +18,4 @@
     = previous_link_mobile(@post)
 .posts
   = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
-  #disqus_thread
-
-  - if Rails.env.production?
-    coffee:
-      disqus_shortname = 'crowdinttech'
-
-      dsq = document.createElement('script')
-      dsq.type = 'text/javascript'
-      dsq.async = true
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js'
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq)
-
-
-    a href="http://disqus.com" class="dsq-brlink"
-      | blog comments powered by
-      span class="logo-disqus" Disqus
+  = render 'disqus'

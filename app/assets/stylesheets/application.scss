@@ -1,35 +1,27 @@
 @import 'fonts/fonts';
 
-@import "mixins/*";
+@import 'mixins/*';
 
 // Font mixins
-@import "fonts/roboto";
+@import 'fonts/roboto';
 
 // Colors variables file
-@import "colors";
+@import 'colors';
 
 // Base and Layout files
-@import "base";
-@import "layout";
+@import 'base';
+@import 'layout';
 
-@import "highlight/sunburst";
+@import 'highlight/sunburst';
+
+@import 'pickadate/default';
+@import 'pickadate/default.date';
 
 // Modules
-@import "modules/button";
-@import "modules/categories";
-@import "modules/error";
-@import "modules/footer";
-@import "modules/header";
-@import "modules/headline";
-@import "modules/menu-header";
-@import "modules/mobile-menu";
-@import "modules/nav";
-@import "modules/nav-bar";
-@import "modules/share";
-@import "modules/social-icon";
+@import 'modules/*';
 
 // State file
-@import "state";
+@import 'state';
 
 pre code {
   background-color: #555 !important;

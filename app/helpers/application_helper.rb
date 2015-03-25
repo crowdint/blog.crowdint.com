@@ -99,9 +99,7 @@ module ApplicationHelper
     link_to text, url, attr
   end
 
-  def index_page?
-    if params[:controller] == 'crowdblog/posts' && params[:action] == 'index'
-      'index'
-    end
+  def active_admin_link(current_state, expected_state)
+    return 'active' if current_state == expected_state
   end
 end
