@@ -1,6 +1,6 @@
-.categories
+.categories.for-post
   .categories-desktop
-    h1.title We write about
+    h1.categories-title We write about
     = render partial: 'crowdblog/categories/category_details', collection: @categories, as: :category
   .categories-mobile
     = select_tag :category,
