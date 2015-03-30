@@ -6,7 +6,7 @@
     = select_tag :category,
       options_from_collection_for_select(@categories, 'id', 'name'),
       prompt: 'select one',
-      class: 'categories-select'
+      class: 'categories-select js-categories-select'
 .post-menu
   .post-menu-desktop
     = next_link(@post)
