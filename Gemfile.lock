@@ -205,6 +205,8 @@ GEM
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
     pg (0.17.1)
+    pickadate-rails (3.5.5.0)
+      railties (>= 3.1.0)
     polyglot (0.3.5)
     pr_geohash (1.0.0)
     pry (0.10.1)
@@ -371,6 +373,7 @@ DEPENDENCIES
   omniauth
   omniauth-google-oauth2
   pg
+  pickadate-rails
   pry-rails
   puma
   quiet_assets

@@ -1,18 +1,53 @@
 class Post < Crowdblog::Post
-  belongs_to :author, :class_name => "User"
-  belongs_to :publisher, :class_name => "User"
+  belongs_to :author, class_name: 'User'
+  belongs_to :publisher, class_name: 'User'
+  has_and_belongs_to_many :categories
 
   SHORT_DESCRIPTION_SIZE = 300
+  DEFAULT_FROM_DATE = '2010-01-01'
+
+  delegate :name, to: :author, prefix: true
 
   searchable do
-    text :title, :body
+    text :title, :body, :author_name, :category_names
     string :state
+    integer :author_id
+    integer :category_ids, multiple: true
+    time :published_at
+  end
+
+  def category_names
+    categories.pluck(:name).join(' ')
+  end
+
+  def self.query(query)
+    dates = self.date_range(query)
+    Post.search do
+      fulltext query[:q]
+      with(:author_id, query[:author].to_i) if query[:author].present?
+      with(:category_ids, [query[:category].to_i]) if query[:category].present?
+      with(:state, 'published')
+      with(:published_at, dates)
+      order_by(:published_at, :desc)
+      paginate page: query[:page] || 1, per_page: query[:per_page] || 30
+    end
+  end
+
+  def self.date_range(params)
+    from = params[:from].blank? ? DEFAULT_FROM_DATE : params[:from]
+    to = params[:to].blank? ? Date.today.end_of_month.to_s : params[:to]
+    from..to
+  end
+
+  def self.verbose_reindex
+    all.each do |post|
+      Sunspot.index post
+      Sunspot.commit
+    end
   end
 
   def self.grouped_for_archive
-    published_and_ordered.group_by {|p| p.published_at.year }.
-        inject({}) { |mem, value| mem[value[0]] = value[1].
-            group_by {|p| p.published_at.strftime("%B")}; mem }
+    published_and_ordered.includes(:categories, :author).group_by { |p| p.published_at.year }
   end
 
   def previous
@@ -52,21 +87,6 @@ class Post < Crowdblog::Post
     @@renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
                                            :autolink => true, :space_after_headers => true)
     @@renderer.render(description).html_safe
-  end
-
-  def self.query(query)
-    Post.search do
-      fulltext query
-      with :state, 'published'
-    end
-  end
-
-  def self.verbose_reindex
-    all.each do |post|
-      puts post.id
-      Sunspot.index post
-      Sunspot.commit
-    end
   end
 
   def self.scoped_for(user)

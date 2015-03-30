@@ -1,3 +1,11 @@
+@mixin bg-img($image) {
+  background-image: image_url($image);
+}
+
+.change-bg-img {
+  @include bg-img('options_btn_up.svg');
+}
+
 .is-hidden { display: none; }
 .is-mobile {
   display: none;

@@ -1,86 +1,55 @@
 .categories {
-  height: auto;
-  margin-left: 5%;
-  position: absolute;
-  top: 75px;
+  float: left;
+  margin: 50px 0 0 5%;
   width: 10%;
-  &.index { top: 22%; }
-
-  @include mq-tablet() {
-    margin-top: -90px;
-    position: static;
+  &.for-post {
+    position: absolute;
+    @include mq-tablet(){
+      background-color: $blog-color;
+      display: block;
+      float: none;
+      margin: 0;
+      position: static;
+      text-align: center;
+      width: 100%;
+      select {
+        background-color: #007466;
+        border: none;
+        color: white;
+        font-family: 'Roboto Light';
+        font-size: 20px;
+        margin: 0.5em auto;
+        text-decoration: underline;
+      }
+    }
   }
 
-  a { text-decoration: none; }
-  .title {
-    color: $gray-medium-lighter;
-    font-size: 16px;
-    font-family: 'Roboto Light';
-  }
-  .category {
-    color: $gray-medium-light;
-    font-size: 20px;
+  h1, h2, a {
+    color: $darkgray;
     font-family: 'Roboto Regular';
-
-  }
-  .g-category {
-    @extend .category;
-    color: $home-color;
-  }
-  .categories-desktop {
-    display: block;
-
-    @include mq-tablet() {
-      display: none !important;
-    }
+    font-size: 18px;
+    margin: 0;
+    text-decoration: none;
   }
 
-  &.categories-mobile {
-    background-color: $home-color;
-    display: none;
-    height: 3em;
-    option { background-color: $home-color; }
-
-    @include mq-tablet() {
-      display: block !important;
-    }
+  .categories-title {
+    font-family: 'Roboto Light';
+    font-size: 16px;
+    margin: 60px 0 20px;
   }
 
   .categories-mobile {
     display: none;
-    @include mq-tablet() { display: block; }
+    @include mq-tablet(){
+      display: block;
+    }
   }
 
-  .categories-select {
-    background-color: $home-color;
-    border: none;
-    color: $white;
-    font-family: 'Roboto Light';
-    font-size: 20px;
-    margin: 0.5em auto;
-    text-decoration:underline;
+  .categories-desktop {
+    @include mq-tablet(){
+      display: none;
+    }
   }
 
-  @include mq-tablet() {
-    background-color: $home-color;
-    display: block;
-    float: none;
-    margin: 0;
-    text-align: center;
-    width: 100%;
-  }
-}
-
-.categories.index {
-  @include mq-tablet() { background-color: transparent; }
-  margin-bottom: 20px;
-
-  .categories-mobile, .categories-select {
-    background-color: transparent;
-  }
-
-  @include mq-mobile() {
-    position: absolute;
-    top: 91px;
-  }
+  @include mq-tablet(){ display: none; }
 }

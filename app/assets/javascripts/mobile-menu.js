@@ -9,3 +9,19 @@ pages.menu.toggleMobileMenu = function() {
     }
   });
 };
+
+pages.menu.swipeHideMenu = function() {
+  $('body').swipe({
+    swipeRight: function(event, direction, distance, duration, fingerCount){
+      if ($('body').hasClass('is-menu-visible')) {
+        $('#header, #container, #footer').addClass('is-moved-to-right');
+        $('body').addClass('is-animating');
+      }
+    }
+  });
+}
+
+pages.menu.init = function(){
+  pages.menu.toggleMobileMenu();
+  pages.menu.swipeHideMenu();
+}

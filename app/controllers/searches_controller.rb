@@ -1,6 +1,5 @@
 class SearchesController < ApplicationController
   def index
-    @query = params[:q]
-    @posts = Post.query(@query).results
+    @posts = Post.query(params).results
   end
 end

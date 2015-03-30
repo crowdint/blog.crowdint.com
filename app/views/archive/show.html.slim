@@ -1,21 +1,33 @@
 section#share
-  h3.is-not-mobile
-    = 'Our '
-    br/
-    span.l-normal archive
-  h3.is-mobile
-    = 'Our '
-    span.l-normal archive
+  h3.share-archive Blog Archive
 
-= render 'application/nav_bar'
+.categories
+  = link_to root_path do
+    h2.category-home Blog Home
+= render partial: 'application/complex_search_form'
 
-section.posts.archive
-  - @posts.each do |year, posts|
-      - posts.each do |month, posts|
-        h3 #{month} / #{year}
-        - posts.each do |post|
-          article.post
-            h1= link_to post.title, post_path(*post.url_params)
+section.posts.for-archive
+  - @posts.grouped_for_archive.each do |year, posts|
+    .posts-year
+      hr.post-year-separator
+      h3.post-year-title= year
+      hr.post-year-separator
+    - posts.each_with_index do |post, index|
+      article.post.for-archive class=('last' if index == posts.size - 1)
+        h1= link_to post.title, post_path(*post.url_params)
+        p.author-info
+          = image_tag post.gravatar_url, class: 'gravatar'
+          = link_to main_app.posts_by_author_path(post.author.to_param) do
+            | by&nbsp;
+            strong= post.author_name
+          span.is-not-mobile.separator |
+        p.is-mobile-info
+          span.published-date
+            = post.formatted_published_date
+        p.is-mobile-info
+          span.is-not-mobile.separator |
+          = category_link(post.first_category)
+  = will_paginate @posts, inner_window: 1, outer_window: 0
 
 - content_for :page_title do
   = " :: Archive"
