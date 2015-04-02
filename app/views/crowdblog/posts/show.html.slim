@@ -17,5 +17,7 @@
     = get_home_category(@post.first_category)
     = previous_link_mobile(@post)
 .posts
-  = render :partial => 'crowdblog/posts/post', :object => @post, :locals => { index_view: false }
-  = render 'disqus'
+  = render partial: 'crowdblog/posts/post',
+        object: @post,
+        locals: { index_view: false }
+  = render partial: 'crowdblog/posts/disqus'
