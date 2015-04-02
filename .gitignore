@@ -34,3 +34,4 @@ sunspot-solr.pid
 
 # Ignore application configuration
 /config/application.yml
+/config/sunspot.yml
