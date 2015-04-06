@@ -4,6 +4,24 @@
   text-align: left;
   width: 70%;
 
+  /*Basic styles for tables*/
+
+  table {
+    border-spacing: 0;
+    margin-bottom: 15px;
+
+    tr {
+      background-color: $white;
+
+      &:nth-child(2n) { background-color: $gray-lighter }
+    }
+
+    th, td {
+      border: 1px solid $gray-dark;
+      padding: 6px 13px;
+    }
+  }
+
   .posts-search {
     border-top: 1px solid $gray-medium-light;
     color: $gray-medium-light;
