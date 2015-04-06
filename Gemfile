@@ -5,7 +5,9 @@ gem 'rails', '4.1.5'
 
 gem 'actionpack-action_caching'
 gem 'coffee-rails'
-gem 'crowdblog', '0.5.0'
+gem 'crowdblog',
+  git: 'https://github.com/crowdint/crowdblog',
+  tag: 'v0.6.2'
 gem 'dalli'
 gem 'dropbox-sdk', :require => "dropbox_sdk"
 gem 'figaro'
