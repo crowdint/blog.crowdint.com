@@ -20,6 +20,7 @@
   margin: 0;
 
   background: image_url('crowdint-logo-inverse.svg') no-repeat;
+  background-size: contain;
 
   @include mq(770px) {
     width: 120px;
@@ -29,8 +30,6 @@
     top: 100%;
     margin-left: -60px;
     margin-top: -25px;
-
-    background: image_url('crowdint-logo-02.svg') no-repeat;
   }
 }
 
