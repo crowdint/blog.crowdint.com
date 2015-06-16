@@ -15,7 +15,7 @@
 }
 
 .button-home, .button-portfolio, .button-blog, .button-error {
-  @include button-page($home-color);
+  @include button-page($sunset-orange);
 }
 
 .button-team {

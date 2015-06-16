@@ -19,7 +19,7 @@
   vertical-align: top;
   margin: 0;
 
-  background: image_url('crowdint-logo.svg') no-repeat;
+  background: image_url('crowdint-logo-inverse.svg') no-repeat;
 
   @include mq(770px) {
     width: 120px;
@@ -49,7 +49,7 @@
 }
 
 .header-nav-link {
-  color: rgb(155,155,155);
+  color: $white;
 }
 
 .header-button {
@@ -85,3 +85,7 @@
 .header-we-do { border-bottom: solid 1px $we-do-color; }
 .header-contact { border-bottom: solid 1px $contact-color; }
 .header-careers { border-bottom: solid 1px $careers-color; }
+
+.header-blog {
+  background-color: $very-dark-grey;
+}
