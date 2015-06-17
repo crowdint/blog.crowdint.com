@@ -64,7 +64,8 @@
   top: 50%;
   margin-top: -14px;
 
-  background: $home-color image_url('menu-btn.svg') -40px -21px no-repeat;
+  background: $very-dark-grey image_url('menu-icon-mobile.svg') no-repeat;
+	background-size: contain;
 
   @include mq(770px) {
     display: block;
@@ -76,7 +77,7 @@
 .header-mobile-team { background-color: $team-color; }
 .header-mobile-about { background-color: $about-color; }
 .header-mobile-we-do { background-color: $we-do-color; }
-.header-mobile-careers { background-color: $careers-color; }
+.header-mobile-careers { background-color: $very-dark-grey; }
 
 .header-home, .header-portfolio, .header-blog { border-bottom: solid 1px $black; }
 .header-team { border-bottom: solid 1px $team-color; }
