@@ -55,7 +55,7 @@ group :test do
   gem 'codeclimate-test-reporter',  require: nil
 end
 
-group :production do
+group :production, :staging do
   gem 'asset_sync'
   gem 'newrelic_rpm'
   gem 'pg'

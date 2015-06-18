@@ -396,3 +396,6 @@ DEPENDENCIES
   unicorn
   warden
   will_paginate
+
+BUNDLED WITH
+   1.10.3
