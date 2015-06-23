@@ -11,7 +11,7 @@ pages.menu.toggleMobileMenu = function() {
 };
 
 pages.menu.swipeHideMenu = function() {
-  $('body').swipe({
+  $('#mobile-menu').swipe({
     swipeRight: function(event, direction, distance, duration, fingerCount){
       if ($('body').hasClass('is-menu-visible')) {
         $('#header, #container, #footer').addClass('is-moved-to-right');
